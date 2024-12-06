@@ -1,2 +1,4 @@
 DATA_raw/*
 dataset/*
+_pycache_/*
+.vscode/*
