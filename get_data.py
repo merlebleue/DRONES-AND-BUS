@@ -10,7 +10,7 @@ import seaborn.objects as so
 
 DOWNLOAD_FOLDER = "dataset"
 DATARAW_FOLDER = "DATA_raw"
-LINE_DATA_FOLDER = "line_data"
+EXPORTS_FOLDER = "exports"
 
 def download_cache(url : str,
                    name: str,
@@ -150,9 +150,9 @@ if __name__ == '__main__':
         # Compute distance based on one journey with the most stops
         # ---
         index = line_timetable.index
-        line_timetable = pd.merge(line_timetable, stops_df[["lv95East", "lv95North"]], how="left", right_on=stops_df["number"], left_on="BPUIC")
+        line_timetable = pd.merge(line_timetable, stops_df[["lv95East", "lv95North"]], how="left", right_on=stops_df["number"], left_on="BPUIC").drop(columns = "BPUIC")
         line_timetable.index = index
-        
+
         journey = line_data["FAHRT_BEZEICHNER"].dropna().mode()[0]
         journey_data = line_timetable[[journey, "lv95East", "lv95North"]].dropna().sort_values(journey)
 
@@ -160,6 +160,32 @@ if __name__ == '__main__':
         journey_data["distance"] = distance
 
         line_timetable["Distance"] = journey_data["distance"]
+        # -------
+        # TODO : Add "simple" export based on one journey
+        # -------
+
+        # Now iterate over other journeys to add to interpolate the distances
+        missing_distances = line_timetable["Distance"].isna().sum()
+        n_iter = 0
+        while missing_distances > 0 and n_iter < 10:
+            n_iter +=1
+            # Find the journey with the most data on the stops for which we don't have the distance yet.
+            journey = line_timetable.loc[line_timetable.Distance.isna()].count(axis=0).idxmax()
+
+            journey_data = line_timetable[[journey, "lv95East", "lv95North", "Distance"]].dropna(subset=journey).sort_values(journey)
+
+            distance = ((journey_data[["lv95East", "lv95North"]].diff()**2).sum(axis=1)**0.5).cumsum()
+
+            index=distance.index
+            distance = np.interp(distance, distance.loc[journey_data["Distance"].notna()], journey_data["Distance"].dropna())
+            distance = pd.Series(distance, index=index)
+
+            line_timetable["Distance"] = line_timetable["Distance"].fillna(distance)
+
+
+            missing_distances = line_timetable["Distance"].isna().sum()
+        if missing_distances > 0:
+            print(f"Still {missing_distances} distances values missing for line {line_name} ({line_id})")
         
         # ---
         # Add distance to the dataframe
@@ -168,9 +194,9 @@ if __name__ == '__main__':
         planned = line_timetable.loc[(line_timetable.index.levels[0], line_timetable.index.levels[1], ["ANKUNFTSZEIT", "ABFAHRTSZEIT"]),]
         real = line_timetable.loc[(line_timetable.index.levels[0], line_timetable.index.levels[1], ["AN_PROGNOSE", "AB_PROGNOSE"]),]
         # Save
-        os.makedirs(os.path.join(LINE_DATA_FOLDER, str(line_name)), exist_ok=True)
-        planned.to_csv(os.path.join(LINE_DATA_FOLDER, str(line_name), f"{line_name}_planned.csv"), header=line_id)
-        real.to_csv(os.path.join(LINE_DATA_FOLDER, str(line_name), f"{line_name}_real.csv"), header=line_id)
+        os.makedirs(os.path.join(EXPORTS_FOLDER, str(line_name)), exist_ok=True)
+        planned.to_csv(os.path.join(EXPORTS_FOLDER, str(line_name), f"{line_name}_planned.csv"), header=line_id)
+        real.to_csv(os.path.join(EXPORTS_FOLDER, str(line_name), f"{line_name}_real.csv"), header=line_id)
     
         lines_data[line_name] = {
             "planned" : planned,
