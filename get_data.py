@@ -8,16 +8,18 @@ from zipfile import ZipFile
 import seaborn as sns
 import seaborn.objects as so
 
-DOWNLOAD_FOLDER = "dataset"
-DATARAW_FOLDER = "DATA_raw"
-EXPORTS_FOLDER = "exports"
+ZIP_FOLDER = os.path.join("data", "0_zip")
+DOWNLOAD_FOLDER = os.path.join("data", "1_downloaded")
+PRE_PROCESSED_FOLDER = os.path.join("data", "2_pre-processed")
+PROCESSED_FOLDER = os.path.join("data", "3_processed")
 
-def download_cache(url : str,
+def download_with_cache(url : str,
                    name: str,
                    date=datetime.datetime.today().date(),
                    zip = False,
+                   verbose = 1,
                    download_folder = DOWNLOAD_FOLDER,
-                   zip_folder = DATARAW_FOLDER):
+                   zip_folder = ZIP_FOLDER):
     """
     Downloads a file from a specified URL, with support for date formatting and optional handling of zip archives. 
     If the file already exists locally, the cached version is returned. Iterates backward through dates to find the file.
@@ -28,7 +30,7 @@ def download_cache(url : str,
         date (datetime.date or tuple, optional): The starting date for file search. Defaults to today's date. Tuple must be in `(year, month, day)` format.
         zip (bool, optional): Whether the file is in a zip archive. Defaults to False.
         download_folder (str, optional): Directory where the file will be saved. Defaults to `DOWNLOAD_FOLDER`.
-        zip_folder (str, optional): Directory where zip files are saved. Defaults to `DATARAW_FOLDER`.
+        zip_folder (str, optional): Directory where zip files are saved. Defaults to `ZIP_FOLDER`.
 
     Returns:
         tuple: 
@@ -67,7 +69,8 @@ def download_cache(url : str,
                     urllib.request.urlretrieve(try_url, zip_save_path if zip else save_path)
                     break
         except urllib.error.HTTPError as e:
-            print(f"File not found at {try_url} (404). Current date : {date}. Trying an earlier date.")
+            if verbose >0 :
+                print(f"File not found at {try_url} (404). Current date : {date}. Trying an earlier date.")
             continue
         
         
@@ -86,118 +89,243 @@ def download_cache(url : str,
         
     return save_path, date
     
-if __name__ == '__main__':
+def preprocess_TP_data(x_min, x_max, y_min, y_max, means_of_transport: tuple = ("all", ), date : datetime.date = datetime.datetime.today().date(), folder = PRE_PROCESSED_FOLDER):
+    # Determine filename (to check if it exists)
+    filename = os.path.join(folder, "_".join([str(i) for i in ("{df}", "{date}", "-".join(means_of_transport), x_min, x_max, y_min, y_max)]))
 
-    # Define rectangle boundaries
-    x_min, x_max = 2531838.30, 2533571.35
-    y_min, y_max = 1152042.99, 1153095.62
+    # Check if files exist and if they exists load them and return them
+    if os.path.isfile(filename.format(df = "stops", date=date)) & os.path.isfile(filename.format(df = "timetable", date=date)) :
+        stops_filtered = pd.read_csv(filename.format(df = "stops", date=date))
+        timetable_filtered = pd.read_csv(filename.format(df = "timetable", date=date))
+    
+        return stops_filtered, timetable_filtered
 
     # Download didok data
     didok_url = "https://opentransportdata.swiss/fr/dataset/service-points-full/permalink"
-    didok_file, date = download_cache(didok_url, "DIDOK_{date}.csv", zip=True)
+    didok_file, didok_date = download_with_cache(didok_url, "DIDOK_{date}.csv", zip=True, verbose=0)
+    stops_df = pd.read_csv(didok_file, delimiter= ";", low_memory=False)
 
-    stops_df = pd.read_csv(didok_file, delimiter= ";")
-
+    # Update date if didok file is older
+    if didok_date < date:
+        print(f"Changing date to {didok_date} because most recent Didok data is older than {date}")
+        date = didok_date
+    
     # Download timetable data:
     timetable_url = "https://opentransportdata.swiss/fr/dataset/istdaten/resource_permalink/{date}_istdaten.csv"
-    timetable_file, date= download_cache(timetable_url, "Timetable_{date}.csv", date)
-    timetable_df = pd.read_csv(timetable_file, delimiter= ";")
+    timetable_file, timetable_date= download_with_cache(timetable_url, "Timetable_{date}.csv", date, verbose=0)
+    timetable_df = pd.read_csv(timetable_file, delimiter= ";", low_memory=False)
+
+    # Update date if timetable file is older
+    if timetable_date < date:
+        print(f"Changing date to {timetable_date} because most recent timetable data is older than {date}")
+        date = timetable_date
+
+    # Given the possible change in date, check again
+    if os.path.isfile(filename.format(df = "stops", date=date)) & os.path.isfile(filename.format(df = "timetable", date=date)) :
+        stops_filtered = pd.read_csv(filename.format(df = "stops", date=date))
+        timetable_filtered = pd.read_csv(filename.format(df = "timetable", date=date))
+    
+        return stops_filtered, timetable_filtered
+
 
     # Filter stops
     # ------------
 
-    # Only keep interesting columns
-    stops_df = stops_df[['lv95East', 'lv95North', 'validFrom', 'validTo', 'number', "designationOfficial"]]
     # Filter based on validity (keep stops valid at the date)
-    stops_df = stops_df[(stops_df.validFrom <= str(date)) & (stops_df.validTo > str(date))]
-    stops_df.drop(columns=['validFrom', 'validTo'])
-    # Filter based on position
+    stops_df = stops_df.loc[(stops_df.validFrom <= str(date)) & (stops_df.validTo >= str(date))]
+    # Filter based on the fact it is a stop (stopPoint = true)
+    stops_df = stops_df.loc[stops_df.stopPoint]
+    # Only keep interesting columns
+    stops_df = stops_df[['number', 'designationOfficial', 'lv95East', 'lv95North']]
+
+    # Get stops numbers in rectangle
     stops_numbers = stops_df[stops_df['lv95East'].between(x_min, x_max) & stops_df['lv95North'].between(y_min, y_max)]["number"]
 
-    # Deduce lines from timetable information
-    # ---------------------------------------
-    # Select the journeys that passes through our stops
-    journeys = timetable_df.FAHRT_BEZEICHNER[timetable_df.BPUIC.isin(stops_numbers)]
-    filtered = timetable_df[timetable_df.FAHRT_BEZEICHNER.isin(journeys)]
 
-    # Make a map LINIEN_ID -> LINIEN_TEXT (for later)
-    line_names = filtered[["LINIEN_ID", "LINIEN_TEXT"]].drop_duplicates().set_index("LINIEN_ID").to_dict()["LINIEN_TEXT"]
+    # Filter timetable_data
+    # ---------------------
     
-    #Group by line
-    journeys_per_line = filtered.groupby("LINIEN_ID")["FAHRT_BEZEICHNER"]
+    # Filter based on the transport means
+    if "all" not in means_of_transport:
+        timetable_df = timetable_df.loc[timetable_df.PRODUKT_ID.str.contains("|".join(means_of_transport)).fillna(False)]
+    # Select the lines that passes through our stops
+    lines = timetable_df.LINIEN_ID[timetable_df.BPUIC.isin(stops_numbers)].unique()
+    # Filter the timetable for only those lines
+    timetable_filtered = timetable_df[timetable_df.LINIEN_ID.isin(lines)]
 
-    grouped = filtered.groupby("LINIEN_ID")[["BPUIC", "FAHRT_BEZEICHNER", "ANKUNFTSZEIT", "AN_PROGNOSE", "ABFAHRTSZEIT", "AB_PROGNOSE"]]
+    # Select all the stops (including outside from the rectangle) from those lines :
+    stops_filtered = stops_df.loc[stops_df.number.isin(timetable_filtered.BPUIC.unique())]
+
+    # Only keep interesting columns from timetable_df and rename them
+    timetable_filtered = timetable_filtered[["LINIEN_ID", "LINIEN_TEXT", "BETREIBER_ABK", "PRODUKT_ID", "FAHRT_BEZEICHNER", "BPUIC", "FAELLT_AUS_TF", "ANKUNFTSZEIT", "AN_PROGNOSE", "AN_PROGNOSE_STATUS", "ABFAHRTSZEIT", "AB_PROGNOSE", "AB_PROGNOSE_STATUS"]].rename(columns={
+        "FAHRT_BEZEICHNER" : "JOURNEY_ID",
+        "BETREIBER_ABK" : "TRANSPORTER",
+        "PRODUKT_ID" : "MEAN_OF_TRANSPORT",
+        "LINIEN_ID" : "LINE_ID",
+        "LINIEN_TEXT" : "LINE_NAME",
+        "FAELLT_AUS_TF" : "CANCELLED",
+        "BPUIC" : "STOP_NUMBER",
+        "ANKUNFTSZEIT" : "ARRIVAL",
+        "AN_PROGNOSE" : "ARRIVAL_REAL",
+        "AN_PROGNOSE_STATUS" : "ARRIVAL_REAL_STATUS",
+        "ABFAHRTSZEIT" : "DEPARTURE",
+        "AB_PROGNOSE" : "DEPARTURE_REAL",
+        "AB_PROGNOSE_STATUS" : "DEPARTURE_REAL_STATUS"
+    })
+
+    # Export the filtered stops and timetable dataframes
+    stops_filtered.to_csv(filename.format(df = "stops", date=date), index=False)
+    timetable_filtered.to_csv(filename.format(df = "timetable", date=date), index=False)
+
+    # Return copies (to reduce impact) of the dataframes
+    return stops_filtered.copy(deep=True), timetable_filtered.copy(deep=True)
+
+def process_line_data(stops_df: pd.DataFrame, timetable_df = pd.DataFrame, complex=False, folder=PROCESSED_FOLDER):
+
+    # Make a map LINE_ID -> LINE_NAME (for later)
+    line_names = (timetable_df[["LINE_ID", "LINE_NAME"]]
+                  .drop_duplicates()
+                  .set_index("LINE_ID")
+                  .to_dict()["LINE_NAME"]
+                  )
+    
+    # Group by line and choose only some columns
+    grouped = timetable_df.groupby("LINE_ID")[["STOP_NUMBER", "JOURNEY_ID", "ARRIVAL", "ARRIVAL_REAL", "DEPARTURE", "DEPARTURE_REAL", "ARRIVAL_REAL_STATUS", "DEPARTURE_REAL_STATUS"]]
     lines_data = {}
+    simple_lines_data = {}
     for line_id, line_data in grouped:
         line_name = line_names[line_id]
         print(line_id, line_name)
-        
-        n_duplicates = line_data.duplicated(subset = ["BPUIC", "FAHRT_BEZEICHNER"], keep="last").sum()
-        if n_duplicates > 0:
-            print(f"Removing {n_duplicates} duplicates for line {line_name} ({line_id})")
-            line_data = line_data.drop_duplicates(subset = ["BPUIC", "FAHRT_BEZEICHNER"], keep="last")
+
+        # Remove duplicates (and try to select the lines with the most accurate status (so REAL instead of PROGNOSE))
+        duplicates = (line_data
+                      .sort_values(by=["ARRIVAL_REAL_STATUS", "DEPARTURE_REAL_STATUS"])
+                      .duplicated(subset = ["STOP_NUMBER", "JOURNEY_ID"], keep="last")
+                      )
+        if duplicates.sum() > 0:
+            print(f"Removing {duplicates.sum()} duplicates for line {line_name} ({line_id})")
+            line_data =line_data[~duplicates]
+        line_data = line_data.drop(columns = ["ARRIVAL_REAL_STATUS", "DEPARTURE_REAL_STATUS"])
 
         # Refactor timetable data for the bus line
         # ----------------------------------------
-        line_timetable = line_data.pivot(index="BPUIC", columns="FAHRT_BEZEICHNER").stack(level=0, future_stack=True).apply(pd.to_datetime, format="mixed")
-        line_timetable = line_timetable.reindex(line_timetable.index.levels[1][::-1], level=1)
-        # Reorder : First on the min time for the first bus, and then for the stops without data, on the second bus in decreasing order (assuming it goes in the other direction).
-        line_timetable = line_timetable.reindex(line_timetable.groupby("BPUIC").min().sort_values(line_timetable.columns[[0,1]].to_list(), ascending = [True, False]).index, level=0)
+        line_timetable = (line_data
+            .pivot(index="STOP_NUMBER", columns="JOURNEY_ID")
+            .stack(level=0, future_stack=True)
+            .apply(pd.to_datetime, format="mixed")
+            )
+        line_timetable.index.set_names("EVENT", level=-1, inplace=True)
+        
         # Add stop names
-        names = line_timetable.index.get_level_values(0).map(stops_df.set_index("number")["designationOfficial"]).rename("Name")
+        names = line_timetable.index.get_level_values("STOP_NUMBER").map(stops_df.set_index("number")["designationOfficial"]).rename("STOP_NAME")
         line_timetable = line_timetable.set_index([names, line_timetable.index])
-
-        # Compute distance based on one journey with the most stops
-        # ---
+        
+        # Add geodata
         index = line_timetable.index
-        line_timetable = pd.merge(line_timetable, stops_df[["lv95East", "lv95North"]], how="left", right_on=stops_df["number"], left_on="BPUIC").drop(columns = "BPUIC")
+        line_timetable = pd.merge(line_timetable, 
+                                  stops_df[["lv95East", "lv95North"]].rename(columns = {"lv95East": "POSITION_X", "lv95North": "POSTION_Y"}), 
+                                  how="left", 
+                                  right_on=stops_df["number"], 
+                                  left_on="STOP_NUMBER"
+                                  ).drop(columns = "STOP_NUMBER")
         line_timetable.index = index
 
-        journey = line_data["FAHRT_BEZEICHNER"].dropna().mode()[0]
-        journey_data = line_timetable[[journey, "lv95East", "lv95North"]].dropna().sort_values(journey)
+        # Select one of the journeys with the most stops
+        journey = line_data["JOURNEY_ID"].dropna().mode()[0]
 
-        distance = ((journey_data[["lv95East", "lv95North"]].diff()**2).sum(axis=1)**0.5).cumsum()
-        journey_data["distance"] = distance
+        # Compute the distance based on this journey
+        journey_data = (line_timetable[[journey, "POSITION_X", "POSTION_Y"]]
+                        .dropna(subset=journey)
+                        .groupby("STOP_NUMBER")
+                        .max()
+                        .sort_values(journey)
+                        )
+        distance = ((journey_data[["POSITION_X", "POSTION_Y"]].diff()**2).sum(axis=1)**0.5).cumsum()
 
-        line_timetable["Distance"] = journey_data["distance"]
-        # -------
-        # TODO : Add "simple" export based on one journey
-        # -------
+        line_timetable["DISTANCE"] = line_timetable.index.get_level_values("STOP_NUMBER").map(distance)
+        line_timetable = line_timetable.sort_values(["DISTANCE", "EVENT"])
+        
+        # ----------------------------------------------------------
+        # Compute travel time averages and then export "simple" data
+        # ----------------------------------------------------------
 
-        # Now iterate over other journeys to add to interpolate the distances
+        simple_lines_data[line_name] = {}
+        for real_time in (False, True):
+            mask = line_timetable.index.get_level_values("EVENT").str[-4:] == "REAL"
+            if not real_time:
+                mask = ~mask
+            simple_line_data = (line_timetable[mask] # Select only real or planned times
+                                .dropna(subset="DISTANCE") # Drop the stops at which our journey did not stop
+                                )
+            
+            # Compute mean travel time
+            def mean_travel_time(diff):
+                df = (simple_line_data
+                      .diff(diff)
+                      .drop(columns=["DISTANCE", "POSITION_X", "POSTION_Y"])
+                      ) * diff
+                return (df[df>pd.Timedelta(seconds=0)] # Check sign to only have busses going that way
+                        .mean(axis=1) # Compute mean accross the columns
+                        .dt.seconds) # Return the seconds (easier to manipulate)
+            previous_tt, next_tt = mean_travel_time(1), mean_travel_time(-1)
+            simple_line_data["TIME_A"], simple_line_data["TIME_R"] = previous_tt, next_tt
+            # Remove "_REAL" suffix for consistency
+            if real_time:
+                simple_line_data = simple_line_data.rename(index= lambda i : i[:-5],level="EVENT")
+            # Invert the TIME_R between departure and arrival
+            simple_line_data.loc[(slice(None), slice(None), "ARRIVAL"), "TIME_R"], simple_line_data.loc[(slice(None), slice(None), "DEPARTURE"), "TIME_R"] = simple_line_data.loc[(slice(None), slice(None), "DEPARTURE"), "TIME_R"].values, simple_line_data.loc[(slice(None), slice(None), "ARRIVAL"), "TIME_R"].values
+
+            # Remove unused columns
+            simple_line_data = simple_line_data[["DISTANCE", "TIME_A", "TIME_R", "POSITION_X", "POSTION_Y"]]
+            # Remove first arrival and last departure lines
+            simple_line_data = simple_line_data.dropna(subset = ["TIME_A", "TIME_R"], how="all")
+
+            # Export and save
+            os.makedirs(os.path.join(folder, "simple"), exist_ok=True)
+            simple_line_data.to_csv(os.path.join(folder, "simple", f"{line_name}_{'real' if real_time else 'planned'}.csv"), float_format="%.0f")
+            simple_lines_data[line_name]['real' if real_time else 'planned'] = simple_line_data
+    return simple_lines_data
+
+
+        
+"""
+        # Get full order of the stops by interpolation
+        # ---
+
+        # Iterate over other journeys to interpolate the distances
         missing_distances = line_timetable["Distance"].isna().sum()
         n_iter = 0
         while missing_distances > 0 and n_iter < 10:
             n_iter +=1
+            print(missing_distances)
             # Find the journey with the most data on the stops for which we don't have the distance yet.
-            journey = line_timetable.loc[line_timetable.Distance.isna()].count(axis=0).idxmax()
+            journey = line_timetable.loc[line_timetable.Distance.isna()].drop(["lv95East", "lv95North" ,"Distance"], axis=1, errors = "ignore").count(axis=0).idxmax()
 
-            journey_data = line_timetable[[journey, "lv95East", "lv95North", "Distance"]].dropna(subset=journey).sort_values(journey)
+            journey_data = line_timetable[[journey, "lv95East", "lv95North", "Distance"]].dropna(subset=journey).groupby("STOP").first().sort_values([journey])
 
-            distance = ((journey_data[["lv95East", "lv95North"]].diff()**2).sum(axis=1)**0.5).cumsum()
+            distance = ((journey_data[["lv95East", "lv95North"]].diff()**2).sum(axis=1)**0.5).cumsum().rename("distance")
+
+            distance = journey_data.join(distance)["distance"]
 
             index=distance.index
             distance = np.interp(distance, distance.loc[journey_data["Distance"].notna()], journey_data["Distance"].dropna())
-            distance = pd.Series(distance, index=index)
+            distance = pd.Series(distance, index=index, name="distance")
 
-            line_timetable["Distance"] = line_timetable["Distance"].fillna(distance)
+            line_timetable["Distance"] = line_timetable["Distance"].fillna(line_timetable.join(distance)["distance"])
 
 
             missing_distances = line_timetable["Distance"].isna().sum()
         if missing_distances > 0:
             print(f"Still {missing_distances} distances values missing for line {line_name} ({line_id})")
-        
-        # ---
-        # Add distance to the dataframe
 
         # Separate between "planned" (to the minute) and "real" (to the sec) data
-        planned = line_timetable.loc[(line_timetable.index.levels[0], line_timetable.index.levels[1], ["ANKUNFTSZEIT", "ABFAHRTSZEIT"]),]
-        real = line_timetable.loc[(line_timetable.index.levels[0], line_timetable.index.levels[1], ["AN_PROGNOSE", "AB_PROGNOSE"]),]
+        planned = line_timetable.loc[(line_timetable.index.levels[0], line_timetable.index.levels[1], ["ANKUNFTSZEIT", "ABFAHRTSZEIT"]),].sort_values("Distance")
+        real = line_timetable.loc[(line_timetable.index.levels[0], line_timetable.index.levels[1], ["AN_PROGNOSE", "AB_PROGNOSE"]),].sort_values("Distance")
         # Save
-        os.makedirs(os.path.join(EXPORTS_FOLDER, str(line_name)), exist_ok=True)
-        planned.to_csv(os.path.join(EXPORTS_FOLDER, str(line_name), f"{line_name}_planned.csv"), header=line_id)
-        real.to_csv(os.path.join(EXPORTS_FOLDER, str(line_name), f"{line_name}_real.csv"), header=line_id)
-    
+        os.makedirs(os.path.join(LINE_DATA_FOLDER, str(line_name)), exist_ok=True)
+        planned.to_csv(os.path.join(LINE_DATA_FOLDER, str(line_name), f"{line_name}_planned.csv"), header=line_id)
+        real.to_csv(os.path.join(LINE_DATA_FOLDER, str(line_name), f"{line_name}_real.csv"), header=line_id)
+
         lines_data[line_name] = {
             "planned" : planned,
             "real" : real,
@@ -235,3 +363,5 @@ if __name__ == '__main__':
     #     line_data[line_name] = selected_bus_stops_data
     #     selected_bus_stops_data.to_csv(f"line_data/{line_name}.csv", header=line_id)
     # display(selected_bus_stops_data)
+
+    """

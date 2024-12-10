@@ -1,0 +1,23 @@
+STOP_NAME                        ,STOP_NUMBER ,EVENT     ,DISTANCE ,TIME_A ,TIME_R ,POSITION_X ,POSTION_Y
+"Lausanne, Bourdonnette"         ,    8501210 ,ARRIVAL   ,       0 ,       ,   110 ,   2534868 ,  1152794
+"Lausanne, sports UNIL-EPFL"     ,    8595937 ,ARRIVAL   ,     391 ,   110 ,    80 ,   2534561 ,  1152552
+"Lausanne, sports UNIL-EPFL"     ,    8595937 ,DEPARTURE ,     391 ,    23 ,    23 ,   2534561 ,  1152552
+"Lausanne, Parc Bourget"         ,    8595939 ,ARRIVAL   ,    1036 ,    80 ,    74 ,   2535156 ,  1152304
+"Lausanne, Parc Bourget"         ,    8595939 ,DEPARTURE ,    1036 ,    14 ,    14 ,   2535156 ,  1152304
+"Lausanne, Siège du CIO"         ,    8595934 ,ARRIVAL   ,    1479 ,    74 ,    70 ,   2535573 ,  1152152
+"Lausanne, Siège du CIO"         ,    8595934 ,DEPARTURE ,    1479 ,    24 ,    24 ,   2535573 ,  1152152
+"Lausanne, Stade de Coubertin"   ,    8595935 ,ARRIVAL   ,    1848 ,    70 ,    57 ,   2535848 ,  1151907
+"Lausanne, Stade de Coubertin"   ,    8595935 ,DEPARTURE ,    1848 ,    19 ,    19 ,   2535848 ,  1151907
+"Lausanne, Vidy-Port"            ,    8595938 ,ARRIVAL   ,    2192 ,    57 ,    72 ,   2536177 ,  1151807
+"Lausanne, Vidy-Port"            ,    8595938 ,DEPARTURE ,    2192 ,    18 ,    18 ,   2536177 ,  1151807
+"Lausanne, Théâtre de Vidy"      ,    8592121 ,ARRIVAL   ,    2547 ,    72 ,    58 ,   2536530 ,  1151767
+"Lausanne, Théâtre de Vidy"      ,    8592121 ,DEPARTURE ,    2547 ,    21 ,    21 ,   2536530 ,  1151767
+"Lausanne, Bellerive"            ,    8591989 ,ARRIVAL   ,    3075 ,    58 ,    41 ,   2536967 ,  1151471
+"Lausanne, Bellerive"            ,    8591989 ,DEPARTURE ,    3075 ,    22 ,    22 ,   2536967 ,  1151471
+"Lausanne, Pêcheurs"             ,    8592090 ,ARRIVAL   ,    3362 ,    41 ,    59 ,   2537175 ,  1151272
+"Lausanne, Pêcheurs"             ,    8592090 ,DEPARTURE ,    3362 ,    18 ,    18 ,   2537175 ,  1151272
+"Lausanne, Ouchy-Olympique"      ,    8592086 ,ARRIVAL   ,    3929 ,    59 ,    89 ,   2537676 ,  1151008
+"Lausanne, Ouchy-Olympique"      ,    8592086 ,DEPARTURE ,    3929 ,    34 ,    34 ,   2537676 ,  1151008
+"Lausanne, Parc Musée Olympique" ,    8595933 ,ARRIVAL   ,    4409 ,    89 ,    80 ,   2538156 ,  1150989
+"Lausanne, Parc Musée Olympique" ,    8595933 ,DEPARTURE ,    4409 ,    12 ,    12 ,   2538156 ,  1150989
+"Lausanne, Tour Haldimand-Lac"   ,    8595936 ,ARRIVAL   ,    5052 ,    80 ,       ,   2538756 ,  1150758

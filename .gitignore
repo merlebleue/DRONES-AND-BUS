@@ -1,4 +1,8 @@
-DATA_raw/*
-dataset/*
+data/0_zip
+data/1_downloaded
 _pycache_/*
+__pycache__/*
 .vscode/*
+old/*
+__pycache__\*
+__pycache__/get_data.cpython-312.pyc
