@@ -46,3 +46,11 @@ _
 - Do Main Objective #1
 - Update Bus System class to include visualisation
 - Try Main Objective #2
+
+
+# 13.12.2024
+
+- Represent update mechanism on a time axis
+- Next steps :
+  - Generate visualisation of lateness / delays / difference between real and planned data for a bus line to allow to adapt the matching of drones -> package
+  - Interaction ? Timetable functionnality would be cool but not necessary
