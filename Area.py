@@ -38,6 +38,9 @@ class Area:
     def is_inside(self, X, Y):
         return (X > self.x_min) & (X < self.x_max) & (Y > self.y_min) & (Y < self.y_max)
     
+    def is_inside_hecto(self, X, Y):
+        return (X + 99 > self.x_min) & (X < self.x_max) & (Y + 99 > self.y_min) & (Y < self.y_max)
+    
     def plot_interactive(self, bus_data = {}):
         min_lat, min_lon = self.to_lat_lon(self.x_min, self.y_min)[::-1]
         max_lat, max_lon = self.to_lat_lon(self.x_max, self.y_max)[::-1]

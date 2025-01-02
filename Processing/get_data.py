@@ -16,6 +16,8 @@ def download_with_cache(url : str,
                    name: str,
                    date=datetime.datetime.today().date(),
                    zip = False,
+                   zip_file_name = None,
+                   method = "HEAD",
                    verbose = 1,
                    download_folder = DOWNLOAD_FOLDER,
                    zip_folder = ZIP_FOLDER):
@@ -57,7 +59,7 @@ def download_with_cache(url : str,
         if (zip and os.path.isfile(zip_save_path)):
             break
 
-        request = urllib.request.Request(try_url, method='HEAD')
+        request = urllib.request.Request(try_url, method=method)
         try:
             with urllib.request.urlopen(request) as response:
                 if response.status == 200:  # URL exists
@@ -68,8 +70,9 @@ def download_with_cache(url : str,
                     urllib.request.urlretrieve(try_url, zip_save_path if zip else save_path)
                     break
         except urllib.error.HTTPError as e:
+            print(e)
             if verbose >0 :
-                print(f"File not found at {try_url} (404). Current date : {date}. Trying an earlier date.")
+                print(f"File not found at {try_url} ({e}). Current date : {date}. Trying an earlier date.")
             continue
         
         
@@ -77,17 +80,36 @@ def download_with_cache(url : str,
         with ZipFile(zip_save_path) as zip_file:
 
             files = zip_file.namelist()
-            files2 = [f for f in files if f.endswith(extension)]
-            if len(files2)>0:
-                file = files2[0]
-            else :
-                file = files[0]
-            zip_file.extract(file, download_folder)
+            if zip_file_name is None:
+                files2 = [f for f in files if f.endswith(extension)]
+                if len(files2)>0:
+                    file = files2[0]
+                else :
+                    file = files[0]
+            else:
+                files3 = [f for f in files if f.endswith(zip_file_name)]
+                if len(files3) == 0:
+                    print(f"No file '{zip_file_name}' found in archive. Found : {files}")
+                file = files3[0]
+            try:    
+                zip_file.extract(file, download_folder)
+            except KeyError as e:
+                print(files)
+                raise e
 
         os.rename(os.path.join(download_folder, file), save_path)
+
+        # Clean any remaining empty folder in `download_folder`
+        for item in os.listdir(download_folder):
+            item_path = os.path.join(download_folder,item)
+            if os.path.isdir(item_path):
+                if not os.listdir(item_path):
+                    os.removedirs(item_path)
+
         
     return save_path, date
     
+# Public transport data processing
 def preprocess_TP_data(area : Area, means_of_transport: tuple = ("all", ), date : datetime.date | tuple = datetime.datetime.today().date(), folder = PRE_PROCESSED_FOLDER):
     if not isinstance(date, datetime.date):
         date = datetime.date(*date)
@@ -306,7 +328,6 @@ def process_line_data(area : Area, stops_df: pd.DataFrame, timetable_df: pd.Data
 
         
     return simple_lines_data
-
 
         
 """
