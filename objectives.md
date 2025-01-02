@@ -54,3 +54,23 @@ _
 - Next steps :
   - Generate visualisation of lateness / delays / difference between real and planned data for a bus line to allow to adapt the matching of drones -> package
   - Interaction ? Timetable functionnality would be cool but not necessary
+
+# 19.12.2024
+
+- Define a problem
+- Work on a methodology
+    > Prepare a dataset to allow testing for a drone and bus delivery system
+- Demonstrate that what we proposed is great (or not)
+
+- Compare headway variability ?
+
+For each step :
+- Relax an assumption
+- Test the assumption against real data
+- Implement it
+
+Steps :
+1. Bus stops position [v]
+2. Bus speed [/]
+3. Headway [x]
+4. Delays [x]
