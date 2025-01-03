@@ -5,15 +5,30 @@ from get_data import download_with_cache
 from Area import Area
 
 class STAT:
-    def __init__(self, df: pd.DataFrame, default_weights = None):
+    def __init__(self, area: Area, df: pd.DataFrame, default_weights = None):
         self.df = df
         self.default_weights = default_weights
-    
-    def generate_n(self, n:int, precision_in_meter = 100, seed=None, weights = None, **kwargs):
+        self.area = area
+
+    def jitter(self, precision, n, seed=None):
+        shape = (n, 2)
+        if precision < 100:
+            n_precision = 100 // precision
+            rng = np.random.default_rng(seed=seed)
+            precision_array = (rng.integers(n_precision, size=shape)+0.5) * precision
+        else:
+            precision_array = np.full(shape, 50)
+
+        return precision_array
+
+    def generate(self, df: pd.DataFrame, n:int, precision_in_meter = 100, seed=None, weights = None, **kwargs):
+        """
+        Internal function that returns a sample of n elements, with a given jitter through precision_in_meter
+        """
         if weights is None:
             weights = self.default_weights
 
-        sample = self.df.sample(
+        sample = df.sample(
             n = n,
             replace = True,
             weights = weights,
@@ -23,15 +38,17 @@ class STAT:
 
         sample_array = sample[["POSITION_X", "POSITION_Y"]].to_numpy(copy=True)
 
-        if precision_in_meter < 100:
-            n_precision = 100 // precision_in_meter
-            rng = np.random.default_rng(seed=seed)
-            precision_array = rng.integers(n_precision, size=sample_array.shape) * precision_in_meter
-        else:
-            precision_array = np.full_like(sample_array, 50)
+        precision_array = self.jitter(precision_in_meter, n, seed)
 
         return sample_array + precision_array
+    
+    def generate_n(self, n:int, precision_in_meter = 100, seed=None, weights = None, **kwargs):
+        return self.generate(self.df, n, precision_in_meter, seed, weights, **kwargs)
 
+    def generate_per_proportion(self, proportion: float,  *args, weights=None,**kwargs):
+        if weights is None:
+            weights = self.default_weights
+        return self.generate_n(int(proportion * self.df[weights].sum()), *args, weights=weights, **kwargs)
 
 class STATPOP (STAT):
     def __init__(self, area: Area, year = 2023, asset_number = 32686751):
@@ -56,12 +73,7 @@ class STATPOP (STAT):
         })
 
         # Save the dataframe by running the super() call to __init__ :
-        super().__init__(df.copy(deep=True), "POPULATION")
-
-    def generate_per_population(self, prob_per_population: float,  *args, weights=None,**kwargs):
-        if weights is None:
-            weights = self.default_weights
-        return self.generate_n(int(prob_per_population * self.df[weights]), *args, weights=weights, **kwargs)
+        super().__init__(area, df.copy(deep=True), default_weights="POPULATION")
 
 
 class STATENT(STAT):
@@ -93,5 +105,20 @@ class STATENT(STAT):
         })
 
         # Save the dataframe by running the super() call to __init__ :
-        super().__init__(df.copy(deep=True), "SHOPS")
-    
+        super().__init__(area, df.copy(deep=True), default_weights="SHOPS")
+
+    # Supersede `generate_n` function to make it have a fixed number of possible shops 
+    def generate_n(self, n, precision_in_meter=100, seed=None, weights=None, **kwargs):
+        sample_df = self.df.loc[self.df.index.repeat(self.df.SHOPS)].reset_index(drop=True).copy(deep=True)
+        
+        sample_df[["SHOPS_EMP", "SHOPS_ETP"]] = sample_df[["SHOPS_EMP", "SHOPS_ETP"]].div(sample_df["SHOPS"], axis="index")
+        columns_to_keep = ["POSITION_X", "POSITION_Y", "SHOPS_EMP", "SHOPS_ETP"]
+        sample_df = sample_df[columns_to_keep]
+
+        if weights not in columns_to_keep:
+            if self.default_weights not in columns_to_keep:
+                weights = "SHOPS_ETP"
+
+        sample_df[["POSITION_X", "POSITION_Y"]] += self.jitter(precision_in_meter, len(sample_df))
+        
+        return self.generate(sample_df, n, 100, seed, weights, **kwargs)
