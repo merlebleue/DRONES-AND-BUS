@@ -1,5 +1,5 @@
 import math
-from Area import Area
+from RealDataSimulation.Simulation import Area
 import pandas as pd
 
 class BusStation:

@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 
-from get_data import download_with_cache
-from Area import Area
+from .get_data import download_with_cache
+from ..Simulation import Area
 
 class STAT:
     def __init__(self, area: Area, df: pd.DataFrame, default_weights = None):
@@ -35,9 +35,9 @@ class STAT:
 
         sample_array = sample[["POSITION_X", "POSITION_Y"]].to_numpy(copy=True)
 
-        precision_array = self.jitter(precision_in_meter, n, seed)
+        sample_array += self.jitter(precision_in_meter, n, seed)
 
-        return sample_array + precision_array
+        return sample_array
 
     def generate_per_proportion(self, proportion: float,  *args, weights=None,**kwargs):
         if weights is None:
@@ -109,5 +109,8 @@ class STATENT(STAT):
         sample_df = sample_df[columns_to_keep]
 
         sample_df[["POSITION_X", "POSITION_Y"]] += self.jitter(precision_in_meter, len(sample_df))
+
+        # Remove those that are not in the area
+        sample_df = sample_df.loc[self.area.is_inside(sample_df.POSITION_X, sample_df.POSITION_Y)]
 
         return STAT(self.area, sample_df, "SHOPS_ETP")

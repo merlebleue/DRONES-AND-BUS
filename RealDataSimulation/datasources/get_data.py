@@ -5,7 +5,7 @@ import urllib.request
 import urllib.error
 from zipfile import ZipFile
 
-from Area import Area
+from RealDataSimulation.Simulation import Area
 
 ZIP_FOLDER = os.path.join("data", "0_zip")
 DOWNLOAD_FOLDER = os.path.join("data", "1_downloaded")
