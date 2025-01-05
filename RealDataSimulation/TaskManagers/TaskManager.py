@@ -2,20 +2,20 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from ..Simulation import Simulation
+from ..project import Project
 from ..datasources.geostat import STATENT, STATPOP
 
 class TaskManager:
-    def __init__(self, sim: Simulation, precision_in_meters = 1, random_seed = None):
-        self.sim = sim
+    def __init__(self, project: Project, precision_in_meters = 1, random_seed = None):
+        self.project = project
         self.precision_in_meters = precision_in_meters
 
         # Generate shops
-        statent = STATENT(sim)
+        statent = STATENT(project)
         self.shops = statent.get_entreprises(precision_in_meters, seed=random_seed) # Generate entreprises with precision (random)
 
         # Generate customers
-        self.customers = STATPOP(sim)
+        self.customers = STATPOP(project)
 
     def get_tasks(self, n, random_seed = None):
         demand = self.customers.generate_n(n, self.precision_in_meters, seed=random_seed) # Here precision serves to generate random customers
@@ -28,7 +28,7 @@ class TaskManager:
     
     def plot(self, ax = None, tasks: pd.DataFrame = None):
         if ax is None:
-            fig, ax = self.sim.plot()
+            fig, ax = self.project.plot()
         if tasks is None:
             # Plot a visualisation of the shops, and densities of customers
             ax.scatter(data=self.customers.df, x="POSITION_X", y="POSITION_Y", c="POPULATION", marker=(4,0,0), s=50, cmap="Blues", alpha=0.5, vmin=-self.customers.df["POPULATION"].quantile(0.5),vmax=self.customers.df["POPULATION"].quantile(0.95), label="Customer density")

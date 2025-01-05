@@ -30,15 +30,15 @@ class TransportData:
         2 : "Data filtered",
         3 : "Line data generated"
     }
-    def __init__(self, sim: Project, **kwargs):
-        self.sim = sim
+    def __init__(self, project: Project, **kwargs):
+        self.project = project
 
-        self.date: datetime.date = kwargs.get("date", sim.t_start.date())
-        self.dl: DownloadManager = kwargs.get("download_manager", sim.dl)
+        self.date: datetime.date = kwargs.get("date", project.t_start.date())
+        self.dl: DownloadManager = kwargs.get("download_manager", project.dl)
         self.transport_folder: str = kwargs.get("folder", TRANSPORT_FOLDER)
 
         # Create folder
-        os.makedirs(sim.path_join(self.transport_folder), exist_ok=True)
+        os.makedirs(project.path_join(self.transport_folder), exist_ok=True)
 
         # Determine status
         self.get_status()
@@ -49,7 +49,7 @@ class TransportData:
         # TODO
 
         # Try at status = 2
-        filename = self.sim.path_join(self.transport_folder, "{df}.csv")
+        filename = self.project.path_join(self.transport_folder, "{df}.csv")
         if os.path.isfile(filename.format(df="lines")) and \
            os.path.isfile(filename.format(df="stops")) and \
            os.path.isfile(filename.format(df="timetable")):
@@ -126,7 +126,7 @@ class TransportData:
         stops_df = stops_df[['number', 'designationOfficial', 'lv95East', 'lv95North']]
 
         # Get stops numbers in rectangle
-        stops_numbers = stops_df[self.sim.is_inside(stops_df['lv95East'], stops_df['lv95North'])]["number"]
+        stops_numbers = stops_df[self.project.is_inside(stops_df['lv95East'], stops_df['lv95North'])]["number"]
 
 
         # Filter timetable_data
@@ -161,7 +161,7 @@ class TransportData:
         lines_df = timetable_filtered[["LINE_ID", "LINE_NAME", "TRANSPORTER", "MEAN_OF_TRANSPORT"]].drop_duplicates()
 
         # Export the filtered stops, timetable and line dataframes
-        filename = self.sim.path_join(self.transport_folder, "{df}.csv")
+        filename = self.project.path_join(self.transport_folder, "{df}.csv")
 
         stops_filtered.to_csv(filename.format(df = "stops"), sep=";", index=False)
         timetable_filtered.to_csv(filename.format(df = "timetable"), sep=";", index=False)
@@ -178,7 +178,7 @@ class TransportData:
         # Check that the data has already been filtered :
         if self.get_status() >= 2:
             # Data has been filtered previously : all good
-            filename = self.sim.path_join(self.transport_folder, "{df}.csv")
+            filename = self.project.path_join(self.transport_folder, "{df}.csv")
             stops_df = pd.read_csv(filename.format(df = "stops"), sep = "[ \t]*;[ \t]*", engine="python")
             timetable_df = pd.read_csv(filename.format(df = "timetable"), sep = "[ \t]*;[ \t]*", engine="python")
             lines_df = pd.read_csv(filename.format(df = "lines"), sep = "[ \t]*;[ \t]*", engine="python")
@@ -356,8 +356,8 @@ class TransportData:
                 # Use cleaned version of LINE_ID to export
                 line_ref = re.sub(r'[^\w\d-]','_',line_id)
             
-            os.makedirs(self.sim.path_join(self.transport_folder, str(line_ref)), exist_ok=True)
+            os.makedirs(self.project.path_join(self.transport_folder, str(line_ref)), exist_ok=True)
             for name, df in lines_timetables[line_id].items():
-                df.to_csv(self.sim.path_join(self.transport_folder, str(line_ref), f"{line_ref}_{name}.csv"), sep=";", float_format="%.0f")
+                df.to_csv(self.project.path_join(self.transport_folder, str(line_ref), f"{line_ref}_{name}.csv"), sep=";", float_format="%.0f")
 
         return lines_timetables
