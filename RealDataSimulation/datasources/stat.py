@@ -26,16 +26,23 @@ class STAT:
             weights = self.default_weights
 
         sample = self.df.sample(
-            n = n,
+            n = 2*n, # 2*n because after we remove some points outside of the area
             replace = True,
             weights = weights,
             random_state=seed,
             **kwargs
         )
 
-        sample_array = sample[["POSITION_X", "POSITION_Y"]].to_numpy(copy=True)
+        sample_array = sample[["POSITION_X", "POSITION_Y"]].to_numpy("float", copy=True)
 
-        sample_array += self.jitter(precision_in_meter, n, seed)
+        sample_array += self.jitter(precision_in_meter, 2*n, seed)
+
+        # Remove points outside of area
+        X, Y = sample_array.T
+        sample_array = sample_array[self.area.is_inside(X, Y)]
+
+        # Take n first points
+        sample_array = sample_array[:n]
 
         return sample_array
 
