@@ -42,7 +42,7 @@ class Area:
     def get_lat_lon_box(self):
          return *self.to_lat_lon(self.x_min, self.y_min)[::-1], *self.to_lat_lon(self.x_max, self.y_max)[::-1]
     
-class Simulation(Area):
+class Project(Area):
     def __init__(self, name: str, area_coordinates: dict, t_start: datetime, t_end: datetime, dt: timedelta, **kwargs):
         self.name = name
         self.t_start = t_start

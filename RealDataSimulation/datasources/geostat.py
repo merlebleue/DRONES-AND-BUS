@@ -2,10 +2,10 @@ import pandas as pd
 import numpy as np
 
 from .download import DownloadManager
-from ..simulation import Simulation
+from ..project import Project
 
 class STAT:
-    def __init__(self, sim: Simulation, df: pd.DataFrame, default_weights = None):
+    def __init__(self, sim: Project, df: pd.DataFrame, default_weights = None):
         self.df = df
         self.default_weights = default_weights
         self.sim = sim
@@ -52,7 +52,7 @@ class STAT:
         return self.generate_n(int(proportion * self.df[weights].sum()), *args, weights=weights)
 
 class STATPOP (STAT):
-    def __init__(self, sim: Simulation, year = 2023, asset_number = 32686751, **kwargs):
+    def __init__(self, sim: Project, year = 2023, asset_number = 32686751, **kwargs):
         dl: DownloadManager = kwargs.get("download_manager", sim.dl)
         filename = dl.download_with_cache(
             f"https://www.bfs.admin.ch/bfsstatic/dam/assets/{asset_number}/master",
@@ -79,7 +79,7 @@ class STATPOP (STAT):
 
 
 class STATENT(STAT):
-    def __init__(self, sim: Simulation, year = 2022, asset_number = 32258837, **kwargs):
+    def __init__(self, sim: Project, year = 2022, asset_number = 32258837, **kwargs):
         dl: DownloadManager = kwargs.get("download_manager", sim.dl)
         filename = dl.download_with_cache(
             f"https://www.bfs.admin.ch/bfsstatic/dam/assets/{asset_number}/master",

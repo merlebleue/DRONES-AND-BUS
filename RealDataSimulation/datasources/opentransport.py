@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 
 from .download import DownloadManager
-from ..simulation import Simulation
+from ..project import Project
 
 TRANSPORT_FOLDER = "transport_data"
 TIMETABLE_FILE = "Timetable_{date}.csv"
@@ -30,7 +30,7 @@ class TransportData:
         2 : "Data filtered",
         3 : "Line data generated"
     }
-    def __init__(self, sim: Simulation, **kwargs):
+    def __init__(self, sim: Project, **kwargs):
         self.sim = sim
 
         self.date: datetime.date = kwargs.get("date", sim.t_start.date())
