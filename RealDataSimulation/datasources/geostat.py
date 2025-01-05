@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-from .download_with_cache import download_with_cache
+from .download import download_with_cache
 from ..Simulation import Area
 
 class STAT:

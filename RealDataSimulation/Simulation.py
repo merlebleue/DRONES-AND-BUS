@@ -3,6 +3,8 @@ import folium
 from pyproj import CRS
 from pyproj import Transformer
 
+from datetime import datetime, timedelta
+
 import smopy
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
@@ -39,8 +41,11 @@ class Area:
          return *self.to_lat_lon(self.x_min, self.y_min)[::-1], *self.to_lat_lon(self.x_max, self.y_max)[::-1]
     
 class Simulation(Area):
-    def __init__(self, name: str, area_coordinates: dict, t_start, t_end, dt, data_folder:str = DATA_FOLDER):
+    def __init__(self, name: str, area_coordinates: dict, t_start: datetime, t_end: datetime, dt: timedelta, data_folder:str = DATA_FOLDER):
         self.name = name
+        self.t_start = t_start
+        self.t_end = t_end
+        self.dt = dt
         super().__init__(**area_coordinates)
         self.path = os.path.join(data_folder, name)
         os.makedirs(self.path, exist_ok=True)
