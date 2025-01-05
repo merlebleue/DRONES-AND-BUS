@@ -34,7 +34,7 @@ class TransportData:
         self.sim = sim
 
         self.date: datetime.date = kwargs.get("date", sim.t_start.date())
-        self.dl: DownloadManager = kwargs.get("download_manager", DownloadManager())
+        self.dl: DownloadManager = kwargs.get("download_manager", sim.dl)
         self.transport_folder: str = kwargs.get("folder", TRANSPORT_FOLDER)
 
         # Create folder

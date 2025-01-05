@@ -1,14 +1,14 @@
 import pandas as pd
 import numpy as np
 
-from .download import download_with_cache
-from ..Simulation import Area
+from .download import DownloadManager
+from ..simulation import Simulation
 
 class STAT:
-    def __init__(self, area: Area, df: pd.DataFrame, default_weights = None):
+    def __init__(self, sim: Simulation, df: pd.DataFrame, default_weights = None):
         self.df = df
         self.default_weights = default_weights
-        self.area = area
+        self.sim = sim
 
     def jitter(self, precision, n, seed=None):
         shape = (n, 2)
@@ -26,7 +26,7 @@ class STAT:
             weights = self.default_weights
 
         sample = self.df.sample(
-            n = 2*n, # 2*n because after we remove some points outside of the area
+            n = 2*n, # 2*n because after we remove some points outside of the sim
             replace = True,
             weights = weights,
             random_state=seed,
@@ -37,23 +37,24 @@ class STAT:
 
         sample_array += self.jitter(precision_in_meter, 2*n, seed)
 
-        # Remove points outside of area
+        # Remove points outside of sim
         X, Y = sample_array.T
-        sample_array = sample_array[self.area.is_inside(X, Y)]
+        sample_array = sample_array[self.sim.is_inside(X, Y)]
 
         # Take n first points
         sample_array = sample_array[:n]
 
         return sample_array
 
-    def generate_per_proportion(self, proportion: float,  *args, weights=None,**kwargs):
+    def generate_per_proportion(self, proportion: float,  *args, weights=None, **kwargs):
         if weights is None:
             weights = self.default_weights
-        return self.generate_n(int(proportion * self.df[weights].sum()), *args, weights=weights, **kwargs)
+        return self.generate_n(int(proportion * self.df[weights].sum()), *args, weights=weights)
 
 class STATPOP (STAT):
-    def __init__(self, area: Area, year = 2023, asset_number = 32686751):
-        filename, _ = download_with_cache(
+    def __init__(self, sim: Simulation, year = 2023, asset_number = 32686751, **kwargs):
+        dl: DownloadManager = kwargs.get("download_manager", sim.dl)
+        filename = dl.download_with_cache(
             f"https://www.bfs.admin.ch/bfsstatic/dam/assets/{asset_number}/master",
             f"STATPOP{year}.csv",
             zip=True,
@@ -63,8 +64,8 @@ class STATPOP (STAT):
 
         df = pd.read_csv(filename, sep=";")
 
-        # Keep only hectares inside the area (i.e. with at least one square meter inside the area)
-        df = df.loc[area.is_inside_hecto(X = df["E_KOORD"], Y = df["N_KOORD"])]
+        # Keep only hectares inside the sim (i.e. with at least one square meter inside the sim)
+        df = df.loc[sim.is_inside_hecto(X = df["E_KOORD"], Y = df["N_KOORD"])]
 
         # Reframe the dataframe, keep only interesting columsn and rename them
         df = df[["E_KOORD", "N_KOORD", "BBTOT"]].rename(columns = {
@@ -74,12 +75,13 @@ class STATPOP (STAT):
         })
 
         # Save the dataframe by running the super() call to __init__ :
-        super().__init__(area, df.copy(deep=True), default_weights="POPULATION")
+        super().__init__(sim, df.copy(deep=True), default_weights="POPULATION")
 
 
 class STATENT(STAT):
-    def __init__(self, area: Area, year = 2022, asset_number = 32258837):
-        filename, _ = download_with_cache(
+    def __init__(self, sim: Simulation, year = 2022, asset_number = 32258837, **kwargs):
+        dl: DownloadManager = kwargs.get("download_manager", sim.dl)
+        filename = dl.download_with_cache(
             f"https://www.bfs.admin.ch/bfsstatic/dam/assets/{asset_number}/master",
             f"STATENT{year}.csv",
             zip=True,
@@ -89,8 +91,8 @@ class STATENT(STAT):
 
         df = pd.read_csv(filename, sep=";")
         
-        # Keep only hectares inside the area (i.e. with at least one square meter inside the area)
-        df = df.loc[area.is_inside_hecto(X = df["E_KOORD"], Y = df["N_KOORD"])]
+        # Keep only hectares inside the sim (i.e. with at least one square meter inside the sim)
+        df = df.loc[sim.is_inside_hecto(X = df["E_KOORD"], Y = df["N_KOORD"])]
 
         # Reframe the dataframe, keep only interesting columsn and rename them
         df = df[["E_KOORD", "N_KOORD", "B0847AS", "B0847EMP", "B0847VZA", "B0847KB1", "B0847KB2", "B0847KB3", "B0847KB4"]].rename(columns = {
@@ -106,7 +108,7 @@ class STATENT(STAT):
         })
 
         # Save the dataframe by running the super() call to __init__ :
-        super().__init__(area, df.copy(deep=True), default_weights="SHOPS")
+        super().__init__(sim, df.copy(deep=True), default_weights="SHOPS")
 
     def get_entreprises(self, precision_in_meter = 100, seed=None): 
         sample_df = self.df.loc[self.df.index.repeat(self.df.SHOPS)].reset_index(drop=True).copy(deep=True)
@@ -117,7 +119,7 @@ class STATENT(STAT):
 
         sample_df[["POSITION_X", "POSITION_Y"]] += self.jitter(precision_in_meter, len(sample_df))
 
-        # Remove those that are not in the area
-        sample_df = sample_df.loc[self.area.is_inside(sample_df.POSITION_X, sample_df.POSITION_Y)]
+        # Remove those that are not in the sim
+        sample_df = sample_df.loc[self.sim.is_inside(sample_df.POSITION_X, sample_df.POSITION_Y)]
 
-        return STAT(self.area, sample_df, "SHOPS_ETP")
+        return STAT(self.sim, sample_df, "SHOPS_ETP")

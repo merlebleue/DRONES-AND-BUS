@@ -26,7 +26,9 @@ class TaskManager:
 
         return tasks
     
-    def plot(self, ax = plt, tasks: pd.DataFrame = None):
+    def plot(self, ax = None, tasks: pd.DataFrame = None):
+        if ax is None:
+            fig, ax = self.sim.plot()
         if tasks is None:
             # Plot a visualisation of the shops, and densities of customers
             ax.scatter(data=self.customers.df, x="POSITION_X", y="POSITION_Y", c="POPULATION", marker=(4,0,0), s=50, cmap="Blues", alpha=0.5, vmin=-self.customers.df["POPULATION"].quantile(0.5),vmax=self.customers.df["POPULATION"].quantile(0.95), label="Customer density")
@@ -38,7 +40,7 @@ class TaskManager:
                 tasks["pickup_y"],
                 tasks["delivery_x"] - tasks["pickup_x"],
                 tasks["delivery_y"] - tasks["pickup_y"],
-                angles='xy', scale_units='xy', scale=1.01, color="silver", width=0.005, alpha=0.5
+                angles='xy', scale_units='xy', scale=1.01, color="grey", width=0.002, alpha=0.5
             )
             ax.scatter(tasks["pickup_x"], tasks["pickup_y"], c="C1", s=10, label="Pickup points")
             ax.scatter(tasks["delivery_x"], tasks["delivery_y"], c="C0", s=10, label="Delivery points")
