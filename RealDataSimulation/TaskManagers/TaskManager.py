@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 from ..Simulation import Simulation
-from ..datasources.stat import STATENT, STATPOP
+from ..datasources.geostat import STATENT, STATPOP
 
 class TaskManager:
     def __init__(self, sim: Simulation, precision_in_meters = 1, random_seed = None):
