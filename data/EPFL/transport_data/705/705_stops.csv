@@ -1,0 +1,28 @@
+;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B;Route_C;Route_D;Route_E
+Lonay, parc;8592254;2529262;1153429;0;yes;yes;;;yes
+Lonay, Pressoirs;8595219;2529507;1153105;406;yes;yes;;;
+Lonay-Préverenges, gare nord;8511344;2529439;1152899;623;yes;yes;;;
+Lonay-Préverenges, gare sud;8595218;2529592;1152847;785;yes;yes;;;yes
+Préverenges, Capellan;8588898;2529954;1152437;1332;yes;yes;;;yes
+Préverenges, village;8579230;2529987;1152190;1581;yes;yes;;;yes
+Denges, Pierraz-Mur;8592240;2530776;1151938;2410;yes;yes;;;yes
+Denges, Sur les Moulins;8592241;2531176;1151922;2810;yes;yes;;;yes
+Denges, La Pale;8592239;2531209;1152348;3237;yes;yes;;;yes
+Denges, village;8592242;2531088;1152836;3740;yes;yes;;;
+Denges, Les Oches;8588872;2531179;1153156;4072;yes;yes;;;yes
+Echandens, collège;8595213;2531135;1153844;4762;yes;yes;;;yes
+Echandens, centre;8588875;2531142;1154096;5014;yes;yes;yes;yes;yes
+Echandens, Riaz;8592243;2531227;1154312;5246;yes;yes;yes;yes;yes
+Echandens, Chocolatière;8592244;2531588;1154297;5607;yes;yes;yes;yes;yes
+Ecublens VD, Larges Pièces;8592248;2532232;1153796;6423;yes;yes;yes;yes;
+Ecublens VD, Villars;8591961;2532675;1153514;6948;yes;yes;yes;yes;yes
+Ecublens VD, Cocarde;8591946;2532620;1153341;7130;yes;;;yes;
+Ecublens VD, Perrettes;8591954;2532466;1153147;7277;;yes;yes;;yes
+Ecublens VD, Motty;8591951;2532705;1153108;7378;yes;;;yes;
+Ecublens VD, En Enjalin;8591949;2532358;1152927;7468;;yes;yes;;
+Ecublens VD, Coquerellaz;8591947;2532646;1152941;7554;yes;;;yes;
+Ecublens VD, Ormet;8591952;2532495;1152858;7587;;yes;yes;;yes
+Ecublens VD, EPFL (bus);8579233;2533107;1152679;8084;yes;yes;yes;yes;yes
+Ecublens VD, Argand;8591944;2533488;1152483;8513;yes;;;yes;
+Ecublens VD, EPFL Piccard;8579234;2533227;1152483;8774;yes;yes;yes;yes;yes
+;;;;;54;53;16;16;1

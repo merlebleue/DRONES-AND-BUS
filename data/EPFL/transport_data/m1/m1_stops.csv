@@ -1,0 +1,17 @@
+;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B;Route_C;Route_D
+Lausanne, Flon;8591818;2537993;1152461;0;yes;;yes;yes
+Lausanne, Vigie;8592133;2537484;1152574;522;yes;;yes;yes
+Lausanne, Montelly;8501207;2536689;1152614;1318;yes;;yes;yes
+Lausanne, Provence;8501208;2536314;1152778;1727;yes;;yes;yes
+Lausanne, Malley;8501209;2535848;1152880;2204;yes;;yes;yes
+Lausanne, Bourdonnette;8501210;2534868;1152794;3188;yes;;yes;yes
+Chavannes-R., UNIL-Chamberonne;8501211;2534478;1152904;3593;yes;;yes;yes
+Chavannes-R., UNIL-Mouline;8501212;2534033;1152995;4047;yes;;yes;yes
+Ecublens VD, UNIL-Sorge;8501213;2533622;1152717;4543;yes;;yes;yes
+Ecublens VD, EPFL;8501214;2533051;1152695;5115;yes;yes;;yes
+Ecublens VD, Bassenges;8501215;2532935;1152962;5406;yes;yes;;
+Ecublens VD, Cerisaie;8501216;2533089;1153312;5788;yes;yes;;
+Chavannes-R., Crochy;8501217;2533358;1153861;6400;yes;yes;;
+Ecublens VD, Epenex;8501218;2533641;1154414;7021;yes;yes;;
+Renens VD, gare;8530749;2534020;1154399;7400;yes;yes;;
+;;;;;283;9;3;1

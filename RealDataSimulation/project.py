@@ -3,7 +3,7 @@ import folium
 from pyproj import CRS
 from pyproj import Transformer
 
-from datetime import datetime, timedelta
+import datetime
 
 import smopy
 import matplotlib.pyplot as plt
@@ -43,11 +43,11 @@ class Area:
          return *self.to_lat_lon(self.x_min, self.y_min)[::-1], *self.to_lat_lon(self.x_max, self.y_max)[::-1]
     
 class Project(Area):
-    def __init__(self, name: str, area_coordinates: dict, t_start: datetime, t_end: datetime, dt: timedelta, **kwargs):
+    def __init__(self, name: str, area_coordinates: dict, date = datetime.datetime.today().date, **kwargs):
         self.name = name
-        self.t_start = t_start
-        self.t_end = t_end
-        self.dt = dt
+        if not isinstance(date, datetime.date):
+            date = datetime.date(*date)
+        self.date = date
         super().__init__(**area_coordinates)
         data_folder = kwargs.get("data_folder", DATA_FOLDER)
         self.dl = kwargs.get("download_manager", DownloadManager())

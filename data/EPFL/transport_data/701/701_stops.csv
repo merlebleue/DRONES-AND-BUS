@@ -1,0 +1,28 @@
+;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B;Route_C
+Lausanne, Bourdonnette;8501210;2534868;1152794;0;yes;yes;
+Ecublens VD, allée de Dorigny;8591950;2534284;1152491;658;yes;yes;
+Ecublens VD, Blévallaire;8596053;2533903;1152393;1051;yes;yes;yes
+Ecublens VD, Champagne;8591945;2533573;1152258;1408;yes;yes;yes
+Ecublens VD, Campus des médias;8511813;2533322;1152164;1676;yes;yes;yes
+St-Sulpice VD, Parc Scient.;8595223;2532863;1152073;2144;yes;yes;yes
+St-Sulpice VD, Pré-Fleuri;8510528;2532618;1151924;2430;yes;yes;yes
+St-Sulpice VD, Ochettaz-Ormet;8510527;2532296;1151770;2788;yes;yes;yes
+St-Sulpice VD, En Champagny;8510526;2531784;1151773;3300;yes;yes;yes
+St-Sulpice VD, Castolin;8510525;2531525;1151737;3562;yes;yes;yes
+Denges, Pierraz-Mur;8592240;2530776;1151938;4337;yes;yes;yes
+Préverenges, village;8579230;2529987;1152190;5165;yes;yes;yes
+Préverenges, Taudaz;8592279;2529331;1152250;5824;yes;yes;yes
+Morges, Bief;8592259;2528912;1152181;6248;yes;yes;yes
+Morges, St-Jean sud;8592272;2528655;1152144;6508;yes;yes;yes
+Morges, Blancherie;8592260;2528220;1151923;6996;yes;yes;yes
+Morges, temple;8592278;2527966;1151460;7433;yes;;
+Morges, St-Louis;8592277;2527951;1151533;7470;;yes;yes
+Morges, Casino;8592261;2527894;1151272;7599;yes;;
+Morges, Charpentiers;8592262;2527706;1151398;7750;;yes;yes
+Morges, gare;8570084;2527528;1151442;7933;yes;yes;yes
+Morges, La Prairie;8592266;2527004;1151243;8493;yes;yes;yes
+Morges, Eglantine;8592273;2526774;1151568;8891;yes;yes;yes
+Morges, Vogéaz;8570081;2526611;1151500;9068;yes;yes;yes
+Morges, Prélionne;8592270;2526400;1151338;9334;yes;yes;yes
+Tolochenaz, La Plantaz;8570082;2526220;1151214;9553;yes;yes;yes
+;;;;;100;99;1

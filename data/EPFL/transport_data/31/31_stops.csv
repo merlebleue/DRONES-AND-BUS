@@ -1,0 +1,20 @@
+;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B
+Renens VD, gare sud;8588983;2534082;1154287;0;yes;yes
+Chavannes-R., Glycines;8593869;2533869;1154252;216;yes;yes
+Chavannes-R., Planta;8591933;2533594;1154023;574;yes;yes
+Chavannes-R., Concorde;8593868;2533691;1153816;802;yes;yes
+Chavannes-R., Cèdres;8507227;2533580;1153574;1069;yes;yes
+Chavannes-R., Plaine;8593867;2533535;1153398;1250;yes;yes
+Chavannes-R., Berges;8594986;2533735;1153276;1484;yes;yes
+Chavannes-R., Mouline;8594987;2534069;1153126;1851;yes;yes
+Ecublens VD, UNIL-Sorge;8501213;2533622;1152717;2456;yes;yes
+Ecublens VD, Argand;8591944;2533488;1152483;2726;yes;yes
+Ecublens VD, Campus des médias;8511813;2533322;1152164;3050;;yes
+St-Sulpice VD, Pâqueret;8592227;2533389;1152057;3163;yes;yes
+St-Sulpice VD, Russel;8592226;2532871;1151912;3701;yes;yes
+St-Sulpice VD, Bochet;8588157;2532528;1151716;4096;yes;yes
+St-Sulpice VD, centre;8588158;2532419;1151355;4474;yes;yes
+St-Sulpice VD, Chantres;8588155;2532069;1151404;4827;yes;yes
+St-Sulpice VD, Laviau;8588156;2531846;1151495;5068;yes;yes
+St-Sulpice VD, Venoge sud;8579231;2531519;1151671;5439;yes;yes
+;;;;;77;77

@@ -1,0 +1,26 @@
+;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B;Route_C
+Pully, gare;8588445;2540150;1151300;0;yes;;yes
+Pully, Joliette;8592182;2539720;1151257;432;yes;;yes
+Pully, C. F. Ramuz;8592172;2539332;1151221;822;yes;;yes
+Pully, Pierraz-Portay;8592193;2538971;1151206;1183;yes;;yes
+Pully, Métairie;8592186;2538767;1151286;1402;yes;;yes
+Lausanne, Montchoisi;8592077;2538477;1151406;1716;yes;;yes
+Lausanne, Musée Olympique;8592084;2538334;1151239;1936;yes;;yes
+Lausanne, Elysée;8592039;2538118;1151378;2193;yes;;yes
+Lausanne, Délices;8592028;2537789;1151513;2548;yes;;yes
+Lausanne, jardin botanique;8591985;2537407;1151579;2936;yes;;yes
+Lausanne, Cèdres;8592005;2537110;1151830;3325;yes;;yes
+Lausanne, Riant-Cour;8592110;2536871;1151918;3580;yes;;yes
+Lausanne, Batelière;8591983;2536637;1152009;3831;yes;;yes
+Lausanne, Figuiers;8592044;2536461;1152063;4015;yes;;yes
+Lausanne, Maladière-Figuiers;8593837;2536113;1152075;4363;yes;;yes
+Lausanne, Bois de Vaux;8591995;2535630;1152359;4923;yes;;yes
+Lausanne, Sablons;8592114;2535323;1152691;5376;yes;;yes
+Lausanne, Bourdonnette nord;8595521;2534825;1152975;5949;yes;yes;
+Chavannes-R., Dorigny;8595602;2534420;1153187;6406;yes;yes;
+Chavannes-R., Talluchet;8510422;2534387;1153398;6620;yes;yes;
+Renens VD, piscine;8595534;2534529;1153591;6859;yes;yes;
+Renens VD, Censuy;8592209;2534431;1153812;7101;yes;yes;
+Renens VD, gare sud;8588983;2534082;1154287;7690;yes;yes;
+Chavannes-R., Glycines;8593869;2533869;1154252;7906;yes;yes;
+;;;;;225;13;5
