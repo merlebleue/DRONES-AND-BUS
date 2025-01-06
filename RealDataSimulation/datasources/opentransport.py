@@ -255,74 +255,83 @@ class TransportData:
                 )
             line_timetable.index.set_names("EVENT", level=-1, inplace=True)
             
-            # Add stop names
-            names = line_timetable.index.get_level_values("STOP_NUMBER").map(stops_df.set_index("number")["designationOfficial"]).rename("STOP_NAME")
-            line_timetable = line_timetable.set_index([names, line_timetable.index])
+            # ----
+            # Analyse journeys, to determine their direction and identify "strange" trajects
+            # ----
+
+            # Get the order in which each journey goes to each bus stop
+            orders = (line_timetable
+                        .loc[line_timetable.index.get_level_values("EVENT").str[-4:] == "REAL"]
+                        .groupby("STOP_NUMBER", sort=False).first()
+                        .apply(lambda x : x.dropna().sort_values().argsort(), axis=0)
+                        .fillna(-1))
             
-            # Add geodata
-            index = line_timetable.index
-            line_timetable = pd.merge(line_timetable, 
-                                        stops_df[["lv95East", "lv95North"]].rename(columns = {"lv95East": "POSITION_X", "lv95North": "POSITION_Y"}), 
-                                        how="left", 
-                                        right_on=stops_df["number"], 
-                                        left_on="STOP_NUMBER"
-                                        ).drop(columns = "STOP_NUMBER")
-            line_timetable.index = index
+            # Count how many time each order appears
+            order_counts = orders.T.value_counts().reset_index().astype("int").set_index("count").T
+            order_counts = order_counts.sort_values(order_counts.columns.max())
 
-            # Select one of the journeys with the most stops
-            journey = line_data.dropna()["JOURNEY_ID"].mode()[0]
+            # Get whether journeys stops at each stop
+            stop_mask = orders >= 0
+            stop_mask_counts = stop_mask.T.value_counts().reset_index().astype("int").set_index("count").T
+            stop_mask_counts = stop_mask_counts.sort_values(stop_mask_counts.columns.max())
 
-            # Compute the distance based on this journey
-            journey_data = (line_timetable
-                            .loc[(line_timetable.index.get_level_values("EVENT").str[-4:] == "REAL"), [journey, "POSITION_X", "POSITION_Y"]]
-                            .dropna(subset=journey)
-                            .groupby("STOP_NUMBER")
-                            .max()
-                            .sort_values(journey)
-                            )
-            distance = ((journey_data[["POSITION_X", "POSITION_Y"]].diff()**2).sum(axis=1)**0.5).cumsum()
-
-            line_timetable["DISTANCE"] = line_timetable.index.get_level_values("STOP_NUMBER").map(distance)
-            line_timetable = line_timetable.sort_values(["DISTANCE", "EVENT"])
-
-            # Get full order of the stops by interpolation
+            # ---
+            # Create a "stops" df to get all the stops of the line in a correct order
             # ---
 
-            # Iterate over other journeys to interpolate the distances
-            missing_distances = line_timetable["DISTANCE"].isna().sum()
-            n_iter = 0
-            while missing_distances > 0 and n_iter < 10:
-                n_iter +=1
+            stops = pd.merge(line_timetable.index.get_level_values("STOP_NUMBER").to_series(), 
+                             stops_df[["designationOfficial", "lv95East", "lv95North"]].rename(columns = {"designationOfficial": "STOP_NAME", "lv95East": "POSITION_X", "lv95North": "POSITION_Y"}), 
+                             how="left", 
+                             right_on=stops_df["number"], 
+                             left_index=True).set_index("STOP_NUMBER").drop_duplicates()
+
+            # ---
+            # Add a "distance" column to order the stops
+            # ---
+
+            # Select the order which appears the most
+            order = order_counts.iloc[:, 0]
+
+            # Compute the distance based on this order
+
+            distance = ((stops[["POSITION_X", "POSITION_Y"]].loc[order>0].sort_index(key=lambda x: x.map(order)).diff()**2).sum(axis=1)**0.5).cumsum()
+
+            stops["DISTANCE"] = stops.index.map(distance)
+
+            # Get full order of the stops by interpolation, over subsequent orders
+            # ---
+            display(stops)
+            # Iterate over other orders to interpolate the distances
+            missing_distances = stops["DISTANCE"].isna().sum()
+            for _, order in order_counts.iloc[:, 1:].items():
                 print(missing_distances)
-                # Find the journey with the most data on the stops for which we don't have the distance yet.
-                journey = (line_timetable
-                           .loc[(line_timetable.index.get_level_values("EVENT").str[-4:] == "REAL") * (line_timetable.DISTANCE.isna())]
-                           .drop(["POSITION_X", "POSITION_Y" ,"DISTANCE"], axis=1, errors = "ignore")
-                           .count(axis=0)
-                           .idxmax())
+                
+                distance = ((stops[["POSITION_X", "POSITION_Y"]].iloc[order].loc[order >= 0].diff()**2).sum(axis=1)**0.5).cumsum().rename("distance")
 
-                journey_data = (line_timetable
-                                .loc[(line_timetable.index.get_level_values("EVENT").str[-4:] == "REAL"), [journey, "POSITION_X", "POSITION_Y", "DISTANCE"]]
-                                .dropna(subset=journey).groupby("STOP_NUMBER")
-                                .first()
-                                .sort_values([journey]))
+                distance = stops.join(distance)["distance"]
 
-                distance = ((journey_data[["POSITION_X", "POSITION_Y"]].diff()**2).sum(axis=1)**0.5).cumsum().rename("distance")
-
-                distance = journey_data.join(distance)["distance"]
+                display(distance)
 
                 index=distance.index
-                distance = np.interp(distance, distance.loc[journey_data["DISTANCE"].notna()], journey_data["DISTANCE"].dropna())
+                distance = np.interp(distance, distance.loc[stops["DISTANCE"].notna()], stops["DISTANCE"].dropna())
                 distance = pd.Series(distance, index=index, name="distance")
 
-                line_timetable["DISTANCE"] = line_timetable["DISTANCE"].fillna(line_timetable.join(distance)["distance"])
+                stops["DISTANCE"] = stops["DISTANCE"].fillna(stops.join(distance)["distance"])
 
 
-                missing_distances = line_timetable["DISTANCE"].isna().sum()
+                missing_distances = stops["DISTANCE"].isna().sum()
+                if missing_distances == 0:
+                    break
+
             if missing_distances > 0:
                 print(f"Still {missing_distances} distances values missing for line {line_name} ({line_id})")
 
-            line_timetable = line_timetable.sort_values(["DISTANCE", "EVENT"]) 
+            def sort_function(x: pd.Index):
+                if x.name == "STOP_NUMBER":
+                    return x.values.map(stops["DISTANCE"])
+                else:
+                    return x
+            line_timetable = line_timetable.sort_index(level=["STOP_NUMBER", "EVENT"], key = sort_function)
 
             # ----
             # Analyse journeys, to determine their direction and identify "strange" trajects
@@ -345,7 +354,8 @@ class TransportData:
             lines_timetables[line_id] = {
                 "planned": planned,
                 "real": real,
-                "full": line_timetable
+                "full": line_timetable,
+                "stops": stops
             }
 
             # Export
