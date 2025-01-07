@@ -448,7 +448,7 @@ class TransportData:
                 "journeys": journeys
             }
 
-            # Export
+            # Determine what denomination of the lines to use
             if lines_df.LINE_NAME.is_unique:
                 # Use linenames to export
                 line_ref = line_name
@@ -456,8 +456,21 @@ class TransportData:
                 # Use cleaned version of LINE_ID to export
                 line_ref = re.sub(r'[^\w\d-]','_',line_id)
             
+            # Export
             os.makedirs(self.project.path_join(self.transport_folder, str(line_ref)), exist_ok=True)
             for name, df in lines_timetables[line_id].items():
-                df.to_csv(self.project.path_join(self.transport_folder, str(line_ref), f"{line_ref}_{name}.csv"), sep=";", float_format="%.0f")
+                # Convert to string (preliminary to justifying the data)
+                df_for_export = (df
+                 .reset_index()
+                 .convert_dtypes()
+                 .astype("string")
+                 .replace({"True": "Yes", "False":""}))
+                # Justify the data
+                max_len = df_for_export.astype(str).map(len).max()
+                max_len = np.maximum(max_len, df_for_export.columns.str.len()) + 2
+                (df_for_export
+                 .fillna(max_len.apply(lambda x: " "*x))
+                 .apply(lambda x: x.str.rjust(max_len[x.name]), axis=0)
+                 .to_csv(self.project.path_join(self.transport_folder, str(line_ref), f"{line_ref}_{name}.csv"), sep=";", index=False, header = df_for_export.columns.map(lambda x: x.center(max_len[x]))))
 
         return lines_timetables

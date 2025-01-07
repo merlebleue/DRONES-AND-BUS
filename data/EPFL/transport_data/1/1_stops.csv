@@ -1,45 +1,45 @@
-STOP_NAME;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B;Route_C;Route_D;Route_E;Route_G;Route_H
-Lausanne, Blécherette;8591994;2537294;1154878;0;True;True;True;True;False;False;True
-Lausanne, Bois-Gentil;8591996;2537375;1154479;407;True;True;True;True;False;False;True
-Lausanne, Parc Vélodrome;8592088;2537488;1154184;723;True;True;True;True;False;False;True
-Lausanne, Stade Olympique;8592116;2537662;1153939;1024;True;True;True;True;False;False;True
-Lausanne, Vieux-Moulin;8592132;2537971;1153870;1146;False;False;False;False;False;False;False
-Lausanne, casernes;8592003;2537827;1153699;1315;True;True;True;True;False;False;True
-Lausanne, Oiseaux;8592085;2537925;1153626;1453;False;True;True;False;False;False;True
-Lausanne, Druey;8592033;2537780;1153494;1525;True;False;False;True;False;False;False
-Lausanne, Grande-Borde;8592053;2538097;1153502;1535;False;False;False;False;False;False;False
-Lausanne, Druey-Collège;8592034;2537996;1153331;1796;True;True;True;True;False;False;True
-Lausanne, Mémise;8592071;2538205;1153223;1834;False;False;False;False;False;False;False
-Lausanne, Tunnel;8504176;2538300;1153000;2076;False;False;False;False;False;False;False
-Lausanne, Valentin;8592125;2538052;1152903;2228;True;True;True;True;False;False;True
-Lausanne, Riponne-M. Béjart;8590442;2538107;1152738;2401;True;True;True;True;False;False;True
-Lausanne, Bel-Air;8591988;2537880;1152653;2644;True;True;True;True;True;False;True
-Lausanne, St-François;8579254;2538215;1152325;3113;True;True;True;True;True;True;True
-Lausanne, Georgette;8592051;2538569;1152150;3508;True;True;True;True;True;True;True
-Lausanne, Mirabeau;8592072;2538313;1152052;3772;False;True;True;False;False;True;True
-Lausanne, gare;8592050;2537919;1152132;4158;True;True;True;True;True;True;True
-Lausanne, Epinettes;8592040;2537608;1151949;4519;True;True;True;True;True;True;True
-Lausanne, Dapples;8592027;2537591;1151819;4650;True;True;True;True;True;True;True
-Lausanne, Cour;8592024;2537618;1151575;4813;False;True;True;False;False;True;True
-Lausanne, jardin botanique;8591985;2537407;1151579;4953;True;True;True;True;True;True;True
-Lausanne, Cèdres;8592005;2537110;1151830;5341;True;True;True;True;True;True;True
-Lausanne, Riant-Cour;8592110;2536871;1151918;5596;True;True;True;True;True;True;True
-Lausanne, Batelière;8591983;2536637;1152009;5847;True;True;True;True;True;True;True
-Lausanne, Montoie;8592080;2536302;1152226;6246;True;True;True;True;True;True;True
-Lausanne, Maladière;8592068;2536059;1152132;6507;True;True;True;True;True;True;True
-Lausanne, Bois de Vaux;8591995;2535630;1152359;6992;False;False;True;True;True;False;True
-Lausanne, Sablons;8592114;2535323;1152691;7444;False;False;True;True;True;False;True
-Lausanne, Bourdonnette;8501210;2534868;1152794;7911;False;False;True;True;True;False;False
-Ecublens VD, allée de Dorigny;8591950;2534284;1152491;8569;False;False;True;True;True;False;False
-Ecublens VD, Blévallaire;8596053;2533903;1152393;8962;False;False;True;True;True;False;False
-Ecublens VD, Champagne;8591945;2533573;1152258;9319;False;False;True;True;True;False;False
-Ecublens VD, Campus des médias;8511813;2533322;1152164;9587;False;False;True;True;True;False;False
-St-Sulpice VD, Parc Scient.;8595223;2532863;1152073;9782;False;False;False;True;True;False;False
-St-Sulpice VD, Pré-Fleuri;8510528;2532618;1151924;9901;False;False;False;True;True;False;False
-Ecublens VD, EPFL/Colladon;8510727;2532850;1152240;10064;False;False;True;True;True;False;False
-Count;;;;;73;71;46;45;3;2;2
-Lausanne, Boston;8592001;2537405;1152837;;False;False;False;False;False;False;False
-Lausanne, Chauderon;8592010;2537555;1152802;;False;False;False;False;False;False;False
-Lausanne, Prélaz;8592102;2536612;1153116;;False;False;False;False;False;False;False
-Lausanne, Recordon;8592109;2537035;1153025;;False;False;False;False;False;False;False
-Direction;;;;;O;R;R;O;O;R;R
+           STOP_NAME            ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B ; Route_C ; Route_D ; Route_E ; Route_G ; Route_H 
+           Lausanne, Blécherette;      8591994;      2537294.0;      1154878.0;                 0.0;      Yes;      Yes;      Yes;      Yes;         ;         ;      Yes
+           Lausanne, Bois-Gentil;      8591996;      2537375.0;      1154479.0;   407.1387969722365;      Yes;      Yes;      Yes;      Yes;         ;         ;      Yes
+        Lausanne, Parc Vélodrome;      8592088;      2537488.0;      1154184.0;   723.0406804740605;      Yes;      Yes;      Yes;      Yes;         ;         ;      Yes
+       Lausanne, Stade Olympique;      8592116;      2537662.0;      1153939.0;  1023.5419283916025;      Yes;      Yes;      Yes;      Yes;         ;         ;      Yes
+          Lausanne, Vieux-Moulin;      8592132;      2537971.0;      1153870.0;  1145.8785519477867;         ;         ;         ;         ;         ;         ;         
+              Lausanne, casernes;      8592003;      2537827.0;      1153699.0;  1314.7892459758164;      Yes;      Yes;      Yes;      Yes;         ;         ;      Yes
+               Lausanne, Oiseaux;      8592085;      2537925.0;      1153626.0;  1452.9121589926024;         ;      Yes;      Yes;         ;         ;         ;      Yes
+                 Lausanne, Druey;      8592033;  2537779.74354;  1153494.27025;  1524.9021764364466;      Yes;         ;         ;      Yes;         ;         ;         
+          Lausanne, Grande-Borde;      8592053;      2538097.0;      1153502.0;  1534.8515587233212;         ;         ;         ;         ;         ;         ;         
+         Lausanne, Druey-Collège;      8592034;      2537996.0;      1153331.0;  1795.8708665590138;      Yes;      Yes;      Yes;      Yes;         ;         ;      Yes
+                Lausanne, Mémise;      8592071;      2538205.0;      1153223.0;   1834.025421218025;         ;         ;         ;         ;         ;         ;         
+                Lausanne, Tunnel;      8504176;      2538300.0;      1153000.0;   2076.417665318367;         ;         ;         ;         ;         ;         ;         
+              Lausanne, Valentin;      8592125;      2538052.0;      1152903.0;  2227.5188713036205;      Yes;      Yes;      Yes;      Yes;         ;         ;      Yes
+     Lausanne, Riponne-M. Béjart;      8590442;  2538107.47618;   1152738.3363;  2401.2765780250224;      Yes;      Yes;      Yes;      Yes;         ;         ;      Yes
+               Lausanne, Bel-Air;      8591988;      2537880.0;      1152653.0;   2644.232739842749;      Yes;      Yes;      Yes;      Yes;      Yes;         ;      Yes
+           Lausanne, St-François;      8579254;      2538215.0;      1152325.0;  3113.0706649298736;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes
+             Lausanne, Georgette;      8592051;      2538569.0;      1152150.0;  3507.9643215008546;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes
+              Lausanne, Mirabeau;      8592072;      2538313.0;      1152052.0;   3771.578122461625;         ;      Yes;      Yes;         ;         ;      Yes;      Yes
+                  Lausanne, gare;      8592050;      2537919.0;      1152132.0;   4158.213504506877;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes
+             Lausanne, Epinettes;      8592040;      2537608.0;      1151949.0;    4519.05973214408;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes
+               Lausanne, Dapples;      8592027;      2537591.0;      1151819.0;   4650.166558816073;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes
+                  Lausanne, Cour;      8592024;      2537618.0;      1151575.0;  4812.7858284276435;         ;      Yes;      Yes;         ;         ;      Yes;      Yes
+      Lausanne, jardin botanique;      8591985;      2537407.0;      1151579.0;   4952.583489559046;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes
+                Lausanne, Cèdres;      8592005;      2537110.0;      1151830.0;   5341.440789863413;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes
+            Lausanne, Riant-Cour;      8592110;      2536871.0;      1151918.0;   5596.126871147805;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes
+             Lausanne, Batelière;      8591983;      2536637.0;      1152009.0;   5847.198574053568;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes
+               Lausanne, Montoie;      8592080;      2536302.0;      1152226.0;   6246.340152945069;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes
+             Lausanne, Maladière;      8592068;  2536058.50913;  1152132.39076;   6507.205048219711;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes;      Yes
+          Lausanne, Bois de Vaux;      8591995;      2535630.0;      1152359.0;   6991.943969853623;         ;         ;      Yes;      Yes;      Yes;         ;      Yes
+               Lausanne, Sablons;      8592114;      2535323.0;      1152691.0;   7444.130878111702;         ;         ;      Yes;      Yes;      Yes;         ;      Yes
+          Lausanne, Bourdonnette;      8501210;      2534868.0;      1152794.0;   7910.643471725208;         ;         ;      Yes;      Yes;      Yes;         ;         
+   Ecublens VD, allée de Dorigny;      8591950;      2534284.0;      1152491.0;    8568.56823946085;         ;         ;      Yes;      Yes;      Yes;         ;         
+        Ecublens VD, Blévallaire;      8596053;  2533903.21836;  1152393.15561;   8961.719841283471;         ;         ;      Yes;      Yes;      Yes;         ;         
+          Ecublens VD, Champagne;      8591945;  2533572.50547;  1152258.17793;   9318.917251282597;         ;         ;      Yes;      Yes;      Yes;         ;         
+  Ecublens VD, Campus des médias;      8511813;  2533321.79839;  1152163.77392;   9586.809313625317;         ;         ;      Yes;      Yes;      Yes;         ;         
+     St-Sulpice VD, Parc Scient.;      8595223;      2532863.0;      1152073.0;   9781.686439064259;         ;         ;         ;      Yes;      Yes;         ;         
+       St-Sulpice VD, Pré-Fleuri;      8510528;  2532618.27626;  1151924.21398;   9901.024574442157;         ;         ;         ;      Yes;      Yes;         ;         
+      Ecublens VD, EPFL/Colladon;      8510727;  2532850.46709;   1152239.5379;  10064.191105302922;         ;         ;      Yes;      Yes;      Yes;         ;         
+                           Count;             ;               ;               ;                    ;       73;       71;       46;       45;        3;        2;        2
+                Lausanne, Boston;      8592001;      2537405.0;      1152837.0;                    ;         ;         ;         ;         ;         ;         ;         
+             Lausanne, Chauderon;      8592010;      2537555.0;      1152802.0;                    ;         ;         ;         ;         ;         ;         ;         
+                Lausanne, Prélaz;      8592102;      2536612.0;      1153116.0;                    ;         ;         ;         ;         ;         ;         ;         
+              Lausanne, Recordon;      8592109;      2537035.0;      1153025.0;                    ;         ;         ;         ;         ;         ;         ;         
+                       Direction;             ;               ;               ;                    ;        O;        R;        R;        O;        O;        R;        R

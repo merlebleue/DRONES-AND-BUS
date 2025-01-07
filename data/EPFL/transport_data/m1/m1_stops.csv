@@ -1,18 +1,18 @@
-STOP_NAME;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B;Route_C;Route_D
-Lausanne, Flon;8591818;2537993;1152461;0;True;False;True;True
-Lausanne, Vigie;8592133;2537484;1152574;522;True;False;True;True
-Lausanne, Montelly;8501207;2536689;1152614;1318;True;False;True;True
-Lausanne, Provence;8501208;2536314;1152778;1727;True;False;True;True
-Lausanne, Malley;8501209;2535848;1152880;2204;True;False;True;True
-Lausanne, Bourdonnette;8501210;2534868;1152794;3188;True;False;True;True
-Chavannes-R., UNIL-Chamberonne;8501211;2534478;1152904;3593;True;False;True;True
-Chavannes-R., UNIL-Mouline;8501212;2534033;1152995;4047;True;False;True;True
-Ecublens VD, UNIL-Sorge;8501213;2533622;1152717;4543;True;False;True;True
-Ecublens VD, EPFL;8501214;2533051;1152695;5115;True;True;False;True
-Ecublens VD, Bassenges;8501215;2532935;1152962;5406;True;True;False;False
-Ecublens VD, Cerisaie;8501216;2533089;1153312;5788;True;True;False;False
-Chavannes-R., Crochy;8501217;2533358;1153861;6400;True;True;False;False
-Ecublens VD, Epenex;8501218;2533641;1154414;7021;True;True;False;False
-Renens VD, gare;8530749;2534020;1154399;7400;True;True;False;False
-Count;;;;;283;9;3;1
-Direction;;;;;OR;RO;R;O
+           STOP_NAME            ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B ; Route_C ; Route_D 
+                  Lausanne, Flon;      8591818;  2537993.26376;  1152461.19768;                 0.0;      Yes;         ;      Yes;      Yes
+                 Lausanne, Vigie;      8592133;      2537484.0;      1152574.0;   521.6070749584649;      Yes;         ;      Yes;      Yes
+              Lausanne, Montelly;      8501207;      2536689.0;      1152614.0;  1317.6127282047216;      Yes;         ;      Yes;      Yes
+              Lausanne, Provence;      8501208;      2536314.0;      1152778.3;  1727.0263210421058;      Yes;         ;      Yes;      Yes
+                Lausanne, Malley;      8501209;  2535847.94901;  1152880.22349;   2204.092273603866;      Yes;         ;      Yes;      Yes
+          Lausanne, Bourdonnette;      8501210;      2534868.0;      1152794.0;  3187.8272747235546;      Yes;         ;      Yes;      Yes
+  Chavannes-R., UNIL-Chamberonne;      8501211;      2534478.0;      1152904.0;   3593.043266510651;      Yes;         ;      Yes;      Yes
+      Chavannes-R., UNIL-Mouline;      8501212;      2534033.0;      1152995.0;   4047.252469411693;      Yes;         ;      Yes;      Yes
+         Ecublens VD, UNIL-Sorge;      8501213;      2533622.0;      1152717.0;   4543.442957027084;      Yes;         ;      Yes;      Yes
+               Ecublens VD, EPFL;      8501214;      2533051.0;      1152695.0;   5114.866617720269;      Yes;      Yes;         ;      Yes
+          Ecublens VD, Bassenges;      8501215;      2532935.0;      1152962.0;   5405.976562586465;      Yes;      Yes;         ;         
+           Ecublens VD, Cerisaie;      8501216;      2533089.0;      1153312.0;   5788.358570531399;      Yes;      Yes;         ;         
+            Chavannes-R., Crochy;      8501217;      2533358.0;      1153861.0;   6399.719347814338;      Yes;      Yes;         ;         
+             Ecublens VD, Epenex;      8501218;      2533641.0;      1154414.0;   7020.926237666664;      Yes;      Yes;         ;         
+                 Renens VD, gare;      8530749;  2534019.52076;  1154398.91644;  7399.7474085816675;      Yes;      Yes;         ;         
+                           Count;             ;               ;               ;                    ;      283;        9;        3;        1
+                       Direction;             ;               ;               ;                    ;       OR;       RO;        R;        O
