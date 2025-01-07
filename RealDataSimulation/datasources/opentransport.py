@@ -198,7 +198,7 @@ class TransportData:
     def generate_timetable(self,
      lines = "all",
      modes = None,
-     correct_errors = True,
+     correct_times = True,
      threshold = 3,
      verbose= 1,
      solve_too_fast = False,
@@ -365,7 +365,7 @@ class TransportData:
             # Determine the different routes and add them to the "stops" df
             routes = stop_mask.T.value_counts().rename("Count").reset_index().T
             routes = routes.rename(columns= lambda i: f"Route_{chr(65+i)}")
-            routes.iloc[:-1] = np.where(routes.values[:-1], "yes", "")
+            #routes.iloc[:-1] = np.where(routes.values[:-1], "yes", "")
             stops = stops.merge(routes, how="outer", left_on="STOP_NAME", right_index=True).set_index("STOP_NAME").sort_values("DISTANCE")
 
             # ----
@@ -408,11 +408,12 @@ class TransportData:
             # ----
             # Correct the data
             # ----
-
+            
             # Correct time data
-            if correct_errors:
-                line_timetable[journeys.loc[journeys.Direction == "O"].index].apply(lambda col : pd.to_datetime(((col- pd.Timestamp("1970-01-01")) // pd.Timedelta("1s")).expanding(1).max(), unit="s"), axis = 1)
-                line_timetable[journeys.loc[journeys.Direction == "R"].index].apply(lambda col : pd.to_datetime(((col- pd.Timestamp("1970-01-01")) // pd.Timedelta("1s")).expanding(1).min(), unit="s"), axis = 1)
+            if correct_times:
+                line_timetable.loc[mask, journeys.loc[journeys.Direction == "O"].index] = line_timetable.loc[mask, journeys.loc[journeys.Direction == "O"].index].apply(lambda col : pd.to_datetime(((col.dropna()- pd.Timestamp("1970-01-01")) // pd.Timedelta("1s")).expanding(1).max(), unit="s"), axis = 0)
+                line_timetable.loc[mask, journeys.loc[journeys.Direction == "R"].index] = line_timetable.loc[mask, journeys.loc[journeys.Direction == "R"].index].apply(lambda col : pd.to_datetime(((col.dropna().iloc[::-1].reindex(["ARRIVAL_REAL", "DEPARTURE_REAL"], level=2)- pd.Timestamp("1970-01-01")) // pd.Timedelta("1s")).expanding(1).max(), unit="s"), axis = 0)
+            
             # ----
             # Finalise and export
             # ----
