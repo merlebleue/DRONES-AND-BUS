@@ -1,4 +1,4 @@
-;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B
+STOP_NAME;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B
 Renens VD, gare sud;8588983;2534082;1154287;0;yes;yes
 Chavannes-R., Glycines;8593869;2533869;1154252;216;yes;yes
 Chavannes-R., Planta;8591933;2533594;1154023;574;yes;yes
@@ -17,4 +17,5 @@ St-Sulpice VD, centre;8588158;2532419;1151355;4474;yes;yes
 St-Sulpice VD, Chantres;8588155;2532069;1151404;4827;yes;yes
 St-Sulpice VD, Laviau;8588156;2531846;1151495;5068;yes;yes
 St-Sulpice VD, Venoge sud;8579231;2531519;1151671;5439;yes;yes
-;;;;;77;77
+Count;;;;;77;77
+Direction;;;;;O;R

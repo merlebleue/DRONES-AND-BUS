@@ -1,4 +1,4 @@
-;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B;Route_C
+STOP_NAME;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B;Route_C
 Pully, gare;8588445;2540150;1151300;0;yes;;yes
 Pully, Joliette;8592182;2539720;1151257;432;yes;;yes
 Pully, C. F. Ramuz;8592172;2539332;1151221;822;yes;;yes
@@ -23,4 +23,5 @@ Renens VD, piscine;8595534;2534529;1153591;6859;yes;yes;
 Renens VD, Censuy;8592209;2534431;1153812;7101;yes;yes;
 Renens VD, gare sud;8588983;2534082;1154287;7690;yes;yes;
 Chavannes-R., Glycines;8593869;2533869;1154252;7906;yes;yes;
-;;;;;225;13;5
+Count;;;;;225;13;5
+Direction;;;;;OR;RO;R

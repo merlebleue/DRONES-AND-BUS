@@ -1,4 +1,4 @@
-;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B
+STOP_NAME;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B
 St-Sulpice VD, Venoge sud;8579231;2531519;1151671;0;yes;yes
 St-Sulpice VD, Venoge nord;8594988;2531466;1151782;72;;yes
 Ecublens VD, Champs-Courbes;8591959;2531812;1152058;331;;yes
@@ -51,4 +51,5 @@ Lausanne, Tivoli;8592122;2537305;1152534;8375;yes;yes
 Lausanne, Chauderon;8592010;2537555;1152802;8742;yes;yes
 Lausanne, Bel-Air;8591988;2537880;1152653;9099;yes;yes
 Lausanne, St-François;8579254;2538215;1152325;9568;yes;yes
-;;;;;3;3
+Count;;;;;3;3
+Direction;;;;;O;R

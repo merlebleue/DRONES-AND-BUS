@@ -1,4 +1,4 @@
-;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B;Route_C;Route_D
+STOP_NAME;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B;Route_C;Route_D
 Lausanne, Flon;8591818;2537993;1152461;0;yes;;yes;yes
 Lausanne, Vigie;8592133;2537484;1152574;522;yes;;yes;yes
 Lausanne, Montelly;8501207;2536689;1152614;1318;yes;;yes;yes
@@ -14,4 +14,5 @@ Ecublens VD, Cerisaie;8501216;2533089;1153312;5788;yes;yes;;
 Chavannes-R., Crochy;8501217;2533358;1153861;6400;yes;yes;;
 Ecublens VD, Epenex;8501218;2533641;1154414;7021;yes;yes;;
 Renens VD, gare;8530749;2534020;1154399;7400;yes;yes;;
-;;;;;283;9;3;1
+Count;;;;;283;9;3;1
+Direction;;;;;OR;RO;R;O

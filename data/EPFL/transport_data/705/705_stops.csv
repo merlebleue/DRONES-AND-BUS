@@ -1,4 +1,4 @@
-;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B;Route_C;Route_D;Route_E
+STOP_NAME;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B;Route_C;Route_D;Route_E
 Lonay, parc;8592254;2529262;1153429;0;yes;yes;;;yes
 Lonay, Pressoirs;8595219;2529507;1153105;406;yes;yes;;;
 Lonay-Préverenges, gare nord;8511344;2529439;1152899;623;yes;yes;;;
@@ -25,4 +25,5 @@ Ecublens VD, Ormet;8591952;2532495;1152858;7587;;yes;yes;;yes
 Ecublens VD, EPFL (bus);8579233;2533107;1152679;8084;yes;yes;yes;yes;yes
 Ecublens VD, Argand;8591944;2533488;1152483;8513;yes;;;yes;
 Ecublens VD, EPFL Piccard;8579234;2533227;1152483;8774;yes;yes;yes;yes;yes
-;;;;;54;53;16;16;1
+Count;;;;;54;53;16;16;1
+Direction;;;;;O;R;R;O;R

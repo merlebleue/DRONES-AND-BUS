@@ -1,4 +1,4 @@
-;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B;Route_C;Route_D
+STOP_NAME;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B;Route_C;Route_D
 Prilly, Galicien;8592049;2535968;1153319;0;yes;yes;yes;yes
 Lausanne, Malley;8501209;2535848;1152880;455;yes;yes;yes;yes
 Renens VD, Longemalle;8592215;2535392;1153045;940;yes;yes;yes;yes
@@ -25,4 +25,5 @@ Villars-Ste-Croix, Le Sansy;8588848;2533042;1157804;8006;yes;;;yes
 Villars-Ste-Croix, village;8588847;2532765;1157793;8283;yes;;;yes
 Villars-Ste-Croix, En Coulaye;8583748;2532575;1157570;8577;yes;yes;yes;
 Mex VD, Faraz;8594270;2531907;1157602;9162;;;yes;yes
-;;;;;47;46;34;34
+Count;;;;;47;46;34;34
+Direction;;;;;O;R;R;O

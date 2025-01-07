@@ -361,10 +361,10 @@ class TransportData:
             stops = stops.reset_index().set_index("STOP_NAME")
 
             # Determine the different routes and add them to the "stops" df
-            routes = stop_mask.T.value_counts().reset_index().T
+            routes = stop_mask.T.value_counts().rename("Count").reset_index().T
             routes = routes.rename(columns= lambda i: f"Route_{chr(65+i)}")
             routes.iloc[:-1] = np.where(routes.values[:-1], "yes", "")
-            stops = stops.merge(routes, how="outer", left_on="STOP_NAME", right_index=True).drop("STOP_NAME", axis=1).sort_values("DISTANCE")
+            stops = stops.merge(routes, how="outer", left_on="STOP_NAME", right_index=True).set_index("STOP_NAME").sort_values("DISTANCE")
 
             # ----
             # Analyse journeys
@@ -385,7 +385,13 @@ class TransportData:
             real = line_timetable.loc[mask]
             journeys["Direction"] = line_timetable.loc[line_timetable.index.get_level_values("EVENT") == "DEPARTURE_REAL"].diff().map(lambda x : np.where(x<pd.Timedelta(0), "R", "O"), na_action="ignore").mode().loc[0]
 
-            # Add start and end stops for this journey
+            # Add a direction to routes in the stops dataframe
+            def get_direction(group):
+                v = group.value_counts()
+                return "".join(v.index)
+            stops.loc["Direction"] = journeys.groupby("Route")["Direction"].apply(get_direction)
+
+            # Add start and end stops
             journeys["Start"] = real.droplevel(["STOP_NUMBER", "EVENT"]).idxmin(axis=0).T
             journeys["Start_time_Planned"] = planned.min(axis=0).T
             journeys["Start_time_Real"] = real.min(axis=0).T

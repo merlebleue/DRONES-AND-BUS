@@ -1,4 +1,4 @@
-;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B;Route_C
+STOP_NAME;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B;Route_C
 Lausanne, Bourdonnette;8501210;2534868;1152794;0;yes;yes;
 Ecublens VD, allée de Dorigny;8591950;2534284;1152491;658;yes;yes;
 Ecublens VD, Blévallaire;8596053;2533903;1152393;1051;yes;yes;yes
@@ -25,4 +25,5 @@ Morges, Eglantine;8592273;2526774;1151568;8891;yes;yes;yes
 Morges, Vogéaz;8570081;2526611;1151500;9068;yes;yes;yes
 Morges, Prélionne;8592270;2526400;1151338;9334;yes;yes;yes
 Tolochenaz, La Plantaz;8570082;2526220;1151214;9553;yes;yes;yes
-;;;;;100;99;1
+Count;;;;;100;99;1
+Direction;;;;;R;O;O
