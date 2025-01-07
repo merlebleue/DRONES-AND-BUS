@@ -76,12 +76,12 @@ class Area:
         # For anything in `elements`, call a .plot() method
         for e in elements:
             if type(e) is tuple:
-                if e[1] is dict:
+                if type(e[1]) is dict:
                     e[0].plot(ax, **e[1])
                 else:
                     e[0].plot(ax, *e[1:])
             else:
-                e.plot()
+                e.plot(ax)
 
         # Personalise the plot
         ax.set_xlim(self.x_min-margin*size_x, self.x_max+margin*size_x)

@@ -1,4 +1,4 @@
-           STOP_NAME            ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B ; Route_C ; Route_D ; Route_E ; Route_G ; Route_H 
+           STOP_NAME            ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B ; Route_C ; Route_D ; Route_E ; Route_F ; Route_I 
            Lausanne, Blécherette;      8591994;      2537294.0;      1154878.0;                 0.0;      Yes;      Yes;      Yes;      Yes;         ;         ;      Yes
            Lausanne, Bois-Gentil;      8591996;      2537375.0;      1154479.0;   407.1387969722365;      Yes;      Yes;      Yes;      Yes;         ;         ;      Yes
         Lausanne, Parc Vélodrome;      8592088;      2537488.0;      1154184.0;   723.0406804740605;      Yes;      Yes;      Yes;      Yes;         ;         ;      Yes
@@ -37,9 +37,7 @@
      St-Sulpice VD, Parc Scient.;      8595223;      2532863.0;      1152073.0;   9781.686439064259;         ;         ;         ;      Yes;      Yes;         ;         
        St-Sulpice VD, Pré-Fleuri;      8510528;  2532618.27626;  1151924.21398;   9901.024574442157;         ;         ;         ;      Yes;      Yes;         ;         
       Ecublens VD, EPFL/Colladon;      8510727;  2532850.46709;   1152239.5379;  10064.191105302922;         ;         ;      Yes;      Yes;      Yes;         ;         
-                           Count;             ;               ;               ;                    ;       73;       71;       46;       45;        3;        2;        2
                 Lausanne, Boston;      8592001;      2537405.0;      1152837.0;                    ;         ;         ;         ;         ;         ;         ;         
              Lausanne, Chauderon;      8592010;      2537555.0;      1152802.0;                    ;         ;         ;         ;         ;         ;         ;         
                 Lausanne, Prélaz;      8592102;      2536612.0;      1153116.0;                    ;         ;         ;         ;         ;         ;         ;         
               Lausanne, Recordon;      8592109;      2537035.0;      1153025.0;                    ;         ;         ;         ;         ;         ;         ;         
-                       Direction;             ;               ;               ;                    ;        O;        R;        R;        O;        O;        R;        R

@@ -8,6 +8,7 @@ from scipy.interpolate import interp1d
 
 from ..download import DownloadManager
 from ..area import Area
+from .linedata import LineData
 
 TRANSPORT_FOLDER = "transport_data"
 TIMETABLE_FILE = "Timetable_{date}.csv"
@@ -32,16 +33,28 @@ class TransportData:
         3 : "Line data generated"
     }
 
-    def __init__(self, area: Area, date= datetime.datetime.today().date, **kwargs):
-        self.area = area
+    def __init__(self, name : str, area: Area = None, line_id: str = None, date= datetime.datetime.today().date(), **kwargs):
+        self.name = name
+
+
+        if (by_area := (area is not None)):
+            self.area = area
+            self.dl: DownloadManager = kwargs.get("download_manager", area.dl)
+        else:
+            self.dl: DownloadManager = kwargs.get("download_manager", DownloadManager())
+            if line_id is not None:
+                self.line_id = line_id
+            else :
+                print("No area or line_id defined. Do not forget to define one when running .filter_data (use .search_lines to see the possibilities)")
+                self.line_id = None
+        self.by_area = by_area
 
         self.date = date
         if not isinstance(self.date, datetime.date):
             self.date = datetime.date(*self.date)
 
-        self.dl: DownloadManager = kwargs.get("download_manager", area.dl)
-        transport_folder: str = kwargs.get("folder", TRANSPORT_FOLDER)
-        self.path = os.path.join(transport_folder, date.strftime("%Y_%m_%d"))
+        self.transport_folder: str = kwargs.get("folder", TRANSPORT_FOLDER)
+        self.path = os.path.join(self.transport_folder, date.strftime("%Y_%m_%d"))
 
         # Create folder
         os.makedirs(self.path, exist_ok=True)
@@ -58,7 +71,7 @@ class TransportData:
         # TODO
 
         # Try at status = 2
-        filename = self.path_join("{df}.csv")
+        filename = self.path_join(self.name, "{df}.csv")
         if os.path.isfile(filename.format(df="lines")) and \
            os.path.isfile(filename.format(df="stops")) and \
            os.path.isfile(filename.format(df="timetable")):
@@ -81,6 +94,8 @@ class TransportData:
             if date != self.date:
                 print(f"----\nChanged date to {date}\n----\n")
                 self.date = date
+                self.path = os.path.join(self.transport_folder, date.strftime("%Y_%m_%d"))
+                os.makedirs(self.path, exist_ok=True)
         else:
             date = self.date
 
@@ -98,7 +113,7 @@ class TransportData:
             # Return the files
             return stops_file, timetable_file
     
-    def get_downloaded_filenames(self, solve_too_fast = False):
+    def get_downloaded_filenames(self, solve_too_fast = False, date_strict = True):
         # Check that file has been downloaded :
         if hasattr(self, "stops_file") and hasattr(self, "timetable_file"):
             # All right
@@ -109,13 +124,19 @@ class TransportData:
             timetable_file = self.dl.get_path(TIMETABLE_FILE.format(date=self.date))
         elif solve_too_fast:
             # Download the files
-            stops_file, timetable_file = self.download_data(self, date_strict=True, return_data=True)
+            stops_file, timetable_file = self.download_data(date_strict=date_strict, return_data=True)
         else:
             raise TooFastError(self, 1)
         
         return stops_file, timetable_file
         
-    def filter_data(self, solve_too_fast = False, return_data = True):
+    def search_lines(self, line_name, solve_too_fast= True):
+        stops_file, timetable_file = self.get_downloaded_filenames(solve_too_fast=solve_too_fast, date_strict = False)
+        timetable_df = pd.read_csv(timetable_file, delimiter= ";", low_memory=False)
+
+        return timetable_df[timetable_df.LINIEN_TEXT == line_name][["BETREIBER_ABK", "BETREIBER_NAME", "PRODUKT_ID", "LINIEN_ID", "LINIEN_TEXT", "VERKEHRSMITTEL_TEXT"]].drop_duplicates(subset = "LINIEN_ID")
+
+    def filter_data(self, line_id = None, margin=500, solve_too_fast = False, return_data = True):
         stops_file, timetable_file = self.get_downloaded_filenames(solve_too_fast=solve_too_fast)
 
         # Get DataFrames
@@ -134,15 +155,24 @@ class TransportData:
         # Only keep interesting columns
         stops_df = stops_df[['number', 'designationOfficial', 'lv95East', 'lv95North']]
 
-        # Get stops numbers in rectangle
-        stops_numbers = stops_df[self.area.is_inside(stops_df['lv95East'], stops_df['lv95North'])]["number"]
+        if self.by_area:
+            # Get stops numbers in rectangle
+            stops_numbers = stops_df[self.area.is_inside(stops_df['lv95East'], stops_df['lv95North'])]["number"]
 
 
         # Filter timetable_data
         # ---------------------
 
-        # Select the lines that passes through our stops
-        lines = timetable_df.LINIEN_ID[timetable_df.BPUIC.isin(stops_numbers)].unique()
+            # Select the lines that passes through our stops
+            lines = timetable_df.LINIEN_ID[timetable_df.BPUIC.isin(stops_numbers)].unique()
+        else :
+            if (line_id := line_id or self.line_id):
+                self.line_id = line_id
+                lines = [line_id]
+            else:
+                raise ValueError(f"line_id not defined ? ({line_id}, {self.line_id})")
+                
+            
         # Filter the timetable for only those lines
         timetable_filtered = timetable_df[timetable_df.LINIEN_ID.isin(lines)]
 
@@ -169,8 +199,15 @@ class TransportData:
         # Offload data about lines
         lines_df = timetable_filtered[["LINE_ID", "LINE_NAME", "TRANSPORTER", "MEAN_OF_TRANSPORT"]].drop_duplicates()
 
+        # Create an area based on the stops of the line if needed
+        if not self.by_area:
+            x_min, y_min = stops_filtered[['lv95East', 'lv95North']].min() - margin
+            x_max, y_max = stops_filtered[['lv95East', 'lv95North']].max() + margin
+            self.area = Area(x_min, x_max, y_min, y_max)
+
         # Export the filtered stops, timetable and line dataframes
-        filename = self.path_join("{df}.csv")
+        os.makedirs(self.path_join(self.name), exist_ok=True)
+        filename = self.path_join(self.name, "{df}.csv")
 
         stops_filtered.to_csv(filename.format(df = "stops"), sep=";", index=False)
         timetable_filtered.to_csv(filename.format(df = "timetable"), sep=";", index=False)
@@ -187,7 +224,7 @@ class TransportData:
         # Check that the data has already been filtered :
         if self.get_status() >= 2:
             # Data has been filtered previously : all good
-            filename = self.path_join("{df}.csv")
+            filename = self.path_join(self.name, "{df}.csv")
             stops_df = pd.read_csv(filename.format(df = "stops"), sep = "[ \t]*;[ \t]*", engine="python")
             timetable_df = pd.read_csv(filename.format(df = "timetable"), sep = "[ \t]*;[ \t]*", engine="python")
             lines_df = pd.read_csv(filename.format(df = "lines"), sep = "[ \t]*;[ \t]*", engine="python")
@@ -199,15 +236,15 @@ class TransportData:
         
         return stops_df, timetable_df, lines_df
     
-    def generate_timetable(self,
-     lines = "all",
-     modes = None,
-     correct_times = True,
-     threshold = 5,
-     verbose= 1,
-     solve_too_fast = False,
-     return_data = True):
-        stops_df, timetable_df, lines_df = self.get_filtered_data(solve_too_fast=solve_too_fast)
+    def get_lines_data(self,
+                       lines = "all",
+                       modes = None,
+                       correct_times = True,
+                       threshold = 5,
+                       verbose= 1,
+                       solve_too_fast = False,
+                       return_data = True):
+        lines_df = self.get_filtered_data(solve_too_fast=solve_too_fast)[2]
 
         # Filter lines according to modes argument
         if modes is not None:
@@ -239,237 +276,229 @@ class TransportData:
                     raise ValueError(f"'{line}' is not a valid value for `lines` argument. Valid values are (either alone or in a tuple):\n'all', {', '.join(lines_df.LINE_ID.astype(str))}, {', '.join(lines_df.LINE_NAME.astype(str))}")
         else:
             raise TypeError("`lines` argument must be str or tuple")
-        
 
         # Run over each line and compute the timetable
         # --------------------------------------------
-        lines_timetables = {}
+        lines_data = {}
         for line_id in lines_ids:
+            lines_data[line_id] = self.generate_timetable(line_id, 
+                       correct_times = correct_times,
+                       threshold = threshold,
+                       verbose= verbose,
+                       solve_too_fast = solve_too_fast,
+                       return_data = True)
+            
+        if return_data:
+            return lines_data
+        
+    
+    def generate_timetable(self,
+                           line_id = None,
+                           correct_times = True,
+                           threshold = 5,
+                           verbose= 1,
+                           solve_too_fast = False,
+                           return_data = True):
+        if line_id is None:
+            line_id = self.line_id
+        stops_df, timetable_df, lines_df = self.get_filtered_data(solve_too_fast=solve_too_fast)
+        if verbose > 0:
+            print(line_id)
+        line_data = timetable_df.loc[timetable_df.LINE_ID == line_id, ["STOP_NUMBER", "JOURNEY_ID", "ARRIVAL", "ARRIVAL_REAL", "DEPARTURE", "DEPARTURE_REAL", "ARRIVAL_REAL_STATUS", "DEPARTURE_REAL_STATUS"]]
+        line_name = lines_df.LINE_NAME.loc[lines_df.LINE_ID == line_id].iloc[0]
+
+        # Remove duplicates (and try to select the lines with the most accurate status (so REAL instead of PROGNOSE))
+        duplicates = (line_data
+                        .sort_values(by=["ARRIVAL_REAL_STATUS", "DEPARTURE_REAL_STATUS"])
+                        .duplicated(subset = ["STOP_NUMBER", "JOURNEY_ID"], keep="last")
+                        )
+        if duplicates.sum() > 0:
             if verbose > 0:
-                print(line_id)
-            line_data = timetable_df.loc[timetable_df.LINE_ID == line_id, ["STOP_NUMBER", "JOURNEY_ID", "ARRIVAL", "ARRIVAL_REAL", "DEPARTURE", "DEPARTURE_REAL", "ARRIVAL_REAL_STATUS", "DEPARTURE_REAL_STATUS"]]
-            line_name = lines_df.LINE_NAME.loc[lines_df.LINE_ID == line_id].iloc[0]
+                print(f"Removing {duplicates.sum()} duplicates for line {line_name} ({line_id})")
+            line_data = (line_data
+                        .sort_values(by=["ARRIVAL_REAL_STATUS", "DEPARTURE_REAL_STATUS"])
+                        .drop_duplicates(subset = ["STOP_NUMBER", "JOURNEY_ID"], keep="last")
+                        )
+        line_data = line_data.drop(columns = ["ARRIVAL_REAL_STATUS", "DEPARTURE_REAL_STATUS"])
 
-            # Remove duplicates (and try to select the lines with the most accurate status (so REAL instead of PROGNOSE))
-            duplicates = (line_data
-                            .sort_values(by=["ARRIVAL_REAL_STATUS", "DEPARTURE_REAL_STATUS"])
-                            .duplicated(subset = ["STOP_NUMBER", "JOURNEY_ID"], keep="last")
-                            )
-            if duplicates.sum() > 0:
-                if verbose > 0:
-                    print(f"Removing {duplicates.sum()} duplicates for line {line_name} ({line_id})")
-                line_data = (line_data
-                            .sort_values(by=["ARRIVAL_REAL_STATUS", "DEPARTURE_REAL_STATUS"])
-                            .drop_duplicates(subset = ["STOP_NUMBER", "JOURNEY_ID"], keep="last")
-                            )
-            line_data = line_data.drop(columns = ["ARRIVAL_REAL_STATUS", "DEPARTURE_REAL_STATUS"])
+        # Pivot timetable data for the bus line
+        # ----------------------------------------
+        line_timetable = (line_data
+            .pivot(index="STOP_NUMBER", columns="JOURNEY_ID")
+            .stack(level=0, future_stack=True)
+            .apply(pd.to_datetime, format="mixed")
+            )
+        line_timetable.index.set_names("EVENT", level=-1, inplace=True)
+        
+        # ----
+        # Analyse journeys
+        # ----
 
-            # Pivot timetable data for the bus line
-            # ----------------------------------------
-            line_timetable = (line_data
-                .pivot(index="STOP_NUMBER", columns="JOURNEY_ID")
-                .stack(level=0, future_stack=True)
-                .apply(pd.to_datetime, format="mixed")
-                )
-            line_timetable.index.set_names("EVENT", level=-1, inplace=True)
+        # Get the order in which each journey goes to each bus stop
+        orders = (line_timetable
+                    .loc[line_timetable.index.get_level_values("EVENT").str[-4:] == "REAL"]
+                    .groupby("STOP_NUMBER", sort=False).first()
+                    .apply(lambda x : x.dropna().sort_values().argsort(), axis=0)
+                    .fillna(-1))
+        
+        # Count how many time each order appears
+        order_counts = orders.T.value_counts().reset_index().astype("int").set_index("count").T
+        order_counts = order_counts.sort_index(key=lambda x : x.map(order_counts.iloc[:, 0]))
+
+        # ---
+        # Create a "stops" df to get all the stops of the line in a correct order
+        # ---
+
+        stops = pd.merge(line_timetable.index.get_level_values("STOP_NUMBER").to_series(), 
+                            stops_df[["designationOfficial", "lv95East", "lv95North"]].rename(columns = {"designationOfficial": "STOP_NAME", "lv95East": "POSITION_X", "lv95North": "POSITION_Y"}), 
+                            how="left", 
+                            right_on=stops_df["number"], 
+                            left_index=True).drop("key_0", axis=1).set_index("STOP_NUMBER").drop_duplicates()
+
+        # ---
+        # Add a "distance" column to order the stops
+        # ---
+
+        # Select the order which appears the most
+        order = order_counts.iloc[:, 0]
+
+        # Compute the distance based on this order
+        distance = ((stops[["POSITION_X", "POSITION_Y"]].loc[order>=0].sort_index(key=lambda x: x.map(order)).diff()**2).sum(axis=1)**0.5).cumsum()
+
+        stops["DISTANCE"] = stops.index.map(distance)
+
+        # Get full order of the stops by interpolation, over subsequent orders
+        # ---
+
+        # Iterate over other orders to interpolate the distances
+        missing_distances = stops["DISTANCE"].isna().sum()
+        for _, order in order_counts.iloc[:, 1:].items():
+            if verbose > 1:
+                print(missing_distances)
             
-            # ----
-            # Analyse journeys
-            # ----
+            distance = ((stops[["POSITION_X", "POSITION_Y"]].loc[order>=0].sort_index(key=lambda x: x.map(order)).diff()**2).sum(axis=1)**0.5).cumsum().rename("distance")
 
-            # Get the order in which each journey goes to each bus stop
-            orders = (line_timetable
-                        .loc[line_timetable.index.get_level_values("EVENT").str[-4:] == "REAL"]
-                        .groupby("STOP_NUMBER", sort=False).first()
-                        .apply(lambda x : x.dropna().sort_values().argsort(), axis=0)
-                        .fillna(-1))
-            
-            # Count how many time each order appears
-            order_counts = orders.T.value_counts().reset_index().astype("int").set_index("count").T
-            order_counts = order_counts.sort_index(key=lambda x : x.map(order_counts.iloc[:, 0]))
+            distance_for_interp = stops["DISTANCE"].loc[distance.index].dropna()
 
-            # ---
-            # Create a "stops" df to get all the stops of the line in a correct order
-            # ---
+            index=distance.index
+            distance = interp1d(distance.loc[distance_for_interp.index].values, distance_for_interp.values, fill_value = "extrapolate", assume_sorted=False)(distance.values)
+            distance = pd.Series(distance, index=index, name="distance")
 
-            stops = pd.merge(line_timetable.index.get_level_values("STOP_NUMBER").to_series(), 
-                             stops_df[["designationOfficial", "lv95East", "lv95North"]].rename(columns = {"designationOfficial": "STOP_NAME", "lv95East": "POSITION_X", "lv95North": "POSITION_Y"}), 
-                             how="left", 
-                             right_on=stops_df["number"], 
-                             left_index=True).drop("key_0", axis=1).set_index("STOP_NUMBER").drop_duplicates()
+            stops["DISTANCE"] = stops["DISTANCE"].fillna(distance)
 
-            # ---
-            # Add a "distance" column to order the stops
-            # ---
 
-            # Select the order which appears the most
-            order = order_counts.iloc[:, 0]
-
-            # Compute the distance based on this order
-            distance = ((stops[["POSITION_X", "POSITION_Y"]].loc[order>=0].sort_index(key=lambda x: x.map(order)).diff()**2).sum(axis=1)**0.5).cumsum()
-
-            stops["DISTANCE"] = stops.index.map(distance)
-
-            # Get full order of the stops by interpolation, over subsequent orders
-            # ---
-
-            # Iterate over other orders to interpolate the distances
             missing_distances = stops["DISTANCE"].isna().sum()
-            for _, order in order_counts.iloc[:, 1:].items():
-                if verbose > 1:
-                    print(missing_distances)
+            if missing_distances == 0:
+                break
+
+        if missing_distances > 0:
+            if verbose > 0:
+                print(f"Still {missing_distances} distances values missing for line {line_name} ({line_id})")
+                print(stops.loc[stops["DISTANCE"].isna()])
+                print()
+        
+        # Sort the stops df
+        stops = stops.sort_values("DISTANCE")
                 
-                distance = ((stops[["POSITION_X", "POSITION_Y"]].loc[order>=0].sort_index(key=lambda x: x.map(order)).diff()**2).sum(axis=1)**0.5).cumsum().rename("distance")
+        # Add stop names to the timetable
+        names = line_timetable.index.get_level_values("STOP_NUMBER").map(stops_df.set_index("number")["designationOfficial"]).rename("STOP_NAME")
+        line_timetable = line_timetable.set_index([names, line_timetable.index])
+        # Sort the timetable based on this distance
+        def sort_function(x: pd.Index):
+            if x.name == "STOP_NUMBER":
+                return x.map(stops["DISTANCE"])
+            else:
+                return x
+        line_timetable = line_timetable.sort_index(level=["STOP_NUMBER", "EVENT"], key = sort_function)
 
-                distance_for_interp = stops["DISTANCE"].loc[distance.index].dropna()
-
-                index=distance.index
-                distance = interp1d(distance.loc[distance_for_interp.index].values, distance_for_interp.values, fill_value = "extrapolate", assume_sorted=False)(distance.values)
-                distance = pd.Series(distance, index=index, name="distance")
-
-                stops["DISTANCE"] = stops["DISTANCE"].fillna(distance)
-
-
-                missing_distances = stops["DISTANCE"].isna().sum()
-                if missing_distances == 0:
-                    break
-
-            if missing_distances > 0:
-                if verbose > 0:
-                    print(f"Still {missing_distances} distances values missing for line {line_name} ({line_id})")
-                    print(stops.loc[stops["DISTANCE"].isna()])
-                    print()
-            
-            # Sort the stops df
-            stops = stops.sort_values("DISTANCE")
-                 
-            # Add stop names to the timetable
-            names = line_timetable.index.get_level_values("STOP_NUMBER").map(stops_df.set_index("number")["designationOfficial"]).rename("STOP_NAME")
-            line_timetable = line_timetable.set_index([names, line_timetable.index])
-            # Sort the timetable based on this distance
-            def sort_function(x: pd.Index):
-                if x.name == "STOP_NUMBER":
-                    return x.map(stops["DISTANCE"])
-                else:
-                    return x
-            line_timetable = line_timetable.sort_index(level=["STOP_NUMBER", "EVENT"], key = sort_function)
-
-            # ----get 
-            # Analyse routes
-            # ----
+        # ----
+        # Analyse routes
+        # ----
 
 
-            # Get whether journeys stops at each stop
-            stop_mask = orders >= 0
-            
-            # Change stops index :
-            stop_mask.index = stop_mask.index.map(stops["STOP_NAME"])
-            stops = stops.reset_index().set_index("STOP_NAME")
+        # Get whether journeys stops at each stop
+        stop_mask = orders >= 0
+        
+        # Change stops index :
+        stop_mask.index = stop_mask.index.map(stops["STOP_NAME"])
+        stops = stops.reset_index().set_index("STOP_NAME")
 
-            # Determine the different routes and add them to the "stops" df
-            routes = stop_mask.T.value_counts().rename("Count").reset_index().T
-            routes = routes.rename(columns= lambda i: f"Route_{chr(65+i)}")
-            #routes.iloc[:-1] = np.where(routes.values[:-1], "yes", "")
-            stops = stops.merge(routes, how="outer", left_on="STOP_NAME", right_index=True).set_index("STOP_NAME").sort_values("DISTANCE")
+        # Determine the different routes and add them to the "stops" df
+        stop_mask = stop_mask.reindex(stops.index)
+        routes = stop_mask.T.value_counts().rename("Count").reset_index()
+        routes = routes.rename(index= lambda i: f"Route_{chr(65+i)}")
+        stops = stops.merge(routes.T, how="left", left_on="STOP_NAME", right_index=True).sort_values("DISTANCE")
 
-            # ----
-            # Analyse journeys
-            # ----
+        # ----
+        # Analyse journeys
+        # ----
 
-            # Create a `journeys` df to log journeys, their route and their direction
-            journeys = line_data.JOURNEY_ID.drop_duplicates()
+        # Create a `journeys` df to log journeys, their route and their direction
+        journeys = line_data.JOURNEY_ID.drop_duplicates()
 
-            # Determine the route :
-            routes_map = routes.iloc[:-1].apply(lambda x : "".join(np.where(x, "Y", "N")), axis=0).T.rename("YN").reset_index().set_index("YN")["index"]
-            journeys_routes = stop_mask.apply(lambda x : "".join(np.where(x, "Y", "N")), axis=0).map(routes_map).rename("Route")
-            journeys = pd.DataFrame(journeys_routes, index = journeys)
-            journeys["Number_of_stops"] = stop_mask.T.sum(axis=1)
+        # Determine the route :
+        routes_map = routes.iloc[:, :-1].apply(lambda x : "".join(np.where(x, "Y", "N")), axis=1).rename("YN").reset_index().set_index("YN")["index"]
+        journeys_routes = stop_mask.apply(lambda x : "".join(np.where(x, "Y", "N")), axis=0).map(routes_map).rename("Route")
+        journeys = pd.DataFrame(journeys_routes, index = journeys)
+        journeys["Number_of_stops"] = stop_mask.T.sum(axis=1)
 
-            # Determine the direction :
-            mask = line_timetable.index.get_level_values("EVENT").str[-4:] == "REAL"
-            planned = line_timetable.loc[~mask]
-            real = line_timetable.loc[mask]
-            journeys["Direction"] = line_timetable.loc[line_timetable.index.get_level_values("EVENT") == "DEPARTURE_REAL"].diff().map(lambda x : np.where(x<pd.Timedelta(0), "R", "O"), na_action="ignore").mode().loc[0]
+        # Determine the direction :
+        mask = line_timetable.index.get_level_values("EVENT").str[-4:] == "REAL"
+        planned = line_timetable.loc[~mask]
+        real = line_timetable.loc[mask]
+        journeys["Direction"] = line_timetable.loc[line_timetable.index.get_level_values("EVENT") == "DEPARTURE_REAL"].diff().map(lambda x : np.where(x<pd.Timedelta(0), "R", "O"), na_action="ignore").mode().loc[0]
 
-            # Add a direction to routes in the stops dataframe
-            def get_direction(group):
-                v = group.value_counts()
-                return "".join(v.index)
-            stops.loc["Direction"] = journeys.groupby("Route")["Direction"].apply(get_direction)
+        # Add a direction to routes in the routes dataframe
+        def get_direction(group):
+            v = group.value_counts()
+            return "".join(v.index)
+        routes["Direction"] = journeys.groupby("Route")["Direction"].apply(get_direction)
 
-            # Add start and end stops
-            journeys["Start"] = real.droplevel(["STOP_NUMBER", "EVENT"]).idxmin(axis=0).T
-            journeys["Start_time_Planned"] = planned.min(axis=0).T
-            journeys["Start_time_Real"] = real.min(axis=0).T
-            journeys["End"] = real.droplevel(["STOP_NUMBER", "EVENT"]).idxmax(axis=0).T
-            journeys["End_time_Planned"] = planned.max(axis=0).T
-            journeys["End_time_Real"] = real.max(axis=0).T
+        # Add start and end stops
+        journeys["Start"] = real.droplevel(["STOP_NUMBER", "EVENT"]).idxmin(axis=0).T
+        journeys["Start_time_Planned"] = planned.min(axis=0).T
+        journeys["Start_time_Real"] = real.min(axis=0).T
+        journeys["End"] = real.droplevel(["STOP_NUMBER", "EVENT"]).idxmax(axis=0).T
+        journeys["End_time_Planned"] = planned.max(axis=0).T
+        journeys["End_time_Real"] = real.max(axis=0).T
 
-            # Sort journeys and line_timetable DataFrame
-            journeys = journeys.sort_values("Start_time_Planned")
-            line_timetable = line_timetable[journeys.index.tolist()]
+        # Sort journeys and line_timetable DataFrame
+        journeys = journeys.sort_values("Start_time_Planned")
+        line_timetable = line_timetable[journeys.index.tolist()]
 
-            # ----
-            # Correct the data
-            # ----
-            
-            # Correct time data
-            if correct_times:
-                line_timetable.loc[mask, journeys.loc[journeys.Direction == "O"].index] = line_timetable.loc[mask, journeys.loc[journeys.Direction == "O"].index].apply(lambda col : pd.to_datetime(((col.dropna()- pd.Timestamp("1970-01-01")) // pd.Timedelta("1s")).expanding(1).max(), unit="s"), axis = 0)
-                line_timetable.loc[mask, journeys.loc[journeys.Direction == "R"].index] = line_timetable.loc[mask, journeys.loc[journeys.Direction == "R"].index].apply(lambda col : pd.to_datetime(((col.dropna().iloc[::-1].reindex(["ARRIVAL_REAL", "DEPARTURE_REAL"], level=2)- pd.Timestamp("1970-01-01")) // pd.Timedelta("1s")).expanding(1).max(), unit="s"), axis = 0)
+        # ----
+        # Correct the data
+        # ----
+        
+        # Correct time data
+        if correct_times:
+            line_timetable.loc[mask, journeys.loc[journeys.Direction == "O"].index] = line_timetable.loc[mask, journeys.loc[journeys.Direction == "O"].index].apply(lambda col : pd.to_datetime(((col.dropna()- pd.Timestamp("1970-01-01")) // pd.Timedelta("1s")).expanding(1).max(), unit="s"), axis = 0)
+            line_timetable.loc[mask, journeys.loc[journeys.Direction == "R"].index] = line_timetable.loc[mask, journeys.loc[journeys.Direction == "R"].index].apply(lambda col : pd.to_datetime(((col.dropna().iloc[::-1].reindex(["ARRIVAL_REAL", "DEPARTURE_REAL"], level=2)- pd.Timestamp("1970-01-01")) // pd.Timedelta("1s")).expanding(1).max(), unit="s"), axis = 0)
 
-            # Drop the routes that share minimal number of stops with the "main" route
-            if threshold > 0:
-                route_similitude = (routes.T * routes["Route_A"]).drop("Count", axis=1).sum(axis=1)
-                routes_to_drop = route_similitude.index[route_similitude < threshold]
+        # Drop the routes that share minimal number of stops with the "main" route
+        if threshold > 0:
+            only_routes = routes.drop(columns =["Count", "Direction"])
+            route_similitude = (only_routes * only_routes.loc["Route_A"]).sum(axis=1)
+            routes_to_drop = route_similitude.index[route_similitude < threshold]
 
-                if len(routes_to_drop) > 0:
-                    print(f"Dropping routes {', '.join(routes_to_drop)} as their similitude with Route_A is smaller than the threshold ({threshold})")
+            if len(routes_to_drop) > 0:
+                print(f"Dropping routes {', '.join(routes_to_drop)} as their similitude with Route_A is smaller than the threshold ({threshold})")
 
-                    stops = stops.drop(columns=routes_to_drop) # Remove the route
-                    stops = stops.loc[~stops.any(axis=1, bool_only=True)] # Remove stops where no route is going through it
-                    journeys_to_drop = journeys.index[journeys["Route"].isin(routes_to_drop)]
-                    print(f"Consequently, dropping journeys {', '.join(journeys_to_drop)}")
-                    journeys = journeys.drop(index=journeys_to_drop) # Remove concerned journeys from 'journeys' DataFrame
-                    line_timetable = line_timetable.drop(columns=journeys_to_drop) # Remove concerned journeys from the timetable
-                    line_timetable = line_timetable.dropna(how="all") # Remove stops where no journey is going through it
-                    print()
+                routes = routes.drop(index=routes_to_drop)
+                stops = stops.drop(columns=routes_to_drop) # Remove the route
+                stops = stops.loc[~stops.any(axis=1, bool_only=True)] # Remove stops where no route is going through it
+                journeys_to_drop = journeys.index[journeys["Route"].isin(routes_to_drop)]
+                print(f"Consequently, dropping journeys {', '.join(journeys_to_drop)}")
+                journeys = journeys.drop(index=journeys_to_drop) # Remove concerned journeys from 'journeys' DataFrame
+                line_timetable = line_timetable.drop(columns=journeys_to_drop) # Remove concerned journeys from the timetable
+                line_timetable = line_timetable.dropna(how="all") # Remove stops where no journey is going through it
+                print()
 
-            # ----
-            # Finalise and export
-            # ----
+        # ----
+        # Finalise and export
+        # ----
 
-            # Separate between "planned" (to the minute) and "real" (to the sec) data
-            mask = line_timetable.index.get_level_values("EVENT").str[-4:] == "REAL"
-            planned = line_timetable.loc[~mask]
-            real = line_timetable.loc[mask]
-
-            lines_timetables[line_id] = {
-                "planned": planned,
-                "real": real,
-                "full": line_timetable,
-                "stops": stops,
-                "journeys": journeys
-            }
-
-            # Name the folder according to LINE_ID (cleaned)
-            line_ref = re.sub(r'[^\w\d-]','_',line_id)
-            
-            # Export
-            os.makedirs(self.path_join(str(line_ref)), exist_ok=True)
-            for name, df in lines_timetables[line_id].items():
-                # Convert to string (preliminary to justifying the data)
-                df_for_export = (df
-                 .reset_index()
-                 .convert_dtypes()
-                 .astype("string")
-                 .replace({"True": "Yes", "False":""}))
-                # Justify the data
-                max_len = df_for_export.astype(str).map(len).max()
-                max_len = np.maximum(max_len, df_for_export.columns.str.len()) + 2
-                (df_for_export
-                 .fillna(max_len.apply(lambda x: " "*x))
-                 .apply(lambda x: x.str.rjust(max_len[x.name]), axis=0)
-                 .to_csv(self.path_join(str(line_ref), f"{line_name}_{name}.csv"), sep=";", index=False, header = df_for_export.columns.map(lambda x: x.center(max_len[x]))))
-
-        return lines_timetables
+        line_data = LineData(line_id, line_name, self.path, timetable = line_timetable, stops = stops, routes = routes, journeys= journeys)
+        line_data.save_data()
+        if return_data:
+            return line_data
