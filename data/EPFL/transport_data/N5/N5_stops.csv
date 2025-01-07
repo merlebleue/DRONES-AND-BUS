@@ -1,55 +1,55 @@
 STOP_NAME;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B
-St-Sulpice VD, Venoge sud;8579231;2531519;1151671;0;yes;yes
-St-Sulpice VD, Venoge nord;8594988;2531466;1151782;72;;yes
-Ecublens VD, Champs-Courbes;8591959;2531812;1152058;331;;yes
-St-Sulpice VD, Laviau;8588156;2531846;1151495;371;yes;
-Ecublens VD, Montaney;8594890;2532022;1152331;533;;yes
-St-Sulpice VD, Chantres;8588155;2532069;1151404;612;yes;
-Ecublens VD, Renges;8591956;2532177;1152742;790;;yes
-Ecublens VD, En Enjalin;8591949;2532358;1152927;942;;yes
-St-Sulpice VD, centre;8588158;2532419;1151355;966;yes;
-Ecublens VD, Perrettes;8591954;2532466;1153147;1085;;yes
-Ecublens VD, Villars;8591961;2532675;1153514;1332;;yes
-St-Sulpice VD, Bochet;8588157;2532528;1151716;1343;yes;
-Ecublens VD, Pontet;8588873;2533051;1153539;1553;;yes
-Ecublens VD, Veilloud;8591960;2532936;1153704;1671;;yes
-St-Sulpice VD, Russel;8592226;2532871;1151912;1738;yes;
-Ecublens VD, Stand;8591957;2532783;1153872;1804;;yes
-Ecublens VD, place de sport;8591955;2532890;1154149;1978;;yes
-Ecublens VD, Croset;8591948;2533084;1154084;2097;;yes
-Ecublens VD, Parc;8591953;2533217;1154336;2264;;yes
-St-Sulpice VD, Pâqueret;8592227;2533389;1152057;2276;yes;
-Ecublens VD, Campus des médias;8511813;2533322;1152164;2402;yes;
-Ecublens VD, Suchet-Forêt;8591958;2533411;1154656;2483;;yes
-Ecublens VD, Epenex/Pont-Bleu;8510721;2533763;1154498;2709;;yes
-Ecublens VD, Argand;8591944;2533488;1152483;2762;yes;
-Renens VD, gare sud;8588983;2534082;1154287;2933;;yes
-Ecublens VD, UNIL-Sorge;8501213;2533622;1152717;3031;yes;
-Chavannes-R., Glycines;8593869;2533869;1154252;3060;;yes
-Chavannes-R., Planta;8591933;2533594;1154023;3269;;yes
-Chavannes-R., Concorde;8593868;2533691;1153816;3403;;yes
-Chavannes-R., Préfaully;8593866;2534059;1153950;3632;;yes
-Chavannes-R., Mouline;8594987;2534069;1153126;3637;yes;
-Renens VD, Censuy;8592209;2534431;1153812;3865;;yes
-Renens VD, Caudray;8592218;2534580;1153738;3962;;yes
-Chavannes-R., Berges;8594986;2533735;1153276;4003;yes;
-Renens VD, Chêne;8592210;2534899;1153437;4219;;yes
-Renens VD, rue du Lac;8592219;2535061;1153251;4363;;yes
-Renens VD, Longemalle;8592215;2535392;1153045;4592;;yes
-Chavannes-R., Dorigny;8595602;2534420;1153187;4694;yes;
-Lausanne, Malley;8501209;2535848;1152880;4875;;yes
-Lausanne, Bourdonnette nord;8595521;2534825;1152975;5151;yes;
-Lausanne, Bourdonnette;8501210;2534868;1152794;5451;;yes
-Lausanne, Sablons;8592114;2535323;1152691;5725;yes;yes
-Lausanne, Bois de Vaux;8591995;2535630;1152359;6177;yes;yes
-Lausanne, Maladière-Figuiers;8593837;2536113;1152075;6737;yes;yes
-Lausanne, Figuiers;8592044;2536461;1152063;7085;yes;yes
-Lausanne, Montoie;8592080;2536302;1152226;7313;yes;yes
-Lausanne, Montelly;8501207;2536689;1152614;7781;;yes
-Lausanne, Belvédère;8591990;2536962;1152509;8031;yes;yes
-Lausanne, Tivoli;8592122;2537305;1152534;8375;yes;yes
-Lausanne, Chauderon;8592010;2537555;1152802;8742;yes;yes
-Lausanne, Bel-Air;8591988;2537880;1152653;9099;yes;yes
-Lausanne, St-François;8579254;2538215;1152325;9568;yes;yes
+St-Sulpice VD, Venoge sud;8579231;2531519;1151671;0;True;True
+St-Sulpice VD, Venoge nord;8594988;2531466;1151782;72;False;True
+Ecublens VD, Champs-Courbes;8591959;2531812;1152058;331;False;True
+St-Sulpice VD, Laviau;8588156;2531846;1151495;371;True;False
+Ecublens VD, Montaney;8594890;2532022;1152331;533;False;True
+St-Sulpice VD, Chantres;8588155;2532069;1151404;612;True;False
+Ecublens VD, Renges;8591956;2532177;1152742;790;False;True
+Ecublens VD, En Enjalin;8591949;2532358;1152927;942;False;True
+St-Sulpice VD, centre;8588158;2532419;1151355;966;True;False
+Ecublens VD, Perrettes;8591954;2532466;1153147;1085;False;True
+Ecublens VD, Villars;8591961;2532675;1153514;1332;False;True
+St-Sulpice VD, Bochet;8588157;2532528;1151716;1343;True;False
+Ecublens VD, Pontet;8588873;2533051;1153539;1553;False;True
+Ecublens VD, Veilloud;8591960;2532936;1153704;1671;False;True
+St-Sulpice VD, Russel;8592226;2532871;1151912;1738;True;False
+Ecublens VD, Stand;8591957;2532783;1153872;1804;False;True
+Ecublens VD, place de sport;8591955;2532890;1154149;1978;False;True
+Ecublens VD, Croset;8591948;2533084;1154084;2097;False;True
+Ecublens VD, Parc;8591953;2533217;1154336;2264;False;True
+St-Sulpice VD, Pâqueret;8592227;2533389;1152057;2276;True;False
+Ecublens VD, Campus des médias;8511813;2533322;1152164;2402;True;False
+Ecublens VD, Suchet-Forêt;8591958;2533411;1154656;2483;False;True
+Ecublens VD, Epenex/Pont-Bleu;8510721;2533763;1154498;2709;False;True
+Ecublens VD, Argand;8591944;2533488;1152483;2762;True;False
+Renens VD, gare sud;8588983;2534082;1154287;2933;False;True
+Ecublens VD, UNIL-Sorge;8501213;2533622;1152717;3031;True;False
+Chavannes-R., Glycines;8593869;2533869;1154252;3060;False;True
+Chavannes-R., Planta;8591933;2533594;1154023;3269;False;True
+Chavannes-R., Concorde;8593868;2533691;1153816;3403;False;True
+Chavannes-R., Préfaully;8593866;2534059;1153950;3632;False;True
+Chavannes-R., Mouline;8594987;2534069;1153126;3637;True;False
+Renens VD, Censuy;8592209;2534431;1153812;3865;False;True
+Renens VD, Caudray;8592218;2534580;1153738;3962;False;True
+Chavannes-R., Berges;8594986;2533735;1153276;4003;True;False
+Renens VD, Chêne;8592210;2534899;1153437;4219;False;True
+Renens VD, rue du Lac;8592219;2535061;1153251;4363;False;True
+Renens VD, Longemalle;8592215;2535392;1153045;4592;False;True
+Chavannes-R., Dorigny;8595602;2534420;1153187;4694;True;False
+Lausanne, Malley;8501209;2535848;1152880;4875;False;True
+Lausanne, Bourdonnette nord;8595521;2534825;1152975;5151;True;False
+Lausanne, Bourdonnette;8501210;2534868;1152794;5451;False;True
+Lausanne, Sablons;8592114;2535323;1152691;5725;True;True
+Lausanne, Bois de Vaux;8591995;2535630;1152359;6177;True;True
+Lausanne, Maladière-Figuiers;8593837;2536113;1152075;6737;True;True
+Lausanne, Figuiers;8592044;2536461;1152063;7085;True;True
+Lausanne, Montoie;8592080;2536302;1152226;7313;True;True
+Lausanne, Montelly;8501207;2536689;1152614;7781;False;True
+Lausanne, Belvédère;8591990;2536962;1152509;8031;True;True
+Lausanne, Tivoli;8592122;2537305;1152534;8375;True;True
+Lausanne, Chauderon;8592010;2537555;1152802;8742;True;True
+Lausanne, Bel-Air;8591988;2537880;1152653;9099;True;True
+Lausanne, St-François;8579254;2538215;1152325;9568;True;True
 Count;;;;;3;3
 Direction;;;;;O;R

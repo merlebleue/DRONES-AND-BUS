@@ -199,7 +199,7 @@ class TransportData:
      lines = "all",
      modes = None,
      correct_times = True,
-     threshold = 3,
+     threshold = 5,
      verbose= 1,
      solve_too_fast = False,
      return_data = True):
@@ -413,7 +413,24 @@ class TransportData:
             if correct_times:
                 line_timetable.loc[mask, journeys.loc[journeys.Direction == "O"].index] = line_timetable.loc[mask, journeys.loc[journeys.Direction == "O"].index].apply(lambda col : pd.to_datetime(((col.dropna()- pd.Timestamp("1970-01-01")) // pd.Timedelta("1s")).expanding(1).max(), unit="s"), axis = 0)
                 line_timetable.loc[mask, journeys.loc[journeys.Direction == "R"].index] = line_timetable.loc[mask, journeys.loc[journeys.Direction == "R"].index].apply(lambda col : pd.to_datetime(((col.dropna().iloc[::-1].reindex(["ARRIVAL_REAL", "DEPARTURE_REAL"], level=2)- pd.Timestamp("1970-01-01")) // pd.Timedelta("1s")).expanding(1).max(), unit="s"), axis = 0)
-            
+
+            # Drop the routes that share minimal number of stops with the "main" route
+            if threshold > 0:
+                route_similitude = (routes.T * routes["Route_A"]).drop("Count", axis=1).sum(axis=1)
+                routes_to_drop = route_similitude.index[route_similitude < threshold]
+
+                if len(routes_to_drop) > 0:
+                    print(f"Dropping routes {', '.join(routes_to_drop)} as their similitude with Route_A is smaller than the threshold ({threshold})")
+
+                    stops = stops.drop(columns=routes_to_drop) # Remove the route
+                    stops = stops.loc[~stops.any(axis=1, bool_only=True)] # Remove stops where no route is going through it
+                    journeys_to_drop = journeys.index[journeys["Route"].isin(routes_to_drop)]
+                    print(f"Consequently, dropping journeys {', '.join(journeys_to_drop)}")
+                    journeys = journeys.drop(index=journeys_to_drop) # Remove concerned journeys from 'journeys' DataFrame
+                    line_timetable = line_timetable.drop(columns=journeys_to_drop) # Remove concerned journeys from the timetable
+                    line_timetable = line_timetable.dropna(how="all") # Remove stops where no journey is going through it
+                    print()
+
             # ----
             # Finalise and export
             # ----

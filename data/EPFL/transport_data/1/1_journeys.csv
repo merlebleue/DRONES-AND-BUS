@@ -5,20 +5,17 @@ JOURNEY_ID;Route;Number_of_stops;Direction;Start;Start_time_Planned;Start_time_R
 85:151:60;Route_A;21;O;Lausanne, Blécherette;2025-03-01 05:27:00;2025-03-01 05:27:32;Lausanne, Maladière;2025-03-01 05:54:00;2025-03-01 05:52:51
 85:151:83;Route_B;23;R;Lausanne, Maladière;2025-03-01 05:40:00;2025-03-01 05:40:00;Lausanne, Blécherette;2025-03-01 06:08:00;2025-03-01 06:06:42
 85:151:2;Route_A;21;O;Lausanne, Blécherette;2025-03-01 05:42:00;2025-03-01 05:42:00;Lausanne, Maladière;2025-03-01 06:09:00;2025-03-01 06:08:21
-85:151:106;Route_F;5;O;Lausanne, Prélaz;2025-03-01 05:52:00;2025-03-01 05:52:00;Lausanne, Bel-Air;2025-03-01 05:59:00;2025-03-01 05:57:15
 85:151:10;Route_B;23;R;Lausanne, Maladière;2025-03-01 05:55:00;2025-03-01 05:55:48;Lausanne, Blécherette;2025-03-01 06:24:00;2025-03-01 06:23:27
 85:151:31;Route_D;31;O;Lausanne, Blécherette;2025-03-01 05:57:00;2025-03-01 05:57:28;Ecublens VD, EPFL/Colladon;2025-03-01 06:34:00;2025-03-01 06:33:06
 85:151:107;Route_E;22;O;Lausanne, Bel-Air;2025-03-01 05:59:00;2025-03-01 05:57:47;Ecublens VD, EPFL/Colladon;2025-03-01 06:25:00;2025-03-01 06:23:52
 85:151:61;Route_B;23;R;Lausanne, Maladière;2025-03-01 06:10:00;2025-03-01 06:10:00;Lausanne, Blécherette;2025-03-01 06:40:00;2025-03-01 06:38:05
 85:151:84;Route_D;31;O;Lausanne, Blécherette;2025-03-01 06:11:00;2025-03-01 06:11:40;Ecublens VD, EPFL/Colladon;2025-03-01 06:49:00;2025-03-01 06:46:53
-85:151:137;Route_F;5;O;Lausanne, Prélaz;2025-03-01 06:20:00;2025-03-01 06:21:53;Lausanne, Bel-Air;2025-03-01 06:27:00;2025-03-01 06:29:07
 85:151:114;Route_D;31;O;Lausanne, Blécherette;2025-03-01 06:22:00;2025-03-01 06:23:15;Ecublens VD, EPFL/Colladon;2025-03-01 07:00:00;2025-03-01 07:00:32
 85:151:3;Route_B;23;R;Lausanne, Maladière;2025-03-01 06:25:00;2025-03-01 06:25:00;Lausanne, Blécherette;2025-03-01 06:55:00;2025-03-01 06:53:46
 85:151:138;Route_E;22;O;Lausanne, Bel-Air;2025-03-01 06:27:00;2025-03-01 06:29:13;Ecublens VD, EPFL/Colladon;2025-03-01 06:54:00;2025-03-01 06:55:10
 85:151:167;Route_H;25;R;Lausanne, Sablons;2025-03-01 06:30:00;2025-03-01 06:30:58;Lausanne, Blécherette;2025-03-01 07:03:00;2025-03-01 07:01:18
 85:151:108;Route_C;31;R;Ecublens VD, EPFL/Colladon;2025-03-01 06:31:00;2025-03-01 06:31:00;Lausanne, Blécherette;2025-03-01 07:12:00;2025-03-01 07:09:49
 85:151:11;Route_D;31;O;Lausanne, Blécherette;2025-03-01 06:33:00;2025-03-01 06:33:47;Ecublens VD, EPFL/Colladon;2025-03-01 07:11:00;2025-03-01 07:10:24
-85:151:220;Route_J;6;O;Lausanne, Vieux-Moulin;2025-03-01 06:42:00;2025-03-01 06:42:11;Lausanne, Bel-Air;2025-03-01 06:50:00;2025-03-01 06:48:31
 85:151:62;Route_D;31;O;Lausanne, Blécherette;2025-03-01 06:44:00;2025-03-01 06:44:51;Ecublens VD, EPFL/Colladon;2025-03-01 07:23:00;2025-03-01 07:22:10
 85:151:32;Route_C;31;R;Ecublens VD, EPFL/Colladon;2025-03-01 06:46:00;2025-03-01 06:46:27;Lausanne, Blécherette;2025-03-01 07:29:00;2025-03-01 07:27:16
 85:151:173;Route_H;25;R;Lausanne, Sablons;2025-03-01 06:46:00;2025-03-01 06:46:55;Lausanne, Blécherette;2025-03-01 07:21:00;2025-03-01 07:21:11
@@ -199,7 +196,6 @@ JOURNEY_ID;Route;Number_of_stops;Direction;Start;Start_time_Planned;Start_time_R
 85:151:102;Route_A;21;O;Lausanne, Blécherette;2025-03-01 19:09:00;2025-03-01 19:09:51;Lausanne, Maladière;2025-03-01 19:39:00;2025-03-01 19:38:03
 85:151:156;Route_A;21;O;Lausanne, Blécherette;2025-03-01 19:19:00;2025-03-01 19:19:06;Lausanne, Maladière;2025-03-01 19:49:00;2025-03-01 19:45:48
 85:151:79;Route_B;23;R;Lausanne, Maladière;2025-03-01 19:21:00;2025-03-01 19:21:06;Lausanne, Blécherette;2025-03-01 19:53:00;2025-03-01 19:51:52
-85:151:239;Route_I;7;R;Lausanne, St-François;2025-03-01 19:24:00;2025-03-01 19:24:00;Lausanne, Vieux-Moulin;2025-03-01 19:34:00;2025-03-01 19:32:52
 85:151:132;Route_A;21;O;Lausanne, Blécherette;2025-03-01 19:29:00;2025-03-01 19:29:06;Lausanne, Maladière;2025-03-01 19:59:00;2025-03-01 19:58:33
 85:151:209;Route_B;23;R;Lausanne, Maladière;2025-03-01 19:31:00;2025-03-01 19:31:00;Lausanne, Blécherette;2025-03-01 20:03:00;2025-03-01 20:03:11
 85:151:247;Route_A;21;O;Lausanne, Blécherette;2025-03-01 19:39:00;2025-03-01 19:40:14;Lausanne, Maladière;2025-03-01 20:09:00;2025-03-01 20:09:56
@@ -212,7 +208,6 @@ JOURNEY_ID;Route;Number_of_stops;Direction;Start;Start_time_Planned;Start_time_R
 85:151:210;Route_A;21;O;Lausanne, Blécherette;2025-03-01 20:10:00;2025-03-01 20:10:00;Lausanne, Maladière;2025-03-01 20:39:00;2025-03-01 20:42:07
 85:151:248;Route_B;23;R;Lausanne, Maladière;2025-03-01 20:14:00;2025-03-01 20:14:49;Lausanne, Blécherette;2025-03-01 20:45:00;2025-03-01 20:43:37
 85:151:51;Route_A;21;O;Lausanne, Blécherette;2025-03-01 20:22:00;2025-03-01 20:22:56;Lausanne, Maladière;2025-03-01 20:51:00;2025-03-01 20:46:44
-85:151:134;Route_I;7;R;Lausanne, St-François;2025-03-01 20:25:00;2025-03-01 20:25:24;Lausanne, Vieux-Moulin;2025-03-01 20:35:00;2025-03-01 20:34:22
 85:151:263;Route_B;23;R;Lausanne, Maladière;2025-03-01 20:28:00;2025-03-01 20:30:38;Lausanne, Blécherette;2025-03-01 20:59:00;2025-03-01 20:57:28
 85:151:158;Route_A;21;O;Lausanne, Blécherette;2025-03-01 20:37:00;2025-03-01 20:37:27;Lausanne, Maladière;2025-03-01 21:06:00;2025-03-01 21:04:09
 85:151:211;Route_B;23;R;Lausanne, Maladière;2025-03-01 20:43:00;2025-03-01 20:43:55;Lausanne, Blécherette;2025-03-01 21:14:00;2025-03-01 21:15:00
