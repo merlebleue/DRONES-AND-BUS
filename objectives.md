@@ -73,4 +73,10 @@ Steps :
 1. Bus stops position [v]
 2. Bus speed [/]
 3. Headway [x]
-4. Delays [x]
+4. Delays [x] 
+
+# 06.01.2024
+
+- No time
+- Possibility of using the bus lines from task
+  - Evaluate quantitavely (reduce_drone_flight_distance)
