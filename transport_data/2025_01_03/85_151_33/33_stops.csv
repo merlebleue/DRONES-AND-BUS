@@ -1,0 +1,32 @@
+           STOP_NAME           ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A 
+     St-Sulpice VD, Venoge nord;      8594988;      2531466.0;      1151782.0;                 0.0;      Yes
+    Ecublens VD, Champs-Courbes;      8591959;      2531812.0;      1152058.0;   442.5968820495689;      Yes
+          Ecublens VD, Montaney;      8594890;      2532022.0;      1152331.0;   787.0224908535602;      Yes
+            Ecublens VD, Renges;      8591956;      2532177.0;      1152742.0;   1226.278680337556;      Yes
+        Ecublens VD, En Enjalin;      8591949;      2532358.0;      1152927.0;  1485.0952176762662;      Yes
+         Ecublens VD, Perrettes;      8591954;      2532466.0;      1153147.0;  1730.1747965889124;      Yes
+           Ecublens VD, Villars;      8591961;      2532675.0;      1153514.0;   2152.513523205357;      Yes
+            Ecublens VD, Pontet;      8588873;      2533051.0;      1153539.0;   2529.343723693588;      Yes
+          Ecublens VD, Veilloud;      8591960;      2532936.0;      1153704.0;  2730.4655773047757;      Yes
+             Ecublens VD, Stand;      8591957;      2532783.0;      1153872.0;   2957.694536726765;      Yes
+    Ecublens VD, place de sport;      8591955;      2532890.0;      1154149.0;  3254.6423435885094;      Yes
+            Ecublens VD, Croset;      8591948;      2533084.0;      1154084.0;  3459.2419525812934;      Yes
+              Ecublens VD, Parc;      8591953;      2533217.0;      1154336.0;  3744.1858066999603;      Yes
+      Ecublens VD, Suchet-Forêt;      8591958;      2533411.0;      1154656.0;   4118.399649308702;      Yes
+  Ecublens VD, Epenex/Pont-Bleu;      8510721;   2533763.3282;   1154498.1669;   4504.464990890588;      Yes
+            Renens VD, gare sud;      8588983;      2534082.0;      1154287.0;   4886.751762530623;      Yes
+              Renens VD, Censuy;      8592209;      2534431.0;      1153812.0;   5476.180299335552;      Yes
+             Renens VD, Caudray;      8592218;      2534580.0;      1153738.0;   5642.544357953993;      Yes
+               Renens VD, Chêne;      8592210;      2534899.0;      1153437.0;   6081.135283532715;      Yes
+          Renens VD, rue du Lac;      8592219;      2535061.0;      1153251.0;   6327.792941025848;      Yes
+          Renens VD, Longemalle;      8592215;      2535392.0;      1153045.0;   6717.660867380402;      Yes
+               Lausanne, Malley;      8501209;  2535847.94901;  1152880.22349;   7202.470931186682;      Yes
+               Prilly, Galicien;      8592049;      2535968.0;      1153319.0;   7657.374290074845;      Yes
+               Prilly, Flumeaux;      8592179;      2535710.0;      1153529.0;   7990.036280689944;      Yes
+            Prilly, Grand Vigne;      8592180;      2535964.0;      1153723.0;   8309.648545786264;      Yes
+                 Prilly, centre;      8592173;   2536064.6179;  1154037.43158;   8639.786668852586;      Yes
+               Prilly, Chasseur;      8592175;      2536176.0;      1154545.0;   9159.432387762714;      Yes
+               Prilly, Coudraie;      8592176;      2536413.0;      1154670.0;    9427.37641176773;      Yes
+            Prilly, Mont-Goulin;      8592187;      2536517.0;      1154484.0;   9640.477326829116;      Yes
+                          Count;             ;               ;               ;                    ;      154
+                      Direction;             ;               ;               ;                    ;       RO

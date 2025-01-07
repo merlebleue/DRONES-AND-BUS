@@ -5,3 +5,9 @@ __pycache__/*
 .vscode/*
 old/*
 __pycache__\*
+NotInGithub/*
+NotInGithub\*
+raw_data/*
+raw_data\*
+*\__pycache__\*
+*/__pycache__/*

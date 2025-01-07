@@ -1,0 +1,7 @@
+  JOURNEY_ID ;  Route  ; Number_of_stops ; Direction ;           Start           ;  Start_time_Planned ;   Start_time_Real   ;            End            ;   End_time_Planned  ;    End_time_Real    
+  85:151:7069;  Route_B;               39;          R;      Lausanne, St-François;  2025-04-01 00:59:00;  2025-04-01 00:59:16;  St-Sulpice VD, Venoge sud;  2025-04-01 01:42:00;  2025-04-01 01:41:25
+  85:151:7070;  Route_A;               24;          O;  St-Sulpice VD, Venoge sud;  2025-04-01 01:42:00;  2025-04-01 01:42:46;      Lausanne, St-François;  2025-04-01 02:13:00;  2025-04-01 02:11:25
+  85:151:7072;  Route_B;               39;          R;      Lausanne, St-François;  2025-04-01 02:51:00;  2025-04-01 02:12:19;  St-Sulpice VD, Venoge sud;  2025-04-01 03:34:00;  2025-04-01 02:54:51
+  85:151:7073;  Route_A;               24;          O;  St-Sulpice VD, Venoge sud;  2025-04-01 03:34:00;  2025-04-01 03:34:00;      Lausanne, St-François;  2025-04-01 04:05:00;  2025-04-01 04:05:00
+  85:151:7075;  Route_B;               39;          R;      Lausanne, St-François;  2025-04-01 04:15:00;  2025-04-01 04:15:00;  St-Sulpice VD, Venoge sud;  2025-04-01 04:58:00;  2025-04-01 04:58:00
+  85:151:7076;  Route_A;               24;          O;  St-Sulpice VD, Venoge sud;  2025-04-01 04:58:00;  2025-04-01 04:58:00;      Lausanne, St-François;  2025-04-01 05:29:00;  2025-04-01 05:29:00

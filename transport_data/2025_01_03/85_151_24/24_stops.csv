@@ -1,0 +1,15 @@
+           STOP_NAME            ; STOP_NUMBER ; POSITION_X ; POSITION_Y ;      DISTANCE      ; Route_A 
+          Lausanne, Bourdonnette;      8501210;     2534868;     1152794;                 0.0;      Yes
+      Lausanne, sports UNIL-EPFL;      8595937;     2534561;     1152552;   390.9130338067535;      Yes
+          Lausanne, Parc Bourget;      8595939;     2535156;     1152304;  1035.5284230118205;      Yes
+          Lausanne, Siège du CIO;      8595934;     2535573;     1152152;  1479.3673577618038;      Yes
+    Lausanne, Stade de Coubertin;      8595935;     2535848;     1151907;  1847.6742949758618;      Yes
+             Lausanne, Vidy-Port;      8595938;     2536177;     1151807;  2191.5361858564884;      Yes
+       Lausanne, Théâtre de Vidy;      8592121;     2536530;     1151767;  2546.7952462617086;      Yes
+             Lausanne, Bellerive;      8591989;     2536967;     1151471;  3074.6067656509695;      Yes
+              Lausanne, Pêcheurs;      8592090;     2537175;     1151272;  3362.4695801998446;      Yes
+       Lausanne, Ouchy-Olympique;      8592086;     2537676;     1151008;  3928.7707368294245;      Yes
+  Lausanne, Parc Musée Olympique;      8595933;     2538156;     1150989;   4409.146631312068;      Yes
+    Lausanne, Tour Haldimand-Lac;      8595936;     2538756;     1150758;   5052.078198432551;      Yes
+                           Count;             ;            ;            ;                    ;      131
+                       Direction;             ;            ;            ;                    ;       OR

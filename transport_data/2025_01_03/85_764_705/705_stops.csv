@@ -1,0 +1,29 @@
+          STOP_NAME           ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B ; Route_C ; Route_D ; Route_E 
+                   Lonay, parc;      8592254;      2529262.0;      1153429.0;                 0.0;      Yes;      Yes;         ;         ;      Yes
+              Lonay, Pressoirs;      8595219;  2529507.31315;  1153105.17853;   406.2497827640676;      Yes;      Yes;         ;         ;         
+  Lonay-Préverenges, gare nord;      8511344;  2529438.71944;  1152899.15485;   623.3922562053779;      Yes;      Yes;         ;         ;         
+   Lonay-Préverenges, gare sud;      8595218;      2529592.0;      1152847.0;   785.3029058007671;      Yes;      Yes;         ;         ;      Yes
+         Préverenges, Capellan;      8588898;      2529954.0;      1152437.0;  1332.2434875827373;      Yes;      Yes;         ;         ;      Yes
+          Préverenges, village;      8579230;      2529987.0;      1152190.0;  1581.4381905761998;      Yes;      Yes;         ;         ;      Yes
+           Denges, Pierraz-Mur;      8592240;      2530776.0;      1151938.0;   2409.704452112911;      Yes;      Yes;         ;         ;      Yes
+       Denges, Sur les Moulins;      8592241;  2531176.04448;  1151922.30311;   2810.056769870994;      Yes;      Yes;         ;         ;      Yes
+               Denges, La Pale;      8592239;  2531209.31847;   1152347.6803;   3236.733359553061;      Yes;      Yes;         ;         ;      Yes
+               Denges, village;      8592242;  2531088.48382;  1152835.77612;    3739.56388979378;      Yes;      Yes;         ;         ;         
+             Denges, Les Oches;      8588872;  2531178.62831;  1153155.79499;   4072.036604814773;      Yes;      Yes;         ;         ;      Yes
+            Echandens, collège;      8595213;  2531135.13246;   1153844.1333;   4761.747789283253;      Yes;      Yes;         ;         ;      Yes
+             Echandens, centre;      8588875;      2531142.0;      1154096.0;   5013.708099003831;      Yes;      Yes;      Yes;      Yes;      Yes
+               Echandens, Riaz;      8592243;   2531227.4023;  1154311.99642;   5245.975200200128;      Yes;      Yes;      Yes;      Yes;      Yes
+       Echandens, Chocolatière;      8592244;  2531587.78513;  1154297.10699;   5606.665481860925;      Yes;      Yes;      Yes;      Yes;      Yes
+    Ecublens VD, Larges Pièces;      8592248;  2532232.11857;  1153795.57806;   6423.180545732287;      Yes;      Yes;      Yes;      Yes;         
+          Ecublens VD, Villars;      8591961;      2532675.0;      1153514.0;   6947.994955702375;      Yes;      Yes;      Yes;      Yes;      Yes
+          Ecublens VD, Cocarde;      8591946;      2532620.0;      1153341.0;     7129.5273219625;      Yes;         ;         ;      Yes;         
+        Ecublens VD, Perrettes;      8591954;      2532466.0;      1153147.0;   7277.023399474786;         ;      Yes;      Yes;         ;      Yes
+            Ecublens VD, Motty;      8591951;      2532705.0;      1153108.0;   7377.547482433378;      Yes;         ;         ;      Yes;         
+       Ecublens VD, En Enjalin;      8591949;      2532358.0;      1152927.0;   7467.955813123083;         ;      Yes;      Yes;         ;         
+      Ecublens VD, Coquerellaz;      8591947;  2532646.40257;  1152941.46273;   7554.093003763311;      Yes;         ;         ;      Yes;         
+            Ecublens VD, Ormet;      8591952;      2532495.0;      1152858.0;   7587.460104442336;         ;      Yes;      Yes;         ;      Yes
+       Ecublens VD, EPFL (bus);      8579233;      2533107.0;      1152679.0;   8084.221928801125;      Yes;      Yes;      Yes;      Yes;      Yes
+           Ecublens VD, Argand;      8591944;      2533488.0;      1152483.0;   8512.680794971497;      Yes;         ;         ;      Yes;         
+     Ecublens VD, EPFL Piccard;      8579234;  2533226.62602;  1152482.70215;   8774.054944679805;      Yes;      Yes;      Yes;      Yes;      Yes
+                         Count;             ;               ;               ;                    ;       54;       53;       16;       16;        1
+                     Direction;             ;               ;               ;                    ;        O;        R;        R;        O;        R

@@ -1,0 +1,21 @@
+           STOP_NAME            ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B 
+             Renens VD, gare sud;      8588983;      2534082.0;      1154287.0;                 0.0;      Yes;      Yes
+          Chavannes-R., Glycines;      8593869;      2533869.0;      1154252.0;   215.8564337702261;      Yes;      Yes
+            Chavannes-R., Planta;      8591933;      2533594.0;      1154023.0;   573.7195360872993;      Yes;      Yes
+          Chavannes-R., Concorde;      8593868;      2533691.0;      1153816.0;   802.3196235763464;      Yes;      Yes
+            Chavannes-R., Cèdres;      8507227;      2533580.0;      1153574.0;    1068.56199435906;      Yes;      Yes
+            Chavannes-R., Plaine;      8593867;      2533535.1;      1153397.8;  1250.3928223282887;      Yes;      Yes
+            Chavannes-R., Berges;      8594986;      2533735.0;      1153276.0;   1484.476674825581;      Yes;      Yes
+           Chavannes-R., Mouline;      8594987;      2534069.0;      1153126.0;  1850.6132613612617;      Yes;      Yes
+         Ecublens VD, UNIL-Sorge;      8501213;      2533622.0;      1152717.0;   2456.492787339818;      Yes;      Yes
+             Ecublens VD, Argand;      8591944;      2533488.0;      1152483.0;  2726.1444144441243;      Yes;      Yes
+  Ecublens VD, Campus des médias;      8511813;  2533321.79839;  1152163.77392;   3049.940659066292;         ;      Yes
+         St-Sulpice VD, Pâqueret;      8592227;   2533389.0391;  1152057.10831;  3163.3823260435174;      Yes;      Yes
+           St-Sulpice VD, Russel;      8592226;      2532871.0;      1151912.0;  3701.3608858022244;      Yes;      Yes
+           St-Sulpice VD, Bochet;      8588157;      2532528.0;      1151716.0;   4096.411515468853;      Yes;      Yes
+           St-Sulpice VD, centre;      8588158;      2532419.0;      1151355.0;   4473.508320016439;      Yes;      Yes
+         St-Sulpice VD, Chantres;      8588155;      2532069.0;      1151404.0;    4826.92167573464;      Yes;      Yes
+           St-Sulpice VD, Laviau;      8588156;      2531846.0;      1151495.0;    5067.77432778564;      Yes;      Yes
+       St-Sulpice VD, Venoge sud;      8579231;      2531519.0;      1151671.0;   5439.129952490584;      Yes;      Yes
+                           Count;             ;               ;               ;                    ;       77;       77
+                       Direction;             ;               ;               ;                    ;        O;        R
