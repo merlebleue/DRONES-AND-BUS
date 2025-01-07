@@ -1,45 +1,45 @@
-STOP_NAME                      ;STOP_NUMBER ;POSITION_X ;POSITION_Y ;DISTANCE ;Route_A ;Route_B ;Route_C ;Route_D ;Route_E ;Route_F ;Route_G ;Route_H ;Route_I ;Route_J
-Lausanne, Blécherette          ;    8591994 ;   2537294 ;   1154878 ;       0 ;yes     ;yes     ;yes     ;yes     ;        ;        ;        ;yes     ;        ;
-Lausanne, Bois-Gentil          ;    8591996 ;   2537375 ;   1154479 ;     407 ;yes     ;yes     ;yes     ;yes     ;        ;        ;        ;yes     ;        ;
-Lausanne, Parc Vélodrome       ;    8592088 ;   2537488 ;   1154184 ;     723 ;yes     ;yes     ;yes     ;yes     ;        ;        ;        ;yes     ;        ;
-Lausanne, Stade Olympique      ;    8592116 ;   2537662 ;   1153939 ;    1024 ;yes     ;yes     ;yes     ;yes     ;        ;        ;        ;yes     ;        ;
-Lausanne, Vieux-Moulin         ;    8592132 ;   2537971 ;   1153870 ;    1146 ;        ;        ;        ;        ;        ;        ;        ;        ;yes     ;yes
-Lausanne, casernes             ;    8592003 ;   2537827 ;   1153699 ;    1315 ;yes     ;yes     ;yes     ;yes     ;        ;        ;        ;yes     ;        ;
-Lausanne, Oiseaux              ;    8592085 ;   2537925 ;   1153626 ;    1453 ;        ;yes     ;yes     ;        ;        ;        ;        ;yes     ;        ;
-Lausanne, Druey                ;    8592033 ;   2537780 ;   1153494 ;    1525 ;yes     ;        ;        ;yes     ;        ;        ;        ;        ;        ;
-Lausanne, Grande-Borde         ;    8592053 ;   2538097 ;   1153502 ;    1535 ;        ;        ;        ;        ;        ;        ;        ;        ;yes     ;yes
-Lausanne, Druey-Collège        ;    8592034 ;   2537996 ;   1153331 ;    1796 ;yes     ;yes     ;yes     ;yes     ;        ;        ;        ;yes     ;        ;
-Lausanne, Mémise               ;    8592071 ;   2538205 ;   1153223 ;    1834 ;        ;        ;        ;        ;        ;        ;        ;        ;yes     ;yes
-Lausanne, Tunnel               ;    8504176 ;   2538300 ;   1153000 ;    2076 ;        ;        ;        ;        ;        ;        ;        ;        ;yes     ;yes
-Lausanne, Valentin             ;    8592125 ;   2538052 ;   1152903 ;    2228 ;yes     ;yes     ;yes     ;yes     ;        ;        ;        ;yes     ;        ;
-Lausanne, Riponne-M. Béjart    ;    8590442 ;   2538107 ;   1152738 ;    2401 ;yes     ;yes     ;yes     ;yes     ;        ;        ;        ;yes     ;yes     ;yes
-Lausanne, Bel-Air              ;    8591988 ;   2537880 ;   1152653 ;    2644 ;yes     ;yes     ;yes     ;yes     ;yes     ;yes     ;        ;yes     ;yes     ;yes
-Lausanne, St-François          ;    8579254 ;   2538215 ;   1152325 ;    3113 ;yes     ;yes     ;yes     ;yes     ;yes     ;        ;yes     ;yes     ;yes     ;
-Lausanne, Georgette            ;    8592051 ;   2538569 ;   1152150 ;    3508 ;yes     ;yes     ;yes     ;yes     ;yes     ;        ;yes     ;yes     ;        ;
-Lausanne, Mirabeau             ;    8592072 ;   2538313 ;   1152052 ;    3772 ;        ;yes     ;yes     ;        ;        ;        ;yes     ;yes     ;        ;
-Lausanne, gare                 ;    8592050 ;   2537919 ;   1152132 ;    4158 ;yes     ;yes     ;yes     ;yes     ;yes     ;        ;yes     ;yes     ;        ;
-Lausanne, Epinettes            ;    8592040 ;   2537608 ;   1151949 ;    4519 ;yes     ;yes     ;yes     ;yes     ;yes     ;        ;yes     ;yes     ;        ;
-Lausanne, Dapples              ;    8592027 ;   2537591 ;   1151819 ;    4650 ;yes     ;yes     ;yes     ;yes     ;yes     ;        ;yes     ;yes     ;        ;
-Lausanne, Cour                 ;    8592024 ;   2537618 ;   1151575 ;    4813 ;        ;yes     ;yes     ;        ;        ;        ;yes     ;yes     ;        ;
-Lausanne, jardin botanique     ;    8591985 ;   2537407 ;   1151579 ;    4953 ;yes     ;yes     ;yes     ;yes     ;yes     ;        ;yes     ;yes     ;        ;
-Lausanne, Cèdres               ;    8592005 ;   2537110 ;   1151830 ;    5341 ;yes     ;yes     ;yes     ;yes     ;yes     ;        ;yes     ;yes     ;        ;
-Lausanne, Riant-Cour           ;    8592110 ;   2536871 ;   1151918 ;    5596 ;yes     ;yes     ;yes     ;yes     ;yes     ;        ;yes     ;yes     ;        ;
-Lausanne, Batelière            ;    8591983 ;   2536637 ;   1152009 ;    5847 ;yes     ;yes     ;yes     ;yes     ;yes     ;        ;yes     ;yes     ;        ;
-Lausanne, Montoie              ;    8592080 ;   2536302 ;   1152226 ;    6246 ;yes     ;yes     ;yes     ;yes     ;yes     ;        ;yes     ;yes     ;        ;
-Lausanne, Maladière            ;    8592068 ;   2536059 ;   1152132 ;    6507 ;yes     ;yes     ;yes     ;yes     ;yes     ;        ;yes     ;yes     ;        ;
-Lausanne, Bois de Vaux         ;    8591995 ;   2535630 ;   1152359 ;    6992 ;        ;        ;yes     ;yes     ;yes     ;        ;        ;yes     ;        ;
-Lausanne, Sablons              ;    8592114 ;   2535323 ;   1152691 ;    7444 ;        ;        ;yes     ;yes     ;yes     ;        ;        ;yes     ;        ;
-Lausanne, Bourdonnette         ;    8501210 ;   2534868 ;   1152794 ;    7911 ;        ;        ;yes     ;yes     ;yes     ;        ;        ;        ;        ;
-Ecublens VD, allée de Dorigny  ;    8591950 ;   2534284 ;   1152491 ;    8569 ;        ;        ;yes     ;yes     ;yes     ;        ;        ;        ;        ;
-Ecublens VD, Blévallaire       ;    8596053 ;   2533903 ;   1152393 ;    8962 ;        ;        ;yes     ;yes     ;yes     ;        ;        ;        ;        ;
-Ecublens VD, Champagne         ;    8591945 ;   2533573 ;   1152258 ;    9319 ;        ;        ;yes     ;yes     ;yes     ;        ;        ;        ;        ;
-Ecublens VD, Campus des médias ;    8511813 ;   2533322 ;   1152164 ;    9587 ;        ;        ;yes     ;yes     ;yes     ;        ;        ;        ;        ;
-St-Sulpice VD, Parc Scient.    ;    8595223 ;   2532863 ;   1152073 ;    9782 ;        ;        ;        ;yes     ;yes     ;        ;        ;        ;        ;
-St-Sulpice VD, Pré-Fleuri      ;    8510528 ;   2532618 ;   1151924 ;    9901 ;        ;        ;        ;yes     ;yes     ;        ;        ;        ;        ;
-Ecublens VD, EPFL/Colladon     ;    8510727 ;   2532850 ;   1152240 ;   10064 ;        ;        ;yes     ;yes     ;yes     ;        ;        ;        ;        ;
-Count                          ;            ;           ;           ;         ;73      ;71      ;46      ;45      ;3       ;2       ;2       ;2       ;2       ;1
-Lausanne, Boston               ;    8592001 ;   2537405 ;   1152837 ;         ;        ;        ;        ;        ;        ;yes     ;        ;        ;        ;
-Lausanne, Chauderon            ;    8592010 ;   2537555 ;   1152802 ;         ;        ;        ;        ;        ;        ;yes     ;        ;        ;        ;
-Lausanne, Prélaz               ;    8592102 ;   2536612 ;   1153116 ;         ;        ;        ;        ;        ;        ;yes     ;        ;        ;        ;
-Lausanne, Recordon             ;    8592109 ;   2537035 ;   1153025 ;         ;        ;        ;        ;        ;        ;yes     ;        ;        ;        ;
-Direction                      ;            ;           ;           ;         ;O       ;R       ;R       ;O       ;O       ;O       ;R       ;R       ;R       ;O
+STOP_NAME;STOP_NUMBER;POSITION_X;POSITION_Y;DISTANCE;Route_A;Route_B;Route_C;Route_D;Route_E;Route_F;Route_G;Route_H;Route_I;Route_J
+Lausanne, Blécherette;8591994;2537294;1154878;0;yes;yes;yes;yes;;;;yes;;
+Lausanne, Bois-Gentil;8591996;2537375;1154479;407;yes;yes;yes;yes;;;;yes;;
+Lausanne, Parc Vélodrome;8592088;2537488;1154184;723;yes;yes;yes;yes;;;;yes;;
+Lausanne, Stade Olympique;8592116;2537662;1153939;1024;yes;yes;yes;yes;;;;yes;;
+Lausanne, Vieux-Moulin;8592132;2537971;1153870;1146;;;;;;;;;yes;yes
+Lausanne, casernes;8592003;2537827;1153699;1315;yes;yes;yes;yes;;;;yes;;
+Lausanne, Oiseaux;8592085;2537925;1153626;1453;;yes;yes;;;;;yes;;
+Lausanne, Druey;8592033;2537780;1153494;1525;yes;;;yes;;;;;;
+Lausanne, Grande-Borde;8592053;2538097;1153502;1535;;;;;;;;;yes;yes
+Lausanne, Druey-Collège;8592034;2537996;1153331;1796;yes;yes;yes;yes;;;;yes;;
+Lausanne, Mémise;8592071;2538205;1153223;1834;;;;;;;;;yes;yes
+Lausanne, Tunnel;8504176;2538300;1153000;2076;;;;;;;;;yes;yes
+Lausanne, Valentin;8592125;2538052;1152903;2228;yes;yes;yes;yes;;;;yes;;
+Lausanne, Riponne-M. Béjart;8590442;2538107;1152738;2401;yes;yes;yes;yes;;;;yes;yes;yes
+Lausanne, Bel-Air;8591988;2537880;1152653;2644;yes;yes;yes;yes;yes;yes;;yes;yes;yes
+Lausanne, St-François;8579254;2538215;1152325;3113;yes;yes;yes;yes;yes;;yes;yes;yes;
+Lausanne, Georgette;8592051;2538569;1152150;3508;yes;yes;yes;yes;yes;;yes;yes;;
+Lausanne, Mirabeau;8592072;2538313;1152052;3772;;yes;yes;;;;yes;yes;;
+Lausanne, gare;8592050;2537919;1152132;4158;yes;yes;yes;yes;yes;;yes;yes;;
+Lausanne, Epinettes;8592040;2537608;1151949;4519;yes;yes;yes;yes;yes;;yes;yes;;
+Lausanne, Dapples;8592027;2537591;1151819;4650;yes;yes;yes;yes;yes;;yes;yes;;
+Lausanne, Cour;8592024;2537618;1151575;4813;;yes;yes;;;;yes;yes;;
+Lausanne, jardin botanique;8591985;2537407;1151579;4953;yes;yes;yes;yes;yes;;yes;yes;;
+Lausanne, Cèdres;8592005;2537110;1151830;5341;yes;yes;yes;yes;yes;;yes;yes;;
+Lausanne, Riant-Cour;8592110;2536871;1151918;5596;yes;yes;yes;yes;yes;;yes;yes;;
+Lausanne, Batelière;8591983;2536637;1152009;5847;yes;yes;yes;yes;yes;;yes;yes;;
+Lausanne, Montoie;8592080;2536302;1152226;6246;yes;yes;yes;yes;yes;;yes;yes;;
+Lausanne, Maladière;8592068;2536059;1152132;6507;yes;yes;yes;yes;yes;;yes;yes;;
+Lausanne, Bois de Vaux;8591995;2535630;1152359;6992;;;yes;yes;yes;;;yes;;
+Lausanne, Sablons;8592114;2535323;1152691;7444;;;yes;yes;yes;;;yes;;
+Lausanne, Bourdonnette;8501210;2534868;1152794;7911;;;yes;yes;yes;;;;;
+Ecublens VD, allée de Dorigny;8591950;2534284;1152491;8569;;;yes;yes;yes;;;;;
+Ecublens VD, Blévallaire;8596053;2533903;1152393;8962;;;yes;yes;yes;;;;;
+Ecublens VD, Champagne;8591945;2533573;1152258;9319;;;yes;yes;yes;;;;;
+Ecublens VD, Campus des médias;8511813;2533322;1152164;9587;;;yes;yes;yes;;;;;
+St-Sulpice VD, Parc Scient.;8595223;2532863;1152073;9782;;;;yes;yes;;;;;
+St-Sulpice VD, Pré-Fleuri;8510528;2532618;1151924;9901;;;;yes;yes;;;;;
+Ecublens VD, EPFL/Colladon;8510727;2532850;1152240;10064;;;yes;yes;yes;;;;;
+Count;;;;;73;71;46;45;3;2;2;2;2;1
+Lausanne, Boston;8592001;2537405;1152837;;;;;;;yes;;;;
+Lausanne, Chauderon;8592010;2537555;1152802;;;;;;;yes;;;;
+Lausanne, Prélaz;8592102;2536612;1153116;;;;;;;yes;;;;
+Lausanne, Recordon;8592109;2537035;1153025;;;;;;;yes;;;;
+Direction;;;;;O;R;R;O;O;O;R;R;R;O

@@ -198,6 +198,8 @@ class TransportData:
     def generate_timetable(self,
      lines = "all",
      modes = None,
+     correct_errors = True,
+     threshold = 3,
      verbose= 1,
      solve_too_fast = False,
      return_data = True):
@@ -403,6 +405,14 @@ class TransportData:
             journeys = journeys.sort_values("Start_time_Planned")
             line_timetable = line_timetable[journeys.index.tolist()]
 
+            # ----
+            # Correct the data
+            # ----
+
+            # Correct time data
+            if correct_errors:
+                line_timetable[journeys.loc[journeys.Direction == "O"].index].apply(lambda col : pd.to_datetime(((col- pd.Timestamp("1970-01-01")) // pd.Timedelta("1s")).expanding(1).max(), unit="s"), axis = 1)
+                line_timetable[journeys.loc[journeys.Direction == "R"].index].apply(lambda col : pd.to_datetime(((col- pd.Timestamp("1970-01-01")) // pd.Timedelta("1s")).expanding(1).min(), unit="s"), axis = 1)
             # ----
             # Finalise and export
             # ----
