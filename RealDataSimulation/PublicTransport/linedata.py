@@ -102,22 +102,30 @@ class LinesData(dict):
         self.name_to_id = {}
         self.key_to_id = {}
         super().__init__()
+        
+    def add_line(self, line: LineData):
+        id = line.line_id
+        name = str(line.line_name)
+        if name in self.name_to_id:
+            if type(self.name_to_id[name]) is set:
+                self.name_to_id[name].append(id)
+            elif type(self.name_to_id[name]) is str:
+                if id != self.name_to_id[name] :
+                    self.name_to_id[name] = {self.name_to_id[name], id}
+        else:
+            self.name_to_id[name] = id
+
+        return super().__setitem__(id, line)
 
     def __setitem__(self, key: str, line: LineData):
         assert type(line) is LineData
-        self.key_to_id[key] = line.line_id
-        if line.line_name in self.name_to_id:
-            if type(self.name_to_id[line.line_name]) is set:
-                self.name_to_id[line.line_name].append(line.line_id)
-            elif type(self.name_to_id[line.line_name]) is str:
-                if line.line_id != self.name_to_id[line.line_name] :
-                    self.name_to_id[line.line_name] = {self.name_to_id[line.line_name], line.line_id}
-        else:
-            self.name_to_id[str(line.line_name)] = line.line_id
-        
-        return super().__setitem__(line.line_id, line)
+        id = line.line_id
+        self.key_to_id[key] = id
+
+        return self.add_line(line)
     
     def __getitem__(self, key):
+        key = str(key)
         #Try if key has previously been provided as key by setitem
         if key in self.key_to_id:
             id = self.key_to_id[key]
@@ -135,3 +143,11 @@ class LinesData(dict):
             e.add_note(f"Registered names: {', '.join(self.name_to_id)}")
             raise e
         return super().__getitem__(id)
+    
+    def __repr__(self):
+        return f"""
+LinesData object, with {len(self)} line{'' if len(self)==1 else 's'} registered
+Registered line names : {', '.join(self.name_to_id)}
+Registered line ids : {', '.join(self)}
+Registered keys to access lines : {', '.join(map("'{}'".format, self.key_to_id))}
+        """
