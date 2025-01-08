@@ -51,6 +51,9 @@ class STAT:
         if weights is None:
             weights = self.default_weights
         return self.generate_n(int(proportion * self.df[weights].sum()), *args, weights=weights)
+    
+    def plot(self):
+        
 
 class STATPOP (STAT):
     def __init__(self, area: Area, year = 2023, asset_number = 32686751, **kwargs):

@@ -28,7 +28,6 @@ class TaskManager:
         return tasks
     
     def plot(self, ax = None, tasks: pd.DataFrame = None, line: LineData = None):
-        main_plot = True
         if ax is None:
             fig, ax = self.area.plot()
             

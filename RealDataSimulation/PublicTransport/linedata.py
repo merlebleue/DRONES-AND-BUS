@@ -6,6 +6,8 @@ import pandas as pd
 
 from matplotlib.axes import Axes
 
+from ..area import Area
+
 class LineData:
     def __init__(self, id, name, parent_path, timetable=None, stops=None, routes = None, journeys=None, **kwargs):
         self.line_id = id
@@ -74,7 +76,11 @@ class LineData:
         stops_x, stops_y = stops_x.reshape((1, -1)), stops_y.reshape((1, -1))
         i = np.argmin(((x-stops_x)**2 + (y-stops_y)**2)**0.5, axis=1)
         return stops_x[0, i], stops_y[0, i]
-
+    
+    def get_area(self, margin= 500):
+        x_min, y_min = self.stops[['POSITION_X', 'POSITION_Y']].min() - margin
+        x_max, y_max = self.stops[['POSITION_X', 'POSITION_Y']].max() + margin
+        return Area(x_min, x_max, y_min, y_max)
 
     def plot(self, ax: Axes, *args, routes = "all", **kwargs):
         if routes == "all":

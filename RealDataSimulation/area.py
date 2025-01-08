@@ -48,7 +48,7 @@ class Area:
     def get_lat_lon_box(self):
          return *self.to_lat_lon(self.x_min, self.y_min)[::-1], *self.to_lat_lon(self.x_max, self.y_max)[::-1]
     
-    def plot(self, *elements, background = "cartodb", figsize=(8,8), dpi=200, margin=0, layout="tight"):
+    def plot(self, *elements, background = "cartodb", figsize=(8,8), dpi=200, margin=0, layout="tight", plot_axes = True):
         # Create figure
         fig = plt.figure(figsize=figsize, dpi=dpi, layout = layout)
         ax = fig.subplots()
@@ -59,9 +59,9 @@ class Area:
             swisstopo_url = "https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-karte-grau/default/current/3857/{z}/{x}/{y}.png"
 
             if background == "cartodb":
-                map = smopy.Map(self.get_lat_lon_box(), tileserver=cartodb_url, tilesize=512, margin=margin)
+                map = smopy.Map(self.get_lat_lon_box(), tileserver=cartodb_url, tilesize=512, margin=margin, verbose=False)
             elif background == "swisstopo":
-                map = smopy.Map(self.get_lat_lon_box(), tileserver=swisstopo_url, margin=margin)
+                map = smopy.Map(self.get_lat_lon_box(), tileserver=swisstopo_url, margin=margin, verbose=False)
             else:
                 raise ValueError("`background` argument must be either 'cartodb', 'swisstopo' or None")
             
@@ -71,7 +71,7 @@ class Area:
 
         # If margin > 0, plot a rectangle with the area in the simulation
         size_x, size_y = self.x_max - self.x_min, self.y_max - self.y_min
-        if margin > 0:
+        if margin > 0 and plot_axes:
             ax.add_patch(patches.Rectangle((self.x_min, self.y_min), size_x, size_y, linewidth=1, edgecolor='navy', facecolor='none'))
 
         # For anything in `elements`, call a .plot() method
@@ -87,12 +87,15 @@ class Area:
         # Personalise the plot
         ax.set_xlim(self.x_min-margin*size_x, self.x_max+margin*size_x)
         ax.set_ylim(self.y_min-margin*size_y, self.y_max+margin*size_y)
-        ax.xaxis.set_major_formatter('{x:,.0f}')
-        ax.yaxis.set_major_formatter('{x:,.0f}')
-        ax.grid(linestyle = ":",color="grey")
+        if plot_axes:
+            ax.xaxis.set_major_formatter('{x:,.0f}')
+            ax.yaxis.set_major_formatter('{x:,.0f}')
+            ax.grid(linestyle = ":",color="grey")
+            ax.legend()
+        else:
+            ax.axis("off")
         ax.set_aspect("equal")
 
-        ax.legend()
 
         return fig, ax
 

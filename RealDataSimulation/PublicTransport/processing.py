@@ -138,7 +138,7 @@ class TransportData:
 
         return timetable_df[timetable_df.LINIEN_TEXT == line_name][["BETREIBER_ABK", "BETREIBER_NAME", "PRODUKT_ID", "LINIEN_ID", "LINIEN_TEXT", "VERKEHRSMITTEL_TEXT"]].drop_duplicates(subset = "LINIEN_ID")
 
-    def filter_data(self, line_id = None, margin=500, solve_too_fast = False, return_data = True):
+    def filter_data(self, line_id = None, solve_too_fast = False, return_data = True):
         stops_file, timetable_file = self.get_downloaded_filenames(solve_too_fast=solve_too_fast)
 
         # Get DataFrames
@@ -200,12 +200,6 @@ class TransportData:
 
         # Offload data about lines
         lines_df = timetable_filtered[["LINE_ID", "LINE_NAME", "TRANSPORTER", "MEAN_OF_TRANSPORT"]].drop_duplicates()
-
-        # Create an area based on the stops of the line if needed
-        if not self.by_area:
-            x_min, y_min = stops_filtered[['lv95East', 'lv95North']].min() - margin
-            x_max, y_max = stops_filtered[['lv95East', 'lv95North']].max() + margin
-            self.area = Area(x_min, x_max, y_min, y_max)
 
         # Export the filtered stops, timetable and line dataframes
         os.makedirs(self.path_join(self.filtered_folder, self.name), exist_ok=True)
