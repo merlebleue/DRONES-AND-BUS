@@ -97,6 +97,41 @@ class LineData:
             kwargs["c"] = lines2d[0].get_c()
             label="_"
 
-class LinesData:
+class LinesData(dict):
     def __init__(self):
-        pass
+        self.name_to_id = {}
+        self.key_to_id = {}
+        super().__init__()
+
+    def __setitem__(self, key: str, line: LineData):
+        assert type(line) is LineData
+        self.key_to_id[key] = line.line_id
+        if line.line_name in self.name_to_id:
+            if type(self.name_to_id[line.line_name]) is set:
+                self.name_to_id[line.line_name].append(line.line_id)
+            elif type(self.name_to_id[line.line_name]) is str:
+                if line.line_id != self.name_to_id[line.line_name] :
+                    self.name_to_id[line.line_name] = {self.name_to_id[line.line_name], line.line_id}
+        else:
+            self.name_to_id[str(line.line_name)] = line.line_id
+        
+        return super().__setitem__(line.line_id, line)
+    
+    def __getitem__(self, key):
+        #Try if key has previously been provided as key by setitem
+        if key in self.key_to_id:
+            id = self.key_to_id[key]
+        # Try if key is a line id :
+        elif key in self:
+            id = key
+        # Try if key is a line name
+        elif key in self.name_to_id:
+            id = self.name_to_id[key]
+        else :
+            e = KeyError(key)
+            e.add_note(f"Key {key} has not been found in the lines of this object. Valid values:")
+            e.add_note(f"Registered keys: {', '.join(self.key_to_id)}")
+            e.add_note(f"Registered ids: {', '.join(self)}")
+            e.add_note(f"Registered names: {', '.join(self.name_to_id)}")
+            raise e
+        return super().__getitem__(id)
