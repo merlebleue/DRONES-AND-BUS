@@ -11,6 +11,7 @@ from ..area import Area
 from .linedata import LineData
 
 TRANSPORT_FOLDER = "transport_data"
+FILTERED_SUBFOLDER = "0_filtered_data"
 TIMETABLE_FILE = "Timetable_{date}.csv"
 STOPS_FILE = "Stops_{date}.csv"
 
@@ -54,7 +55,8 @@ class TransportData:
             self.date = datetime.date(*self.date)
 
         self.transport_folder: str = kwargs.get("folder", TRANSPORT_FOLDER)
-        self.path = os.path.join(self.transport_folder, date.strftime("%Y_%m_%d"))
+        self.filtered_folder: str = kwargs.get("filtered_folder", FILTERED_SUBFOLDER)
+        self.path = os.path.join(self.transport_folder, self.date.strftime("%Y_%m_%d"))
 
         # Create folder
         os.makedirs(self.path, exist_ok=True)
@@ -71,7 +73,7 @@ class TransportData:
         # TODO
 
         # Try at status = 2
-        filename = self.path_join(self.name, "{df}.csv")
+        filename = self.path_join(self.filtered_folder, self.name, "{df}.csv")
         if os.path.isfile(filename.format(df="lines")) and \
            os.path.isfile(filename.format(df="stops")) and \
            os.path.isfile(filename.format(df="timetable")):
@@ -206,8 +208,8 @@ class TransportData:
             self.area = Area(x_min, x_max, y_min, y_max)
 
         # Export the filtered stops, timetable and line dataframes
-        os.makedirs(self.path_join(self.name), exist_ok=True)
-        filename = self.path_join(self.name, "{df}.csv")
+        os.makedirs(self.path_join(self.filtered_folder, self.name), exist_ok=True)
+        filename = self.path_join(self.filtered_folder, self.name, "{df}.csv")
 
         stops_filtered.to_csv(filename.format(df = "stops"), sep=";", index=False)
         timetable_filtered.to_csv(filename.format(df = "timetable"), sep=";", index=False)
@@ -224,7 +226,7 @@ class TransportData:
         # Check that the data has already been filtered :
         if self.get_status() >= 2:
             # Data has been filtered previously : all good
-            filename = self.path_join(self.name, "{df}.csv")
+            filename = self.path_join(self.filtered_folder, self.name, "{df}.csv")
             stops_df = pd.read_csv(filename.format(df = "stops"), sep = "[ \t]*;[ \t]*", engine="python")
             timetable_df = pd.read_csv(filename.format(df = "timetable"), sep = "[ \t]*;[ \t]*", engine="python")
             lines_df = pd.read_csv(filename.format(df = "lines"), sep = "[ \t]*;[ \t]*", engine="python")

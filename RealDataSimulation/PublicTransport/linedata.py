@@ -79,5 +79,6 @@ class LineData:
         kwargs["marker"] = kwargs.get("marker", "o")
         for route in routes:
             this_alpha = alpha * self.routes["Count"][route] / self.routes["Count"]["Route_A"]
-            ax.plot("POSITION_X", "POSITION_Y", data=self.stops[self.stops[route]], *args, label=label, alpha=this_alpha, **kwargs)
+            lines2d = ax.plot("POSITION_X", "POSITION_Y", data=self.stops[self.stops[route]], *args, label=label, alpha=this_alpha, **kwargs)
+            kwargs["c"] = lines2d[0].get_c()
             label="_"
