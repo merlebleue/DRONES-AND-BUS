@@ -48,9 +48,9 @@ class Area:
     def get_lat_lon_box(self):
          return *self.to_lat_lon(self.x_min, self.y_min)[::-1], *self.to_lat_lon(self.x_max, self.y_max)[::-1]
     
-    def plot(self, *elements, background = "cartodb", figsize=(8,8), dpi=200, margin=0):
+    def plot(self, *elements, background = "cartodb", figsize=(8,8), dpi=200, margin=0, layout="tight"):
         # Create figure
-        fig = plt.figure(figsize=figsize, dpi=dpi)
+        fig = plt.figure(figsize=figsize, dpi=dpi, layout = layout)
         ax = fig.subplots()
 
         # Add the background (using smopy library)
@@ -71,7 +71,8 @@ class Area:
 
         # If margin > 0, plot a rectangle with the area in the simulation
         size_x, size_y = self.x_max - self.x_min, self.y_max - self.y_min
-        ax.add_patch(patches.Rectangle((self.x_min, self.y_min), size_x, size_y, linewidth=1, edgecolor='navy', facecolor='none'))
+        if margin > 0:
+            ax.add_patch(patches.Rectangle((self.x_min, self.y_min), size_x, size_y, linewidth=1, edgecolor='navy', facecolor='none'))
 
         # For anything in `elements`, call a .plot() method
         for e in elements:

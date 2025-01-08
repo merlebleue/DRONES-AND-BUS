@@ -68,6 +68,14 @@ class LineData:
         self.timetable = pd.read_csv(self.path_join(f"{self.line_name}_full.csv"), sep="[ \t]*;[ \t]*", engine="python")
         self.journeys = pd.read_csv(self.path_join(f"{self.line_name}_journeys.csv"), sep="[ \t]*;[ \t]*", engine="python")
 
+    def get_nearest_stops(self, x, y):
+        x, y = x.reshape((-1, 1)), y.reshape((-1, 1))
+        stops_x, stops_y = self.stops[["POSITION_X", "POSITION_Y"]].values.T
+        stops_x, stops_y = stops_x.reshape((1, -1)), stops_y.reshape((1, -1))
+        i = np.argmin(((x-stops_x)**2 + (y-stops_y)**2)**0.5, axis=1)
+        return stops_x[0, i], stops_y[0, i]
+
+
     def plot(self, ax: Axes, *args, routes = "all", **kwargs):
         if routes == "all":
             routes = self.stops.columns[self.stops.columns.str[:5] == "Route"]
@@ -75,10 +83,14 @@ class LineData:
         label = kwargs.pop("label", self.line_name)
         alpha = kwargs.pop("alpha", 1)
         kwargs["linewidth"] = kwargs.get("linewidth", 1)
-        #kwargs["markersize"] = kwargs.get("markersize", 3)
+        kwargs["markersize"] = kwargs.get("markersize", 3)
         kwargs["marker"] = kwargs.get("marker", "o")
         for route in routes:
             this_alpha = alpha * self.routes["Count"][route] / self.routes["Count"]["Route_A"]
             lines2d = ax.plot("POSITION_X", "POSITION_Y", data=self.stops[self.stops[route]], *args, label=label, alpha=this_alpha, **kwargs)
             kwargs["c"] = lines2d[0].get_c()
             label="_"
+
+class LinesData:
+    def __init__(self):
+        pass
