@@ -1,0 +1,30 @@
+          STOP_NAME           ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B ; Route_C ; Route_D 
+            Bussigny, gare sud;      8595216;  2531993.31708;  1155456.17983;                 0.0;      Yes;      Yes;         ;         
+             Bussigny, Bosquet;      8595214;      2532192.0;      1155291.0;  231.75029024040117;      Yes;         ;         ;         
+              Bussigny, Vallon;      8595217;  2532119.94899;  1155068.15231;   408.1678538390795;         ;      Yes;         ;         
+             Bussigny, Reculan;      8595215;  2532172.05601;  1154924.78485;   560.7108645611675;      Yes;      Yes;         ;         
+       Echandens, Chocolatière;      8592244;  2531587.78513;  1154297.10699;  1418.2375155462933;      Yes;      Yes;      Yes;      Yes
+               Echandens, Riaz;      8592243;   2531227.4023;  1154311.99642;  1778.9277972070906;      Yes;      Yes;      Yes;      Yes
+             Echandens, centre;      8588875;      2531142.0;      1154096.0;  2011.1948984033877;      Yes;      Yes;      Yes;      Yes
+            Echandens, collège;      8595213;  2531135.13246;   1153844.1333;   2263.155208123966;      Yes;      Yes;      Yes;      Yes
+              Echandens, poste;      8588874;  2531133.09486;   1153602.2721;  2505.0249910222788;      Yes;      Yes;      Yes;      Yes
+                   Lonay, Vozy;      8592255;      2530254.0;      1153378.0;   3412.276746444624;      Yes;      Yes;      Yes;      Yes
+                Lonay, Carouge;      8592249;    2529959.458;  1153227.00749;  3743.2657611264476;      Yes;      Yes;      Yes;      Yes
+            Lonay, collège sud;      8595220;  2529640.51501;  1153013.18921;   4127.248687481558;      Yes;      Yes;      Yes;      Yes
+  Lonay-Préverenges, gare nord;      8511344;  2529438.71944;  1152899.15485;  4359.0358470315405;      Yes;      Yes;      Yes;      Yes
+                 Lonay, Levant;      8592253;  2529166.36639;  1152805.93024;   4646.902155852148;      Yes;      Yes;      Yes;      Yes
+               Lonay, Grassiaz;      8592251;      2528967.0;      1152724.0;    4862.44686510782;      Yes;      Yes;      Yes;      Yes
+              Lonay, Gracieuse;      8592252;      2528710.0;      1152508.0;   5198.162518600474;      Yes;      Yes;      Yes;      Yes
+          Morges, St-Jean nord;      8588871;      2528535.0;      1152349.0;   5434.607015258781;      Yes;      Yes;      Yes;      Yes
+         Morges, Auguste-Forel;      8592274;      2528237.0;      1152234.0;   5754.026801746719;      Yes;      Yes;      Yes;      Yes
+         Morges, Grosse-Pierre;      8592268;      2528054.0;      1152260.0;   5938.864568450388;      Yes;      Yes;      Yes;      Yes
+              Morges, Bellevue;      8592258;      2527762.0;      1152172.0;   6243.836698324579;      Yes;      Yes;      Yes;      Yes
+             Morges, Banc-Vert;      8592257;  2527497.96759;  1151964.26438;  6579.7938404530905;      Yes;      Yes;      Yes;      Yes
+               Morges, La Tour;      8570069;  2527306.11914;  1151834.78761;   6811.245912677616;      Yes;      Yes;      Yes;      Yes
+                  Morges, gare;      8570084;  2527527.52285;  1151442.27829;   7261.893412491472;      Yes;      Yes;      Yes;      Yes
+         Morges, ch. du Bochet;      8589248;  2527463.23767;  1151107.91838;    7602.37708872702;      Yes;      Yes;      Yes;      Yes
+            Morges, En Bonjean;      8596054;      2527129.0;      1150994.0;   7955.494940653194;      Yes;      Yes;      Yes;      Yes
+          Morges, Riond-Bosson;      8589249;   2526825.4576;  1150749.45376;   8345.290851478354;      Yes;      Yes;      Yes;      Yes
+           Tolochenaz, Molliau;      8592284;      2526507.0;      1150479.0;   8763.095206764141;      Yes;      Yes;      Yes;      Yes
+        Tolochenaz, Les Noyers;      8592282;      2526242.0;      1150218.0;   9135.044127988547;         ;      Yes;      Yes;         
+          Tolochenaz, Les Saux;      8592283;      2525949.0;      1150196.0;    9428.86890570479;      Yes;      Yes;      Yes;      Yes

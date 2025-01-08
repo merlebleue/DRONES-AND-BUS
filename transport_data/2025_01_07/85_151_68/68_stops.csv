@@ -1,0 +1,16 @@
+       STOP_NAME       ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B 
+     Lutry, Croix/Lutry;      8579260;      2543535.0;      1152022.0;                 0.0;      Yes;      Yes
+        Lutry, Echerins;      8588438;      2543380.0;      1152174.0;   217.0921463342237;      Yes;      Yes
+          Lutry, Landar;      8579259;  2542551.73301;  1152101.85475;  1048.4952638536931;      Yes;      Yes
+    Lutry, Corsy-Dessus;      8592152;      2542263.0;      1151785.0;  1477.1719294901995;      Yes;      Yes
+         Lutry, Brûlées;      8592147;      2542587.0;      1151735.0;  1805.0072540054202;      Yes;      Yes
+        Lutry, Ponfilet;      8592159;      2542512.0;      1151588.0;   1970.034524479121;      Yes;      Yes
+    Lutry, Marionnettes;      8592157;      2542172.0;      1151540.0;  2313.4060433912173;      Yes;      Yes
+   Lutry, Corsy-Dessous;      8592149;      2541788.0;      1151646.0;    2711.76768813127;      Yes;      Yes
+    La Conversion, gare;      8591976;      2541641.0;      1151557.0;  2883.6106396887894;      Yes;      Yes
+         Lutry, Colline;      8592151;      2541723.0;      1151319.0;  3135.3406537912006;      Yes;      Yes
+  Lutry, avenue William;      8592145;      2541911.0;      1151183.0;   3367.375133987571;      Yes;      Yes
+          Lutry, Orzens;      8592158;      2542037.0;      1150911.0;  3667.1417098428524;      Yes;      Yes
+      Lutry, Les Champs;      8592154;      2542304.0;      1150660.0;  4033.5977099301754;      Yes;      Yes
+       Lutry, Voisinand;      8592164;      2542253.0;      1150541.0;   4163.065852729862;         ;      Yes
+            Lutry, gare;      8593861;      2542553.0;      1150550.0;   4463.200822368523;      Yes;      Yes

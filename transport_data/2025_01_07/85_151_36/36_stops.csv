@@ -1,0 +1,9 @@
+       STOP_NAME        ; STOP_NUMBER ;  POSITION_X  ;  POSITION_Y  ;      DISTANCE      ; Route_A 
+    Renens VD, gare nord;      8588838;     2534082.0;     1154390.0;                 0.0;      Yes
+          Crissier, Jura;      8593815;     2533622.0;     1154891.0;    680.147778060033;      Yes
+     Crissier, Zinguerie;      8591939;     2533415.0;     1155074.0;   956.4411004549111;      Yes
+      Crissier, Marcolet;      8593816;     2533751.0;     1155437.0;  1451.0773304259878;      Yes
+      Crissier, Mongevon;      8595516;     2533644.0;     1155602.0;  1647.7343923383432;      Yes
+  Crissier, Lentillières;      8595986;     2533574.0;     1155873.0;  1927.6290153663679;      Yes
+       Crissier, Feleire;      8593817;  2533436.5518;  1155951.2754;  2085.8031154219207;      Yes
+      Crissier, Closalet;      8591936;     2533350.0;     1156170.8;  2321.7740121199154;      Yes

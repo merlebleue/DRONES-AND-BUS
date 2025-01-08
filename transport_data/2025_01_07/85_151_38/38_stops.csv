@@ -1,0 +1,11 @@
+        STOP_NAME        ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B 
+           Prilly, église;      8592178;      2535587.0;      1154532.0;                 0.0;      Yes;      Yes
+  Renens VD, Bourg-Dessus;      8592206;      2535271.0;      1154453.0;   325.7253444237952;      Yes;      Yes
+       Renens VD, Follieu;      8592212;      2535129.0;      1154615.0;   541.1505054426511;      Yes;      Yes
+        Renens VD, Borjod;      8592205;      2534803.0;      1154610.0;   867.1888467462469;      Yes;      Yes
+       Renens VD, Saugiaz;      8592220;      2534621.0;      1154688.0;  1065.1989474987085;      Yes;      Yes
+       Renens VD, 1er Mai;      8592201;      2534396.0;      1154741.0;  1296.3569021530964;      Yes;      Yes
+     Renens VD, Industrie;      8592214;      2534209.0;      1154779.0;   1487.178808652324;      Yes;      Yes
+       Crissier, Chicorée;      8510421;  2534110.61799;  1154745.76893;  1572.0555930456774;         ;      Yes
+      Renens VD, 14 Avril;      8588839;      2534113.0;      1154587.0;  1701.8413344923038;      Yes;      Yes
+        Renens VD, Avenir;      8592202;   2534348.3731;  1154498.66053;  1953.2461040641576;      Yes;      Yes

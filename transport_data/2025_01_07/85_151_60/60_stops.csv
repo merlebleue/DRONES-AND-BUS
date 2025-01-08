@@ -1,0 +1,19 @@
+           STOP_NAME           ; STOP_NUMBER ;   POSITION_X  ;  POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B ; Route_C 
+    Lausanne, Riponne-M. Béjart;      8590442;  2538107.47618;  1152738.3363;                 0.0;      Yes;      Yes;         
+               Lausanne, Tunnel;      8504176;      2538300.0;     1153000.0;   324.8589127066553;      Yes;         ;         
+            Lausanne, Bellevaux;      8587357;      2538273.0;     1154496.0;  1821.1025426011988;      Yes;      Yes;      Yes
+   Le Mont-sur-L., Coppoz-Poste;      8593845;      2538409.0;     1156497.0;  3826.7189067147347;      Yes;      Yes;      Yes
+     Le Mont-sur-L., Grand-Mont;      8504177;      2538190.0;     1157177.0;   4541.114455413073;      Yes;      Yes;      Yes
+         Le Mont-sur-L., Etavez;      8592141;      2538307.0;     1157528.0;   4911.100941652774;      Yes;      Yes;      Yes
+       Le Mont-sur-L., Fougères;      8592142;      2538314.0;     1158063.0;   5446.146734085534;      Yes;      Yes;      Yes
+         Le Mont-sur-L., Budron;      8592139;      2538283.0;     1158564.0;   5948.104899673066;      Yes;      Yes;      Yes
+             Cugy VD, Cavenette;      8591940;      2538452.0;     1159076.0;   6487.275559112171;      Yes;      Yes;      Yes
+                 Cugy VD, poste;      8504178;      2538705.0;     1159474.0;   6958.882386882932;      Yes;      Yes;      Yes
+               Cugy VD, village;      8573634;      2538831.0;     1159667.0;   7189.370998315255;      Yes;      Yes;      Yes
+             Cugy VD, Le Moulin;      8570164;      2538992.0;     1160050.0;   7604.834594795139;      Yes;      Yes;      Yes
+  Bretigny-sur-Morrens, croisée;      8570176;      2539332.0;     1161067.0;   8677.163369005735;      Yes;      Yes;      Yes
+               Bottens, croisée;      8570178;      2540360.0;     1163133.0;  10984.789855246521;      Yes;      Yes;      Yes
+          Bottens, La Rustériaz;      8570179;      2540835.0;     1161982.0;  12229.950889008822;      Yes;      Yes;      Yes
+           Froideville, village;      8570167;      2541581.0;     1161247.0;  13277.204917408808;      Yes;      Yes;      Yes
+           Froideville, croisée;      8570168;      2541825.0;     1161390.0;  13560.021112136055;      Yes;      Yes;      Yes
+          Froideville, Laiterie;      8570169;      2542060.0;     1161375.0;  13795.499348922387;      Yes;      Yes;      Yes

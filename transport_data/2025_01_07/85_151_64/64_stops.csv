@@ -1,0 +1,17 @@
+           STOP_NAME            ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B ; Route_C 
+           Epalinges, Croisettes;      8579239;  2540394.49736;  1154941.15197;                 0.0;      Yes;      Yes;      Yes
+             Epalinges, Planches;      8589525;      2540791.0;      1155095.0;   425.3040792914066;      Yes;      Yes;      Yes
+        Epalinges, Pré-d'Yverdon;      8591970;      2541241.0;      1155021.0;   881.3479368314463;      Yes;      Yes;      Yes
+          Montblesson, Perronnaz;      8587550;      2541755.0;      1154852.0;   1422.418172567991;      Yes;      Yes;      Yes
+           Lausanne, Haute Combe;      8592058;      2542181.0;      1155116.0;   1923.588802194269;      Yes;      Yes;      Yes
+      Lausanne, Chalet à Matthey;      8587547;      2542689.0;      1155810.0;    2783.64693976405;      Yes;      Yes;      Yes
+            Lausanne, Molliettes;      8592073;      2542833.0;      1156009.0;    3029.28284919099;      Yes;      Yes;      Yes
+   Lausanne, Vers-chez-les-Blanc;      8587548;      2542964.0;      1156215.0;  3273.4078171889396;      Yes;      Yes;      Yes
+            Lausanne, Chevreuils;      8592015;      2543109.0;      1156627.0;   3710.178924291962;      Yes;      Yes;      Yes
+           Lausanne, Praz-Collet;      8592100;      2543078.0;      1156812.0;  3897.7582408489857;      Yes;      Yes;      Yes
+  Lausanne, Chalet-à-Gobet/Jorat;      8509491;  2542869.02885;  1157335.84368;   4461.745069248587;      Yes;      Yes;      Yes
+        Lausanne, Chalet-à-Gobet;      8587929;  2542711.22235;  1157328.42147;   4619.726019503729;      Yes;      Yes;      Yes
+             Lausanne, Mauvernay;      8592070;      2542517.0;      1157305.0;     4815.3554817441;         ;         ;      Yes
+         Lausanne, Vert-Bois/EHL;      8592130;  2542209.37895;  1156858.07414;   5389.499404253708;         ;      Yes;         
+          Lausanne, Cojonnex/EHL;      8592037;      2542025.0;      1157007.0;   5390.566747280511;         ;         ;      Yes
+             Lausanne, Vulliette;      8587549;  2541936.72241;  1156586.71698;   5820.020760879777;         ;      Yes;      Yes

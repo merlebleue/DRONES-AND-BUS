@@ -1,0 +1,12 @@
+      STOP_NAME      ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B 
+          Pully, gare;      8588445;      2540150.0;      1151300.0;                 0.0;      Yes;      Yes
+    Pully, Montillier;      8592188;      2540062.0;      1151528.0;  244.39312592624205;      Yes;      Yes
+  Pully, Perraudettaz;      8592190;      2539805.0;      1151717.0;   563.4072321974224;      Yes;      Yes
+         Pully, Roses;      8592196;      2539984.0;      1151832.0;   776.1653107749468;      Yes;      Yes
+   Pully, Les Liaudes;      8592183;      2539984.0;      1152138.0;  1082.1653107749466;      Yes;      Yes
+     Pully, Pavillard;      8592191;  2540137.79436;  1152345.32185;  1340.3029768666365;      Yes;      Yes
+      Pully, Margerol;      8592185;  2540323.45115;  1152366.83944;   1527.202549772744;      Yes;      Yes
+        Pully, Rosiaz;      8588434;      2540422.0;      1152551.0;   1736.073293764844;      Yes;      Yes
+       Pully, Bruyère;      8592171;  2540486.40233;  1152810.50203;   2003.447495369245;      Yes;         
+      Pully, Val-Vert;      8579256;      2540789.0;      1152580.0;   2124.409548022666;         ;      Yes
+    Pully, Daillettes;      8592177;      2540728.0;      1152702.0;  2268.2910806485415;      Yes;      Yes

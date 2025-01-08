@@ -77,14 +77,25 @@ class LineData:
         i = np.argmin(((x-stops_x)**2 + (y-stops_y)**2)**0.5, axis=1)
         return stops_x[0, i], stops_y[0, i]
     
+    def get_min_max_coords(self):
+        x_min, y_min = self.stops[['POSITION_X', 'POSITION_Y']].min()
+        x_max, y_max = self.stops[['POSITION_X', 'POSITION_Y']].max()
+        return x_min, x_max, y_min, y_max
+    
     def get_area(self, margin= 500):
         x_min, y_min = self.stops[['POSITION_X', 'POSITION_Y']].min() - margin
         x_max, y_max = self.stops[['POSITION_X', 'POSITION_Y']].max() + margin
         return Area(x_min, x_max, y_min, y_max)
 
-    def plot(self, ax: Axes, *args, routes = "all", **kwargs):
+    def plot(self, ax: Axes = None, *args, routes = "all", **kwargs):
+        if ax is None:
+            fig, ax = self.get_area().plot()
+            ax.set_title(f"Map for line {self.line_name}")
+
         if routes == "all":
             routes = self.stops.columns[self.stops.columns.str[:5] == "Route"]
+        
+        total_count = sum(self.routes["Count"][route] for route in routes)
 
         label = kwargs.pop("label", self.line_name)
         alpha = kwargs.pop("alpha", 1)
@@ -92,16 +103,19 @@ class LineData:
         kwargs["markersize"] = kwargs.get("markersize", 3)
         kwargs["marker"] = kwargs.get("marker", "o")
         for route in routes:
-            this_alpha = alpha * self.routes["Count"][route] / self.routes["Count"]["Route_A"]
+            this_alpha = alpha * self.routes["Count"][route] / total_count
             lines2d = ax.plot("POSITION_X", "POSITION_Y", data=self.stops[self.stops[route]], *args, label=label, alpha=this_alpha, **kwargs)
             kwargs["c"] = lines2d[0].get_c()
             label="_"
 
 class LinesData(dict):
-    def __init__(self):
+    def __init__(self, *lines: LineData):
         self.name_to_id = {}
         self.key_to_id = {}
         super().__init__()
+
+        for line in lines:
+            self.add_line(line)
         
     def add_line(self, line: LineData):
         id = line.line_id
@@ -135,6 +149,13 @@ class LinesData(dict):
         # Try if key is a line name
         elif key in self.name_to_id:
             id = self.name_to_id[key]
+            if type(id) is set:
+                # Multiple lines with the same name
+                print("Warning ! Multiple lines with this name. Returning a LinesData object")
+                lines = LinesData()
+                for line_id in id:
+                    lines.add_line(super().__getitem__(line_id))
+                return lines
         else :
             e = KeyError(key)
             e.add_note(f"Key {key} has not been found in the lines of this object. Valid values:")
@@ -151,3 +172,26 @@ Registered line names : {', '.join(self.name_to_id)}
 Registered line ids : {', '.join(self)}
 Registered keys to access lines : {', '.join(map("'{}'".format, self.key_to_id))}
         """
+    
+
+
+    def get_area(self, margin = 500):
+        coords = np.zeros((len(self), 4))
+        for i, line in enumerate(self.values()):
+            coords[i] = line.get_min_max_coords()
+        x_min, y_min = coords.min(axis=0)[[0, 2]] - margin
+        x_max, y_max = coords.max(axis=0)[[1, 3]] + margin
+        return Area(x_min, x_max, y_min, y_max)
+
+
+    def plot(self, ax: Axes = None, same_color = True, **kwargs):
+        if ax is None:
+            fig, ax = self.get_area().plot()
+        label = kwargs.pop("label", "Transport lines" if same_color else "")
+        for line_id, line in self.items():
+            line.plot(ax=ax, label=label, **kwargs)
+            if same_color:
+                kwargs["c"] = ax.get_lines()[-1].get_c()
+                label = ""
+    
+        

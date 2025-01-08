@@ -1,0 +1,13 @@
+       STOP_NAME        ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B 
+          Bussigny, gare;      8581914;      2532020.0;      1155520.0;                 0.0;      Yes;      Yes
+  Bussigny, Grand-Record;      8581918;      2531996.0;      1155800.0;  281.02668912400475;      Yes;      Yes
+    Bussigny, St-Germain;      8505529;  2531518.48656;  1155924.57456;   774.5222882733276;      Yes;      Yes
+        Bussigny, Jordil;      8506907;  2531636.30999;  1156046.16853;   943.8369485873426;      Yes;      Yes
+     Bussigny, Tatironne;      8506905;      2531816.0;      1156111.6;  1135.0692077911508;      Yes;      Yes
+     Bussigny, Sottelles;      8506903;      2531901.0;      1156383.4;  1419.8502464856165;      Yes;      Yes
+         Bussigny, Sauge;      8581920;      2532141.0;      1156421.0;  1662.7777253759368;      Yes;      Yes
+    Bussigny, Vieux-Four;      8581921;      2532420.0;      1156200.0;  2018.7018745987734;      Yes;      Yes
+     Bussigny, Condémine;      8581916;      2532675.0;      1156402.0;  2344.0155693612287;      Yes;         
+       Bussigny, Cocagne;      8594177;      2532760.0;      1156315.0;  2465.6461576192814;      Yes;         
+       Bussigny, Sullens;      8581924;      2532707.0;      1156096.0;   2690.968149444314;      Yes;         
+       Bussigny, Riettaz;      8581922;      2532570.0;      1156183.0;   2853.258013576366;      Yes;      Yes

@@ -1,0 +1,20 @@
+          STOP_NAME          ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B 
+              Pully, Val-Vert;      8579256;      2540789.0;      1152580.0;                 0.0;      Yes;      Yes
+                Pully, Rosiaz;      8588434;      2540422.0;      1152551.0;   368.1439935677343;      Yes;      Yes
+          Lausanne, Coudrette;      8592023;  2540131.80455;  1152643.61328;   672.7595198185279;      Yes;      Yes
+    Lausanne, Chailly-Village;      8588432;      2539887.0;      1152731.0;   932.6935624775708;      Yes;      Yes
+    Lausanne, Pont-de-Chailly;      8579255;      2539634.0;      1153061.0;  1348.5168422491583;      Yes;      Yes
+       Lausanne, Fauconnières;      8592042;      2539464.0;      1152883.0;  1594.6550148270826;      Yes;      Yes
+            Lausanne, Béthusy;      8588431;      2539255.0;      1152581.0;  1961.9219477246686;      Yes;      Yes
+               Lausanne, Ours;      8579237;      2538769.0;      1152528.0;   2450.803323929572;      Yes;      Yes
+         Lausanne, César-Roux;      8510575;  2538566.45577;  1152861.43397;  2840.9345549996206;      Yes;      Yes
+             Lausanne, Tunnel;      8504176;      2538300.0;      1153000.0;    3141.26640818243;      Yes;      Yes
+  Lausanne, Riponne-M. Béjart;      8590442;  2538107.47618;   1152738.3363;  3466.1253208890853;      Yes;      Yes
+            Lausanne, Bel-Air;      8591988;      2537880.0;      1152653.0;   3709.081482706812;      Yes;      Yes
+          Lausanne, Chauderon;      8592010;      2537555.0;      1152802.0;    4066.60910401739;      Yes;      Yes
+             Lausanne, Boston;      8592001;      2537405.0;      1152837.0;   4220.638322024884;      Yes;      Yes
+           Lausanne, Recordon;      8592109;      2537035.0;      1153025.0;    4635.66121295983;      Yes;      Yes
+             Lausanne, Prélaz;      8592102;      2536612.0;      1153116.0;    5068.33892211527;      Yes;      Yes
+   Lausanne, Prélaz-les-Roses;      8592103;      2536179.0;      1153200.0;   5509.411478504806;      Yes;      Yes
+             Prilly, Galicien;      8592049;      2535968.0;      1153319.0;  5751.6551574729065;      Yes;      Yes
+       Prilly, Galicien/aréna;      8510543;  2535782.00096;  1153352.97217;   5940.731203590548;      Yes;         

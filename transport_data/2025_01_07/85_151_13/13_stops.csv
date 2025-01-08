@@ -1,0 +1,9 @@
+        STOP_NAME         ; STOP_NUMBER ; POSITION_X ; POSITION_Y ;      DISTANCE      ; Route_A 
+       Lausanne, Montbenon;      8579253;     2537922;     1152376;                 0.0;      Yes
+     Lausanne, St-François;      8579254;     2538215;     1152325;  297.40544715926103;      Yes
+  Lausanne, Benj. Constant;      8591991;     2538520;     1152320;   602.4464280126539;      Yes
+       Lausanne, Mon Repos;      8592074;     2538798;     1152258;   887.2762017372419;      Yes
+       Lausanne, Chandolin;      8592009;     2539062;     1152109;  1190.4213814779068;      Yes
+      Lausanne, Mousquines;      8592083;     2539260;     1152033;  1402.5062701427996;      Yes
+       Lausanne, Floreyres;      8592045;     2539378;     1152066;  1525.0338180657054;      Yes
+         Lausanne, Verdeil;      8592129;     2539457;     1152187;  1669.5398733021557;      Yes

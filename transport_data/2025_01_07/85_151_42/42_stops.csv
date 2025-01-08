@@ -1,0 +1,9 @@
+         STOP_NAME         ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A 
+            Lausanne, Foyer;      8579245;      2540268.0;      1153865.0;                 0.0;      Yes
+       Lausanne, Craivavers;      8592025;      2540203.0;      1153643.0;  231.32012450281968;      Yes
+    Lausanne, Les Chavannes;      8592065;      2540037.0;      1153517.0;    439.723579368616;      Yes
+         Lausanne, Rozavère;      8592112;      2539917.0;      1153367.0;   631.8173064916015;      Yes
+  Lausanne, Pont-de-Chailly;      8579255;      2539634.0;      1153061.0;  1048.6206174189501;      Yes
+            Lausanne, Devin;      8592031;      2539644.0;      1153517.0;  1504.7302533618888;      Yes
+       Lausanne, Champ-Rond;      8592008;  2539516.16629;  1153707.23559;  1733.9267566401195;      Yes
+           Lausanne, Sallaz;      8579238;      2539205.0;      1153810.0;   2061.623238151709;      Yes

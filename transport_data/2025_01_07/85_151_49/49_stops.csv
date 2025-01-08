@@ -1,0 +1,11 @@
+           STOP_NAME            ; STOP_NUMBER ; POSITION_X ; POSITION_Y ;      DISTANCE      ; Route_A ; Route_B 
+                 Pully, Clergère;      8588446;   2540392.0;   1151396.0;                 0.0;      Yes;      Yes
+                Pully, Ruisselet;      8595192;   2540590.0;   1151575.0;   266.9175902783479;      Yes;      Yes
+                   Pully, Caudoz;      8593850;   2540789.0;   1151460.0;  496.75666441501426;      Yes;      Yes
+  Pully,Centre Sportif Rochettaz;      8595191;   2541012.0;   1151453.0;   719.8665028354658;      Yes;      Yes
+      Belmont-sur-L., Chaffeises;      8593795;   2541288.0;   1151711.0;  1097.6759786298137;      Yes;      Yes
+         Belmont-sur-L., Burenoz;      8593798;   2541214.0;   1152498.0;  1888.1473569857917;      Yes;      Yes
+         Belmont-sur-L., Rouvène;      8593806;   2541386.0;   1152519.0;  2061.4245914974263;      Yes;      Yes
+        Belmont-sur-L., Malavaux;      8595190;   2541506.0;   1152430.0;    2210.82673338301;      Yes;         
+          Belmont-sur-L., Pâquis;      8595625;   2541568.5;   1152386.7;  2235.7290661256047;         ;      Yes
+   Belmont-sur-L., Grands Champs;      8588436;   2541580.0;   1152630.0;  2424.0777591718675;      Yes;      Yes

@@ -1,0 +1,33 @@
+          STOP_NAME           ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B ; Route_D ; Route_E ; Route_G ; Route_I ; Route_J 
+                   Pully, gare;      8588445;      2540150.0;      1151300.0;                 0.0;      Yes;      Yes;         ;         ;      Yes;      Yes;      Yes
+               Pully, Joliette;      8592182;      2539720.0;      1151257.0;   432.1446517081983;      Yes;      Yes;         ;         ;      Yes;      Yes;      Yes
+            Pully, C. F. Ramuz;      8592172;      2539332.0;      1151221.0;     821.81117580284;      Yes;      Yes;         ;         ;      Yes;      Yes;      Yes
+         Pully, Pierraz-Portay;      8592193;      2538971.0;      1151206.0;  1183.1226757582108;      Yes;      Yes;         ;         ;      Yes;      Yes;      Yes
+               Pully, Métairie;      8592186;      2538767.0;      1151286.0;  1402.2482105550482;      Yes;      Yes;         ;         ;      Yes;      Yes;      Yes
+          Lausanne, Montchoisi;      8592077;      2538477.0;      1151406.0;  1716.0953070845526;      Yes;      Yes;         ;         ;      Yes;      Yes;      Yes
+             Lausanne, Jurigoz;      8592062;      2538442.0;      1151585.0;   1898.484999775779;      Yes;      Yes;         ;         ;      Yes;      Yes;      Yes
+              Lausanne, Prélaz;      8592102;      2536612.0;      1153116.0;  1987.9053987794537;         ;         ;         ;         ;         ;         ;         
+               Lausanne, Alpes;      8591979;      2538458.0;      1151843.0;  2156.9806477081956;      Yes;      Yes;         ;         ;      Yes;      Yes;      Yes
+            Lausanne, Recordon;      8592109;      2537035.0;      1153025.0;   2420.583107934894;         ;         ;         ;         ;         ;         ;         
+           Lausanne, Georgette;      8592051;      2538569.0;      1152150.0;   2483.431256529806;      Yes;      Yes;         ;         ;      Yes;      Yes;      Yes
+              Lausanne, Boston;      8592001;      2537405.0;      1152837.0;    2835.60599886984;         ;         ;         ;         ;         ;         ;         
+         Lausanne, St-François;      8579254;      2538215.0;      1152325.0;   2878.324913100787;      Yes;      Yes;         ;         ;      Yes;      Yes;      Yes
+           Lausanne, Chauderon;      8592010;      2537555.0;      1152802.0;  2989.6352168773337;         ;         ;         ;         ;         ;         ;         
+             Lausanne, Bel-Air;      8591988;      2537880.0;      1152653.0;  3347.1628381879113;      Yes;      Yes;         ;         ;      Yes;         ;      Yes
+   Lausanne, Riponne-M. Béjart;      8590442;  2538107.47618;   1152738.3363;   3590.119000005638;      Yes;      Yes;      Yes;      Yes;         ;         ;      Yes
+              Lausanne, Tunnel;      8504176;      2538300.0;      1153000.0;  3914.9779127122933;      Yes;      Yes;      Yes;      Yes;         ;         ;      Yes
+              Lausanne, Mémise;      8592071;      2538205.0;      1153223.0;   4157.370156812636;      Yes;      Yes;      Yes;      Yes;         ;         ;      Yes
+        Lausanne, Grande-Borde;      8592053;      2538097.0;      1153502.0;    4456.54401930734;      Yes;      Yes;      Yes;      Yes;         ;         ;      Yes
+        Lausanne, Vieux-Moulin;      8592132;      2537971.0;      1153870.0;  4845.5170260828745;      Yes;      Yes;      Yes;      Yes;         ;         ;      Yes
+            Lausanne, Rouvraie;      8592111;      2538089.0;      1153799.0;   4983.230496738435;      Yes;         ;         ;      Yes;         ;         ;         
+               Lausanne, Motte;      8592082;      2538225.0;      1153863.0;   5133.536850562883;      Yes;      Yes;      Yes;      Yes;         ;         ;         
+               Lausanne, Forêt;      8592047;      2538223.0;      1154124.0;   5394.544513285647;      Yes;      Yes;      Yes;      Yes;         ;         ;         
+           Lausanne, Bellevaux;      8587357;      2538273.0;      1154496.0;   5769.889687758425;      Yes;      Yes;      Yes;      Yes;         ;         ;         
+           Lausanne, Grangette;      8592055;      2538222.0;      1154770.0;   6048.595625980057;      Yes;      Yes;      Yes;      Yes;         ;         ;         
+        Le Mont-sur-L., Rionzi;      8593249;  2538184.54784;  1155002.64232;    6284.23329984331;      Yes;      Yes;      Yes;      Yes;         ;         ;         
+      Le Mont-sur-L., Martines;      8592143;      2538121.0;      1155324.0;   6611.813956267953;      Yes;      Yes;      Yes;      Yes;         ;         ;         
+         Le Mont-sur-L., Côtes;      8592140;      2538107.0;      1155728.0;   7016.056457744479;      Yes;      Yes;      Yes;      Yes;         ;         ;         
+    Le Mont-sur-L., Petit-Mont;      8587853;      2538305.0;      1156124.0;  7458.7979172894375;      Yes;      Yes;      Yes;      Yes;         ;         ;         
+  Le Mont-sur-L., Coppoz-Poste;      8593845;      2538409.0;      1156497.0;   7846.025240705541;      Yes;      Yes;      Yes;      Yes;         ;         ;         
+        Le Mont-sur-L., Coppoz;      8579235;      2538450.0;      1156789.0;    8140.88961630897;      Yes;      Yes;      Yes;      Yes;         ;         ;         
+    Le Mont-sur-L., Grand-Mont;      8504177;      2538190.0;      1157177.0;   8607.948499106418;      Yes;      Yes;      Yes;      Yes;         ;         ;         

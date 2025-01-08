@@ -67,7 +67,7 @@ class Area:
             
             # Add map to the plot (keep units in MN95)
             (x_min, y_max), (x_max, y_min) = self.to_MN95(*smopy.num2deg(map.xmin, map.ymin, map.z)), self.to_MN95(*smopy.num2deg(max(map.box_tile[0], map.box_tile[2])+1, max(map.box_tile[1], map.box_tile[3])+1, map.z))
-            map.show_mpl(ax=ax, extent=[x_min, x_max, y_min, y_max])
+            map.show_mpl(ax=ax, extent=[x_min, x_max, y_min, y_max], zorder= -100)
 
         # If margin > 0, plot a rectangle with the area in the simulation
         size_x, size_y = self.x_max - self.x_min, self.y_max - self.y_min

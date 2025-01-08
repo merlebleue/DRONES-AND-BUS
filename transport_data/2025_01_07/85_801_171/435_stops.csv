@@ -1,0 +1,25 @@
+           STOP_NAME            ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A 
+           Epalinges, Croisettes;      8579239;  2540394.49736;  1154941.15197;                 0.0;      Yes
+            Epalinges, Lion d'Or;      8587546;  2541876.40084;  1155906.05425;  1768.3535658869173;      Yes
+              Lausanne, En Marin;      8504171;      2542142.0;      1156482.0;  2402.5904465047442;      Yes
+         Lausanne, Vert-Bois/EHL;      8592130;  2542209.37895;  1156858.07414;   2784.652851982906;      Yes
+        Lausanne, Chalet-à-Gobet;      8587929;  2542711.22235;  1157328.42147;  3472.4561734068698;      Yes
+       Lausanne, Chalet-Fontaine;      8592006;      2543347.0;      1157654.0;   4186.749250117403;      Yes
+  Villars-Tiercelin, sentier H&N;      8511209;   2544406.2919;  1163105.29215;   9740.008242282147;      Yes
+   Villars-Tiercelin, La Sapelle;      8583395;      2544050.0;      1163666.0;  10404.340396446883;      Yes
+      Villars-Tiercelin, village;      8570172;      2543822.0;      1164005.0;  10812.880480159609;      Yes
+  Peney-le-Jorat, Chalet Renards;      8570173;      2545095.0;      1164494.0;    12176.5703275956;      Yes
+           Peney-le-Jorat, poste;      8570174;      2545490.0;      1164895.0;  12739.443315044811;      Yes
+    Villars-Mendraz, Praz-Longet;      8570175;      2545497.0;      1166029.0;  13873.464919777278;      Yes
+        Villars-Mendraz, croisée;      8570347;      2545692.0;      1166490.0;  14374.010621986377;      Yes
+                Sottens, croisée;      8570348;      2546667.0;      1167316.0;  15651.860769695411;      Yes
+                  Sottens, Radio;      8570349;      2546291.0;      1167534.0;  16086.487045937425;      Yes
+      Chapelle-sur-Moudon, poste;      8507661;      2546305.0;      1168786.0;    17338.5653182511;      Yes
+     Chapelle-sur-Moudon, Mulles;      8570350;      2546422.0;      1169347.0;  17911.635994520617;      Yes
+          St-Cierges, La Tondiaz;      8570351;      2546169.0;      1170754.0;  19341.201662826905;      Yes
+        St-Cierges, Grande Salle;      8507960;      2546164.0;      1171210.0;  19797.229074283718;      Yes
+      St-Cierges, Transformateur;      8581512;      2546236.0;      1171425.0;  20023.964603039138;      Yes
+             Thierrens, La Rapaz;      8570352;      2547171.0;      1172272.0;  21285.564381098724;      Yes
+               Thierrens, Prouty;      8570353;      2547427.0;      1172488.0;  21620.515123746056;      Yes
+                Thierrens, poste;      8507963;      2547654.0;      1172711.0;   21938.72574581892;      Yes
+        Thierrens, gare routière;      8581943;      2547890.0;      1172946.0;   22271.77379040108;      Yes

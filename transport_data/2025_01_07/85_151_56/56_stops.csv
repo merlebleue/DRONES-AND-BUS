@@ -1,0 +1,10 @@
+          STOP_NAME           ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A 
+                Bussigny, gare;      8581914;      2532020.0;      1155520.0;                 0.0;      Yes
+        Bussigny, Grand-Record;      8581918;      2531996.0;      1155800.0;  281.02668912400475;      Yes
+              Bussigny, Dallaz;      8581917;      2531961.0;      1156056.0;   539.4081900098074;      Yes
+           Bussigny, Sottelles;      8506903;      2531901.0;      1156383.4;   872.2606498173609;      Yes
+               Bussigny, Rente;      8594178;      2532809.0;      1156577.0;  1800.6705592862527;      Yes
+                 Mex VD, Faraz;      8594270;      2531907.2;      1157602.4;  3166.2064980295263;      Yes
+     Vufflens-la-Ville, église;      8593781;  2531065.88983;  1158810.88808;   4638.703099603979;      Yes
+  Vufflens-la-Ville, Cuvillard;      8593780;  2530730.47133;  1159105.80759;   5085.338395478326;      Yes
+       Vufflens-la-Ville, gare;      8593782;      2530452.0;      1158837.0;   5472.383356786026;      Yes

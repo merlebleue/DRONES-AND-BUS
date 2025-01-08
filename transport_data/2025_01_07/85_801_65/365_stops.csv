@@ -1,0 +1,35 @@
+           STOP_NAME            ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B ; Route_C ; Route_D ; Route_E 
+                    Moudon, gare;      8570393;      2551294.0;      1168719.0;                 0.0;      Yes;         ;      Yes;         ;         
+                  Moudon, Verger;      8592166;      2551020.0;      1168574.0;   310.0016128990299;      Yes;         ;      Yes;         ;         
+                Moudon, Sorbiers;      8592165;      2550763.0;      1168088.0;   859.7697458423645;      Yes;         ;      Yes;         ;         
+             Bressonnaz, village;      8579243;      2550259.0;      1166935.0;   2118.111909166792;      Yes;         ;      Yes;         ;         
+           Syens, Champ-du-Chêne;      8504162;      2549854.0;      1166037.0;  3103.2154570235643;      Yes;         ;      Yes;         ;         
+                Vucherens, Closy;      8591934;      2549792.0;      1164320.0;   4821.334486660336;      Yes;         ;      Yes;         ;         
+              Vucherens, village;      8504163;      2549741.0;      1163931.0;   5213.663430277806;      Yes;         ;      Yes;         ;         
+          Vulliens, Praz-Botsard;      8504164;      2549527.0;      1162846.0;   6319.566228899818;      Yes;         ;      Yes;         ;         
+             Carrouge VD, centre;      8504165;      2549259.0;      1161891.0;   7311.457856044639;      Yes;         ;      Yes;         ;         
+       Carrouge VD, Gustave Roud;      8511210;  2548916.63119;  1161553.32655;   7601.169969417724;         ;         ;         ;         ;      Yes
+      Carrouge VD, Champ du Trey;      8511214;  2549079.36735;  1161432.60007;   7803.797560689825;         ;         ;      Yes;         ;      Yes
+            Mézières VD, station;      8504166;      2548883.0;      1161133.0;   8162.015843430903;      Yes;      Yes;      Yes;      Yes;      Yes
+            Mézières VD, village;      8504758;      2548788.0;      1160758.0;   8548.862066108597;      Yes;      Yes;      Yes;      Yes;      Yes
+     Mézières VD, centre médical;      8595474;      2548831.0;      1160321.0;    8987.97253057056;      Yes;      Yes;      Yes;      Yes;      Yes
+         Mézières VD, Praz Joret;      8595475;      2548959.0;      1159382.0;   9935.656549640207;      Yes;      Yes;      Yes;      Yes;      Yes
+           Servion, Grange Rouge;      8581429;      2549434.0;      1157989.0;  11407.415361402514;      Yes;      Yes;      Yes;      Yes;      Yes
+       Servion, Zoo-Tropiquarium;      8504997;      2548897.0;      1157422.0;  11608.612569892293;         ;      Yes;         ;         ;      Yes
+      Servion, Clos de l'Auberge;      8570462;      2549668.0;      1157654.0;  11816.048448658063;      Yes;      Yes;      Yes;      Yes;      Yes
+             Essertes, Le Pralet;      8587545;      2549615.0;      1156584.0;    12887.3602613438;      Yes;      Yes;      Yes;      Yes;      Yes
+          Forel (Lavaux), Casard;      8591973;      2549285.0;      1155923.0;  13626.157256464921;      Yes;      Yes;      Yes;      Yes;      Yes
+  Forel (Lavaux), Cornes de Cerf;      8579251;      2548697.0;      1154694.0;  14988.576061385053;      Yes;      Yes;      Yes;      Yes;      Yes
+  Forel (Lavaux), Les Confréries;      8591975;      2548372.0;      1154800.0;    15330.4254434234;      Yes;      Yes;      Yes;      Yes;      Yes
+    Forel (Lavaux), Pra Pélisson;      8596091;      2547722.0;      1154848.0;   15982.19534147025;      Yes;      Yes;      Yes;      Yes;      Yes
+                 Savigny, centre;      8504173;      2545711.0;      1154384.0;  18046.030848481405;      Yes;      Yes;      Yes;      Yes;      Yes
+         Savigny, ancienne poste;      8592228;      2545242.0;      1154537.0;  18539.356298868875;      Yes;      Yes;      Yes;      Yes;      Yes
+                 Savigny, Publoz;      8592233;      2544546.0;      1154761.0;  19270.514284532714;      Yes;      Yes;      Yes;      Yes;      Yes
+       Savigny, Claie-aux-Moines;      8504172;      2543655.0;      1154636.0;  20170.239798231196;      Yes;      Yes;      Yes;      Yes;      Yes
+                Pully, Ravessoud;      8592194;      2543103.0;      1154479.0;   20744.13264537254;      Yes;      Yes;      Yes;      Yes;         
+           Pully, Monts-de-Pully;      8579249;      2542462.0;      1154129.0;  21474.462023119322;      Yes;      Yes;      Yes;      Yes;         
+          Pully, Trois-Chasseurs;      8579248;      2542140.0;      1153953.0;    21841.4225114556;      Yes;      Yes;      Yes;      Yes;         
+         Montblesson, Centenaire;      8579247;      2541634.0;      1154209.0;   22408.49569897199;      Yes;      Yes;      Yes;      Yes;         
+              Lausanne, Rovéréaz;      8579246;      2540857.0;      1153784.0;   23294.13332238238;      Yes;      Yes;      Yes;      Yes;         
+                 Lausanne, Foyer;      8579245;      2540268.0;      1153865.0;     23888.676844759;      Yes;      Yes;      Yes;      Yes;         
+                Lausanne, Sallaz;      8579238;      2539205.0;      1153810.0;  24953.098753590268;      Yes;      Yes;      Yes;      Yes;         

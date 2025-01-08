@@ -1,0 +1,15 @@
+        STOP_NAME         ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B 
+     Epalinges, Bois-Murat;      8591964;  2539851.70926;  1155168.42522;                 0.0;      Yes;      Yes
+      Epalinges, Tuileries;      8591971;  2540112.86043;  1155099.18912;   270.1732243128021;      Yes;      Yes
+     Epalinges, Croisettes;      8579239;  2540394.49736;  1154941.15197;   593.1207450030295;      Yes;      Yes
+       Epalinges, Planches;      8589525;      2540791.0;      1155095.0;  1018.4248242944361;      Yes;      Yes
+  Epalinges, Croix-Blanche;      8591966;      2541117.0;      1155439.0;   1492.357308937555;      Yes;      Yes
+        Epalinges, Girarde;      8591965;  2541317.67128;  1155626.46796;   1766.837970631439;         ;      Yes
+        Epalinges, Giziaux;      8593821;      2541398.0;      1155548.0;  1793.7573752945484;      Yes;         
+      Epalinges, Lion d'Or;      8587546;  2541876.40084;  1155906.05425;  2391.3108956218857;      Yes;      Yes
+   Epalinges, Grand Chemin;      8591968;  2542135.36618;  1156183.06574;  2770.5185075093104;      Yes;         
+        Lausanne, En Marin;      8504171;      2542142.0;      1156482.0;  3069.5263658835456;      Yes;      Yes
+       Lausanne, Vulliette;      8587549;  2541936.72241;  1156586.71698;   3299.970577910151;      Yes;      Yes
+    Lausanne, Cojonnex/EHL;      8592037;      2542025.0;      1157007.0;   3729.424591509417;      Yes;      Yes
+       Lausanne, Mauvernay;      8592070;      2542517.0;      1157305.0;   4304.635857045829;      Yes;      Yes
+  Lausanne, Chalet-à-Gobet;      8587929;  2542711.22235;  1157328.42147;     4500.2653192862;      Yes;      Yes

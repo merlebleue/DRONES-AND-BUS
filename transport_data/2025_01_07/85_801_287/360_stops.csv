@@ -1,0 +1,47 @@
+          STOP_NAME           ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;       DISTANCE      ; Route_A ; Route_B ; Route_E ; Route_F 
+     Carrouge VD, Gustave Roud;      8511210;  2548916.63119;  1161553.32655;  -421.66985376692753;         ;         ;         ;      Yes
+          Mézières VD, station;      8504166;      2548883.0;      1161133.0;                  0.0;      Yes;      Yes;         ;      Yes
+          Mézières VD, village;      8504758;      2548788.0;      1160758.0;   386.84622267769396;      Yes;      Yes;         ;      Yes
+  Mézières VD, collège Raffort;      8557141;      2548673.0;      1160783.0;    504.5322456370926;         ;      Yes;         ;         
+       Carrouge VD, Croix d'Or;      8570425;      2548345.0;      1161045.0;    924.3274337943664;         ;      Yes;         ;         
+     Carrouge VD, Ecorcheboeuf;      8591904;      2548085.0;      1161098.0;   1189.6743764939192;         ;      Yes;         ;         
+   Ferlens VD, Champ des Oches;      8570423;      2549840.0;      1160084.0;   1636.2380747401285;      Yes;      Yes;         ;      Yes
+              Ropraz, Ussières;      8591905;      2547629.0;      1161327.0;   1699.9458728563943;         ;      Yes;         ;         
+         Ferlens VD, Le Moulin;      8570422;      2549767.0;      1159789.0;    1940.136083947165;      Yes;      Yes;         ;      Yes
+         Ropraz, Home du Jorat;      8592225;      2547305.0;      1160740.0;    2370.427043360087;         ;      Yes;         ;         
+          Servion, Mannessivaz;      8570421;      2549780.0;      1159293.0;    2436.306417602856;      Yes;      Yes;         ;      Yes
+       Ropraz, Corcelles-Jorat;      8592224;      2546855.0;      1160216.0;    3061.133927646033;         ;      Yes;         ;         
+        Servion, Vieux-Collège;      8557026;      2549798.0;      1158482.0;    3247.506146399655;      Yes;      Yes;         ;      Yes
+        Servion, poste/croisée;      8570420;      2549588.0;      1158205.0;    3595.110806897756;      Yes;      Yes;         ;      Yes
+         Servion, Grange Rouge;      8581429;      2549434.0;      1157989.0;   3860.3880203933745;      Yes;      Yes;         ;      Yes
+        Montpreveyres, village;      8570417;      2546518.0;      1159242.0;      4091.7866334592;         ;      Yes;         ;         
+     Servion, Zoo-Tropiquarium;      8504997;      2548897.0;      1157422.0;     4641.32207650823;      Yes;      Yes;         ;      Yes
+       Montpreveyres, Balances;      8579240;      2546132.0;      1158503.0;    4925.523402469659;         ;      Yes;         ;         
+     Les Cullayes, Pra la Tête;      8570419;      2547875.0;      1157310.0;     5669.44074670151;      Yes;      Yes;         ;      Yes
+   Montpreveyres, Riau-Graubon;      8592144;      2545233.0;      1158452.0;   5825.9688477910295;         ;      Yes;         ;         
+         Les Cullayes, village;      8504169;      2547399.0;      1158191.0;    6670.808311584655;      Yes;      Yes;         ;      Yes
+       Lausanne, Ste-Catherine;      8592117;      2544036.0;      1158005.0;    7103.708257843017;         ;      Yes;         ;         
+     Lausanne, Chalet-Fontaine;      8592006;      2543347.0;      1157654.0;   7876.9624204570955;         ;      Yes;         ;         
+         Mollie-Margot, centre;      8579250;      2547236.0;      1156368.0;    8501.080968868264;      Yes;      Yes;         ;      Yes
+      Lausanne, Chalet-à-Gobet;      8587929;  2542711.22235;  1157328.42147;    8591.255497167629;         ;      Yes;         ;         
+      Savigny, Grange-la-Ville;      8592231;      2547048.0;      1155895.0;     9010.07311026143;      Yes;      Yes;         ;      Yes
+          Savigny, Clair-Matin;      8592229;      2546955.0;      1155673.0;     9250.76586046384;      Yes;      Yes;         ;      Yes
+       Lausanne, Vert-Bois/EHL;      8592130;  2542209.37895;  1156858.07414;    9279.058818591593;         ;      Yes;         ;         
+             Savigny, St-Amour;      8592234;      2546849.0;      1155407.0;    9537.108312782737;      Yes;      Yes;         ;      Yes
+            Lausanne, En Marin;      8504171;      2542142.0;      1156482.0;    9661.121224069755;         ;      Yes;         ;         
+           Savigny, Crêt-Rouge;      8592230;      2546326.0;      1154921.0;    10251.05859116352;      Yes;      Yes;         ;      Yes
+          Epalinges, Lion d'Or;      8587546;  2541876.40084;  1155906.05425;   10295.358104687584;         ;      Yes;         ;         
+                Savigny, Palaz;      8592232;      2546033.0;      1154707.0;   10613.887752064351;      Yes;      Yes;         ;      Yes
+               Savigny, centre;      8504173;      2545711.0;      1154384.0;   11069.972174074137;      Yes;      Yes;      Yes;      Yes
+       Savigny, ancienne poste;      8592228;      2545242.0;      1154537.0;   11563.297624461607;      Yes;      Yes;      Yes;      Yes
+         Epalinges, Croisettes;      8579239;  2540394.49736;  1154941.15197;   12063.711670574501;         ;      Yes;         ;         
+               Savigny, Publoz;      8592233;      2544546.0;      1154761.0;   12294.455610125446;      Yes;      Yes;      Yes;      Yes
+     Savigny, Claie-aux-Moines;      8504172;      2543655.0;      1154636.0;    13194.18112382393;      Yes;      Yes;      Yes;      Yes
+              Pully, Ravessoud;      8592194;      2543103.0;      1154479.0;   13768.073970965275;      Yes;      Yes;      Yes;         
+         Pully, Monts-de-Pully;      8579249;      2542462.0;      1154129.0;   14498.403348712056;      Yes;      Yes;      Yes;         
+        Pully, Trois-Chasseurs;      8579248;      2542140.0;      1153953.0;   14865.363837048335;      Yes;      Yes;      Yes;         
+       Montblesson, Centenaire;      8579247;      2541634.0;      1154209.0;   15432.437024564726;      Yes;      Yes;      Yes;         
+            Lausanne, Rovéréaz;      8579246;      2540857.0;      1153784.0;   16318.074647975114;      Yes;      Yes;      Yes;         
+               Lausanne, Foyer;      8579245;      2540268.0;      1153865.0;   16912.618170351736;      Yes;      Yes;      Yes;         
+              Lausanne, Sallaz;      8579238;      2539205.0;      1153810.0;   17977.040079183003;      Yes;      Yes;      Yes;         
+    Carrouge VD, Champ du Trey;      8511214;  2549079.36735;  1161432.60007;                     ;         ;         ;         ;         

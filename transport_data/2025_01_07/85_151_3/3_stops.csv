@@ -1,0 +1,18 @@
+           STOP_NAME            ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B ; Route_C ; Route_D 
+                  Lausanne, gare;      8592050;      2537919.0;      1152132.0;                 0.0;      Yes;      Yes;      Yes;      Yes
+               Lausanne, Villard;      8592134;  2537465.83676;  1152353.98006;   504.6108095602153;      Yes;         ;         ;      Yes
+                 Lausanne, Cécil;      8592004;      2537401.0;      1152495.0;   659.8217271043454;      Yes;      Yes;      Yes;      Yes
+        Lausanne, Pont Chauderon;      8592096;      2537522.0;      1152762.0;    952.859350517073;         ;      Yes;      Yes;         
+             Lausanne, Chauderon;      8592010;      2537555.0;      1152802.0;  1003.2820596028744;      Yes;         ;         ;      Yes
+               Lausanne, St-Roch;      8592120;      2537658.0;      1153021.0;   1245.294455979589;      Yes;      Yes;      Yes;      Yes
+       Lausanne, Beaulieu-Jomini;      8592060;      2537680.0;      1153210.0;  1435.5705711385863;      Yes;      Yes;      Yes;      Yes
+            Lausanne, Mont-Blanc;      8592076;      2537726.0;      1153527.0;  1755.8907234862024;      Yes;      Yes;      Yes;      Yes
+              Lausanne, casernes;      8592003;      2537827.0;      1153699.0;   1955.352499272943;      Yes;      Yes;      Yes;      Yes
+          Lausanne, Vieux-Moulin;      8592132;      2537971.0;      1153870.0;   2156.952541979916;         ;      Yes;      Yes;         
+              Lausanne, Rouvraie;      8592111;      2538089.0;      1153799.0;  2235.7878750727878;      Yes;         ;         ;         
+                 Lausanne, Motte;      8592082;      2538225.0;      1153863.0;   2386.094228897235;      Yes;      Yes;         ;         
+                 Lausanne, Forêt;      8592047;      2538223.0;      1154124.0;  2647.1018916199987;      Yes;      Yes;         ;         
+             Lausanne, Bellevaux;      8587357;      2538273.0;      1154496.0;  3022.4470660927764;      Yes;      Yes;         ;         
+            Lausanne, Entre-Bois;      8595004;  2538085.04858;  1154739.36915;   3329.943861932402;      Yes;      Yes;         ;         
+  Le Mont-sur-L., Rionzi/collège;      8511245;  2537975.47321;  1155100.10369;   3706.953371175552;      Yes;         ;         ;         
+       Le Mont-sur-L., Maillefer;      8595005;      2537723.0;      1154897.0;  4030.9808864567563;      Yes;      Yes;         ;         

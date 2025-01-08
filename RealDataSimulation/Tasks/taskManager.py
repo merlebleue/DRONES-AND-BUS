@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 from ..area import Area
 from .geostat import STATENT, STATPOP
-from ..PublicTransport.linedata import LineData
+from ..PublicTransport.linedata import LineData, LinesData
 
 class TaskManager:
     def __init__(self, area: Area, precision_in_meters = 1, random_seed = None):
@@ -27,7 +27,39 @@ class TaskManager:
 
         return tasks
     
-    def plot(self, ax = None, tasks: pd.DataFrame = None, line: LineData = None):
+    def compute_improvement(self, tasks: pd.DataFrame, lines : LineData | LinesData):
+        tasks = tasks.copy(deep=True)
+        if isinstance(lines, LineData):
+            lines = LinesData(lines)
+        pickup_stop_x = np.zeros((len(tasks), len(lines)))
+        pickup_stop_y = np.zeros((len(tasks), len(lines)))
+        delivery_stop_x = np.zeros((len(tasks), len(lines)))
+        delivery_stop_y = np.zeros((len(tasks), len(lines)))
+        distance_transport = np.full((len(tasks), len(lines)), np.inf)
+        line_names = np.zeros(len(lines), dtype=object)
+        for i, line in enumerate(lines.values()):
+            line_names[i] = str(line.line_name)
+            pickup_stop_x[:, i], pickup_stop_y[:, i] = line.get_nearest_stops(tasks.pickup_x.values, tasks.pickup_y.values)
+            delivery_stop_x[:, i], delivery_stop_y[:, i] = line.get_nearest_stops(tasks.delivery_x.values, tasks.delivery_y.values)
+        
+            distance_transport[:, i] = ((pickup_stop_x[:, i] - tasks["pickup_x"])**2 + (pickup_stop_y[:, i] - tasks["pickup_y"])**2)**0.5 \
+                                        + ((delivery_stop_x[:, i] - tasks["delivery_x"])**2 + (delivery_stop_y[:, i] - tasks["delivery_y"])**2)**0.5
+        idx = np.argmin(distance_transport, axis= 1)
+        tasks["pickup_stop_x"] = pickup_stop_x[np.arange(len(tasks)), idx]
+        tasks["pickup_stop_y"] = pickup_stop_y[np.arange(len(tasks)), idx]
+        tasks["delivery_stop_x"] = delivery_stop_x[np.arange(len(tasks)), idx]
+        tasks["delivery_stop_y"] = delivery_stop_y[np.arange(len(tasks)), idx]
+        tasks["distance_transport"] = distance_transport[np.arange(len(tasks)), idx]
+        
+        tasks["improvement"] = tasks["distance"] - tasks["distance_transport"]
+        tasks["line"] = line_names[idx]
+        tasks["line"] = tasks["line"].where(tasks["improvement"] > 0, "Direct")
+
+        return tasks
+
+            
+    
+    def plot(self, ax = None, tasks: pd.DataFrame = None, with_lines = False):
         if ax is None:
             fig, ax = self.area.plot()
             
@@ -35,7 +67,7 @@ class TaskManager:
             # Plot a visualisation of the shops, and densities of customers
             ax.scatter(data=self.customers.df, x="POSITION_X", y="POSITION_Y", c="POPULATION", marker=(4,0,0), s=50, cmap="Blues", alpha=0.5, vmin=-self.customers.df["POPULATION"].quantile(0.5),vmax=self.customers.df["POPULATION"].quantile(0.95), label="Customer density")
             ax.scatter(data=self.shops.df, x="POSITION_X", y="POSITION_Y", c="SHOPS_ETP", marker="*", cmap="Oranges", s=20, vmin=-self.shops.df["SHOPS_ETP"].quantile(0.5),vmax=self.shops.df["SHOPS_ETP"].quantile(0.95), alpha=0.75, label="Shops, by jobs")
-        elif line is None:
+        elif not with_lines:
             # Plot the tasks with arrows
             ax.quiver(
                 tasks["pickup_x"],
@@ -48,12 +80,9 @@ class TaskManager:
             ax.scatter(tasks["delivery_x"], tasks["delivery_y"], c="C0", s=10, label="Delivery points")
         else:
             # Plot the tasks, but to stops, not directly
-            tasks["pickup_stop_x"], tasks["pickup_stop_y"] = line.get_nearest_stops(tasks.pickup_x.values, tasks.pickup_y.values)
-            tasks["delivery_stop_x"], tasks["delivery_stop_y"] = line.get_nearest_stops(tasks.delivery_x.values, tasks.delivery_y.values)
-            
-            tasks["distance_transport"] = ((tasks["pickup_stop_x"] - tasks["pickup_x"])**2 + (tasks["pickup_stop_y"] - tasks["pickup_y"])**2)**0.5 \
-                                            + ((tasks["delivery_stop_x"] - tasks["delivery_x"])**2 + (tasks["delivery_stop_y"] - tasks["delivery_y"])**2)**0.5
-            improved_mask = tasks["distance_transport"] < tasks["distance"]
+            if "improvement" not in tasks:
+                raise ValueError("with_lines is True but improvement has not been computed : use .compute_improvement()")
+            improved_mask = tasks["improvement"] > 0
 
             tasks_improved = tasks.loc[improved_mask]
             tasks_not_improved = tasks.loc[~improved_mask]
@@ -86,3 +115,5 @@ class TaskManager:
         ax.plot([self.area.x_min], [self.area.y_max], alpha=0)
         ax.plot([self.area.x_min], [self.area.y_max], alpha=0)
         return ax
+    
+    def 

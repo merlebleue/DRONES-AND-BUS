@@ -1,0 +1,9 @@
+       STOP_NAME        ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B 
+   Epalinges, Croisettes;      8579239;  2540394.49736;  1154941.15197;                 0.0;      Yes;      Yes
+     Epalinges, Vaugueny;      8511383;   2540168.1785;  1155118.55712;  287.56358190533086;      Yes;      Yes
+    Epalinges, Florimont;      8593820;  2540197.61036;  1155513.88937;    683.989895705384;      Yes;      Yes
+   Epalinges, Montéclard;      8593822;  2540455.97352;  1155859.53345;  1115.5236168493118;      Yes;      Yes
+        Epalinges, Polny;      8591969;      2540711.0;      1156155.0;  1436.2568396832344;         ;      Yes
+  Epalinges, Bois-de-Ban;      8593819;  2540707.75061;  1156238.88387;  1570.8240058268118;      Yes;         
+    Epalinges, Biolleyre;      8591963;      2540931.0;      1155977.0;  1668.8041357121613;         ;      Yes
+     Epalinges, Ballègue;      8591962;      2541045.0;      1156245.0;  1908.1288502947748;      Yes;      Yes

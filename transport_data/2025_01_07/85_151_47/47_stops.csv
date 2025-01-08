@@ -1,0 +1,23 @@
+           STOP_NAME           ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B ; Route_C ; Route_D ; Route_E 
+                    Pully, port;      8588439;      2540343.0;      1150847.0;                 0.0;      Yes;      Yes;      Yes;         ;         
+                  Pully, Somais;      8588440;  2540046.15497;   1150898.8468;   301.3387836072808;      Yes;      Yes;      Yes;         ;         
+             Pully, Châtaignier;      8588441;  2539759.75342;  1150874.90376;   588.7394047041826;      Yes;      Yes;      Yes;         ;         
+                  Pully, Osches;      8588442;  2539795.52654;  1151141.92033;   858.1416407179429;      Yes;      Yes;      Yes;         ;         
+                    Pully, gare;      8588445;      2540150.0;      1151300.0;  1246.2661257889722;      Yes;      Yes;      Yes;         ;         
+                Pully, Clergère;      8588446;      2540392.0;      1151396.0;  1506.6120495135428;      Yes;      Yes;      Yes;      Yes;      Yes
+               Pully, Rochettaz;      8588447;  2540503.85892;   1151719.0632;  1848.4925098762205;      Yes;      Yes;      Yes;      Yes;      Yes
+              Pully, Boverattes;      8588448;      2540695.0;      1151962.0;  2157.6093183124617;      Yes;      Yes;      Yes;      Yes;      Yes
+                  Pully, Vallon;      8588449;  2540792.86684;  1152151.91395;  2371.2567540006366;      Yes;      Yes;      Yes;      Yes;      Yes
+             Pully, Pré Pariset;      8588450;  2540788.48971;  1152267.40681;   2486.832529914287;      Yes;      Yes;      Yes;      Yes;      Yes
+                Pully, Val-Vert;      8579256;      2540789.0;      1152580.0;  2799.4261364231447;      Yes;      Yes;      Yes;      Yes;      Yes
+               Pully, Chenaulaz;      8588435;      2541240.0;      1153150.0;   3526.269310704915;      Yes;      Yes;         ;      Yes;      Yes
+  Belmont-sur-L., Grands Champs;      8588436;      2541580.0;      1152630.0;  4147.5582933852775;      Yes;      Yes;         ;      Yes;      Yes
+         Belmont-sur-L., centre;      8579257;      2541665.0;      1152317.0;   4471.894538661688;      Yes;      Yes;         ;      Yes;      Yes
+      Belmont-sur-L., Blessoney;      8579258;      2542087.0;      1152303.0;   4894.126702287341;      Yes;      Yes;         ;      Yes;      Yes
+                  Lutry, Landar;      8579259;  2542551.73301;  1152101.85475;   5400.521984829867;      Yes;      Yes;         ;      Yes;      Yes
+                Lutry, Echerins;      8588438;      2543380.0;      1152174.0;   6231.925102349336;      Yes;         ;         ;         ;      Yes
+             Lutry, Croix/Lutry;      8579260;      2543535.0;      1152022.0;    6449.01724868356;      Yes;         ;         ;         ;      Yes
+                 Lutry, Sapelle;      8588451;      2543634.0;      1151444.0;   7035.434335747025;      Yes;         ;         ;         ;      Yes
+               Lutry, Jordillon;      8588452;      2543937.0;      1151128.0;   7473.229950160875;      Yes;         ;         ;         ;      Yes
+                Aran, Pra Forny;      8588453;  2544176.09157;  1150705.78695;   7958.439841275395;      Yes;         ;         ;         ;      Yes
+           Grandvaux, Pra Grana;      8588454;  2544426.55754;  1150424.38954;   8335.159504264679;      Yes;         ;         ;         ;      Yes

@@ -8,7 +8,7 @@ from scipy.interpolate import interp1d
 
 from ..download import DownloadManager
 from ..area import Area
-from .linedata import LineData
+from .linedata import LineData, LinesData
 
 TRANSPORT_FOLDER = "transport_data"
 FILTERED_SUBFOLDER = "0_filtered_data"
@@ -244,10 +244,11 @@ class TransportData:
 
         # Filter lines according to modes argument
         if modes is not None:
-            lines_df = lines_df.loc[lines_df.MEAN_OF_TRANSPORT.str.lower.isin([m.lower() for m in modes])]
-            if len(lines_df) == 0:
-                raise ValueError(f"`modes` values is not found in the lines for this area.\nFound : {', '.join(lines_df.MEAN_OF_TRANSPORT.astype(str))}")
-        
+            pot_lines_df = lines_df.loc[lines_df.MEAN_OF_TRANSPORT.str.lower().isin([m.lower() for m in modes])]
+            if len(pot_lines_df) == 0:
+                raise ValueError(f"`modes` values is not found in the lines for this area.\nFound : {', '.join(lines_df.MEAN_OF_TRANSPORT.drop_duplicates().str.lower())}")
+            else:
+                lines_df = pot_lines_df
         # Determine which lines are asked
         if type(lines) is str:
             if lines == "all":
@@ -275,19 +276,18 @@ class TransportData:
 
         # Run over each line and compute the timetable
         # --------------------------------------------
-        lines_data = {}
+        lines_data = LinesData()
         for line_id in lines_ids:
-            lines_data[line_id] = self.generate_timetable(line_id, 
+            lines_data.add_line(self.generate_timetable(line_id, 
                        correct_times = correct_times,
                        threshold = threshold,
                        verbose= verbose,
                        solve_too_fast = solve_too_fast,
-                       return_data = True)
+                       return_data = True))
             
         if return_data:
             return lines_data
         
-    
     def generate_timetable(self,
                            line_id = None,
                            correct_times = True,
@@ -346,10 +346,10 @@ class TransportData:
         # ---
 
         stops = pd.merge(line_timetable.index.get_level_values("STOP_NUMBER").to_series(), 
-                            stops_df[["designationOfficial", "lv95East", "lv95North"]].rename(columns = {"designationOfficial": "STOP_NAME", "lv95East": "POSITION_X", "lv95North": "POSITION_Y"}), 
-                            how="left", 
-                            right_on=stops_df["number"], 
-                            left_index=True).drop("key_0", axis=1).set_index("STOP_NUMBER").drop_duplicates()
+                         stops_df[["designationOfficial", "lv95East", "lv95North"]].rename(columns = {"designationOfficial": "STOP_NAME", "lv95East": "POSITION_X", "lv95North": "POSITION_Y"}), 
+                         how="left", 
+                         right_on=stops_df["number"], 
+                         left_index=True).drop("key_0", axis=1).set_index("STOP_NUMBER").drop_duplicates()
 
         # ---
         # Add a "distance" column to order the stops

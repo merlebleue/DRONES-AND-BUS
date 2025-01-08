@@ -1,0 +1,29 @@
+          STOP_NAME           ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B ; Route_C 
+                  Moudon, gare;      8570393;      2551294.0;      1168719.0;                 0.0;      Yes;      Yes;      Yes
+                Moudon, Verger;      8592166;      2551020.0;      1168574.0;   310.0016128990299;      Yes;      Yes;         
+              Moudon, Sorbiers;      8592165;      2550763.0;      1168088.0;   859.7697458423645;      Yes;      Yes;         
+           Bressonnaz, village;      8579243;      2550259.0;      1166935.0;   2118.111909166792;      Yes;      Yes;         
+         Syens, Champ-du-Chêne;      8504162;      2549854.0;      1166037.0;  3103.2154570235643;      Yes;      Yes;         
+              Vucherens, Closy;      8591934;      2549792.0;      1164320.0;   4821.334486660336;      Yes;      Yes;         
+            Vucherens, village;      8504163;      2549741.0;      1163931.0;   5213.663430277806;      Yes;      Yes;         
+        Vulliens, Praz-Botsard;      8504164;      2549527.0;      1162846.0;   6319.566228899818;      Yes;      Yes;         
+           Carrouge VD, centre;      8504165;      2549259.0;      1161891.0;   7311.457856044639;      Yes;      Yes;         
+    Carrouge VD, Champ du Trey;      8511214;  2549079.36735;  1161432.60007;   7803.797560689825;      Yes;         ;         
+          Mézières VD, station;      8504166;      2548883.0;      1161133.0;   8162.015843430903;      Yes;      Yes;      Yes
+          Mézières VD, village;      8504758;      2548788.0;      1160758.0;   8548.862066108597;      Yes;      Yes;      Yes
+  Mézières VD, collège Raffort;      8557141;      2548673.0;      1160783.0;   8666.548089067996;      Yes;      Yes;      Yes
+       Carrouge VD, Croix d'Or;      8570425;      2548345.0;      1161045.0;   9086.343277225269;      Yes;      Yes;      Yes
+     Carrouge VD, Ecorcheboeuf;      8591904;      2548085.0;      1161098.0;   9351.690219924822;      Yes;      Yes;      Yes
+              Ropraz, Ussières;      8591905;      2547629.0;      1161327.0;   9861.961716287296;      Yes;      Yes;      Yes
+         Ropraz, Home du Jorat;      8592225;      2547305.0;      1160740.0;  10532.442886790988;      Yes;      Yes;      Yes
+       Ropraz, Corcelles-Jorat;      8592224;      2546855.0;      1160216.0;  11223.149771076934;      Yes;      Yes;      Yes
+        Montpreveyres, village;      8570417;      2546518.0;      1159242.0;    12253.8024768901;      Yes;      Yes;      Yes
+       Montpreveyres, Balances;      8579240;      2546132.0;      1158503.0;   13087.53924590056;      Yes;      Yes;      Yes
+   Montpreveyres, Riau-Graubon;      8592144;      2545233.0;      1158452.0;   13987.98469122193;      Yes;      Yes;      Yes
+       Lausanne, Ste-Catherine;      8592117;      2544036.0;      1158005.0;  15265.724101273916;      Yes;      Yes;      Yes
+     Lausanne, Chalet-Fontaine;      8592006;      2543347.0;      1157654.0;  16038.978263887995;      Yes;      Yes;      Yes
+      Lausanne, Chalet-à-Gobet;      8587929;  2542711.22235;  1157328.42147;  16753.271340598527;      Yes;      Yes;      Yes
+       Lausanne, Vert-Bois/EHL;      8592130;  2542209.37895;  1156858.07414;   17441.07466202249;      Yes;      Yes;      Yes
+            Lausanne, En Marin;      8504171;      2542142.0;      1156482.0;   17823.13706750065;      Yes;      Yes;      Yes
+          Epalinges, Lion d'Or;      8587546;  2541876.40084;  1155906.05425;   18457.37394811848;      Yes;      Yes;      Yes
+         Epalinges, Croisettes;      8579239;  2540394.49736;  1154941.15197;  20225.727514005397;      Yes;      Yes;      Yes

@@ -1,0 +1,12 @@
+        STOP_NAME        ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;       DISTANCE      ; Route_A ; Route_B 
+   Lausanne, Praz-Séchaud;      8592101;      2540808.0;      1154324.0;  -1911.6185068311706;         ;      Yes
+     Lausanne, Boveresses;      8592002;      2540551.0;      1154093.0;  -1566.0609862937063;         ;      Yes
+          Lausanne, Foyer;      8579245;      2540268.0;      1153865.0;   -1202.642494744363;         ;      Yes
+        Lausanne, Valmont;      8592127;  2539915.16211;  1154072.13795;   -793.4961799010463;         ;      Yes
+     Lausanne, St-Etienne;      8592118;  2539426.63968;   1154014.5275;  -301.58853759185945;         ;      Yes
+         Lausanne, Sallaz;      8579238;      2539205.0;      1153810.0;                  0.0;      Yes;      Yes
+  Lausanne, Praz-Berthoud;      8592099;      2539407.0;      1154224.0;   460.65171225124084;      Yes;      Yes
+     Lausanne, Boissonnet;      8591997;      2539219.0;      1154506.0;    799.5735321448558;      Yes;      Yes
+       Lausanne, Abeilles;      8591977;      2539344.0;      1154726.0;   1052.6051507224556;      Yes;      Yes
+         Lausanne, Cigale;      8592018;      2539293.0;      1154975.0;   1306.7743856821571;      Yes;      Yes
+      Lausanne, Montolieu;      8592081;      2539042.0;      1154963.0;    1558.061074545694;      Yes;      Yes

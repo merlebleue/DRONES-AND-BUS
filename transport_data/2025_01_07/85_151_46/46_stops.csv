@@ -1,0 +1,11 @@
+        STOP_NAME         ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B 
+       Epalinges, Ballègue;      8591962;      2541045.0;      1156245.0;                 0.0;      Yes;      Yes
+          Epalinges, Polny;      8591969;      2540711.0;      1156155.0;   160.1886372381528;         ;      Yes
+      Epalinges, Biolleyre;      8591963;      2540931.0;      1155977.0;   291.2387336876742;      Yes;      Yes
+    Epalinges, En Praz Bin;      8591967;      2541166.0;      1155782.0;   596.6073633797237;      Yes;      Yes
+        Epalinges, Girarde;      8591965;  2541317.67128;  1155626.46796;   813.8500678449271;      Yes;      Yes
+  Epalinges, Croix-Blanche;      8591966;      2541117.0;      1155439.0;  1088.4647044602602;      Yes;      Yes
+       Epalinges, Planches;      8589525;      2540791.0;      1155095.0;  1562.3971891033789;      Yes;      Yes
+     Epalinges, Croisettes;      8579239;  2540394.49736;  1154941.15197;  1987.7012683947855;      Yes;      Yes
+      Epalinges, Tuileries;      8591971;  2540112.86043;  1155099.18912;   2310.648789085013;      Yes;      Yes
+     Epalinges, Bois-Murat;      8591964;  2539851.70926;  1155168.42522;   2580.822013397815;      Yes;      Yes

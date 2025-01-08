@@ -1,0 +1,14 @@
+         STOP_NAME          ; STOP_NUMBER ;  POSITION_X  ;   POSITION_Y  ;       DISTANCE      ; Route_A ; Route_B ; Route_C ; Route_D ; Route_E 
+     Lausanne, Chauderon-Ale;      8592011;     2537745.0;      1152823.0;  -191.15700353374473;      Yes;         ;         ;         ;      Yes
+         Lausanne, Chauderon;      8592010;     2537555.0;      1152802.0;                  0.0;      Yes;      Yes;         ;      Yes;      Yes
+            Lausanne, Boston;      8592001;     2537405.0;      1152837.0;   154.02921800749363;      Yes;      Yes;         ;      Yes;      Yes
+          Lausanne, Recordon;      8592109;     2537035.0;      1153025.0;    569.0521089424395;      Yes;      Yes;         ;      Yes;      Yes
+            Lausanne, Prélaz;      8592102;     2536612.0;      1153116.0;   1001.7298180978801;      Yes;      Yes;         ;      Yes;      Yes
+  Lausanne, Prélaz-les-Roses;      8592103;     2536179.0;      1153200.0;   1442.8023744874156;      Yes;      Yes;         ;      Yes;      Yes
+            Prilly, Galicien;      8592049;     2535968.0;      1153319.0;    1685.046053455516;      Yes;      Yes;         ;      Yes;      Yes
+         Renens VD, Perrelet;      8592217;     2535581.0;      1153551.0;    2136.258863557357;      Yes;      Yes;      Yes;         ;         
+          Renens VD, village;      8592223;     2535064.0;      1153838.0;    2727.577728468667;      Yes;      Yes;      Yes;         ;         
+    Renens VD, Sous l'Eglise;      8592221;     2534795.0;      1154107.0;   3108.0011767470296;      Yes;      Yes;      Yes;         ;         
+   Renens VD, Hôtel-de-Ville;      8592213;     2534645.0;      1154215.0;    3292.836238356022;      Yes;      Yes;      Yes;         ;         
+           Renens VD, Avenir;      8592202;  2534348.3731;  1154498.66053;    3703.263837432286;      Yes;      Yes;      Yes;         ;         
+         Renens VD, 14 Avril;      8588839;     2534113.0;      1154587.0;   3954.6686070041396;      Yes;      Yes;      Yes;         ;         

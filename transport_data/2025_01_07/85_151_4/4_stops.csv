@@ -1,0 +1,26 @@
+          STOP_NAME          ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B ; Route_D ; Route_E ; Route_F ; Route_H ; Route_I 
+           Lausanne, Faverges;      8592043;      2539172.0;      1151695.0;                 0.0;      Yes;      Yes;      Yes;         ;         ;      Yes;         
+          Lausanne, Trabandan;      8592123;      2539048.0;      1151780.0;   166.3037877045008;         ;      Yes;      Yes;         ;         ;         ;         
+      Lausanne, chemin du Cap;      8592012;      2539425.0;      1151786.0;  268.86799735186037;      Yes;         ;         ;         ;         ;      Yes;         
+    Lausanne, Bonne-Espérance;      8591999;   2539510.1314;  1151833.44599;  366.32812885703015;      Yes;         ;         ;         ;         ;      Yes;         
+     Lausanne, Eugène-Rambert;      8510574;  2539346.30412;  1151859.15086;    507.709887599794;         ;      Yes;      Yes;         ;         ;         ;         
+    Lausanne, avenue du Léman;      8591981;      2539123.0;      1151908.0;   760.5730036149994;      Yes;      Yes;      Yes;         ;         ;      Yes;         
+          Lausanne, Eglantine;      8592038;      2538856.0;      1151981.0;  1037.3725700886484;      Yes;      Yes;      Yes;         ;         ;      Yes;         
+          Lausanne, Georgette;      8592051;      2538569.0;      1152150.0;  1370.4341259608325;      Yes;      Yes;      Yes;         ;         ;      Yes;         
+        Lausanne, St-François;      8579254;      2538215.0;      1152325.0;  1765.3277825318137;      Yes;      Yes;      Yes;         ;         ;      Yes;         
+            Lausanne, Bel-Air;      8591988;      2537880.0;      1152653.0;   2234.165707618938;      Yes;      Yes;      Yes;         ;      Yes;         ;      Yes
+      Lausanne, Chauderon-Ale;      8592011;      2537745.0;      1152823.0;  2445.0545544069964;         ;      Yes;         ;         ;      Yes;         ;         
+  Lausanne, Riponne-M. Béjart;      8590442;  2538107.47618;   1152738.3363;   2477.121869436665;         ;         ;         ;         ;         ;         ;         
+          Lausanne, Chauderon;      8592010;      2537555.0;      1152802.0;   2591.693328929516;      Yes;         ;         ;      Yes;         ;         ;      Yes
+            Lausanne, St-Roch;      8592120;      2537658.0;      1153021.0;   2655.154308200347;         ;      Yes;         ;         ;      Yes;         ;         
+             Lausanne, Tunnel;      8504176;      2538300.0;      1153000.0;  2801.9807821433205;         ;         ;         ;         ;         ;         ;         
+     Lausanne, Ecole Commerce;      8592035;      2537347.0;      1153121.0;  2972.5148094161086;      Yes;      Yes;         ;      Yes;      Yes;         ;      Yes
+             Lausanne, Mémise;      8592071;      2538205.0;      1153223.0;   3044.373026243663;         ;         ;         ;         ;         ;         ;         
+          Lausanne, Aubépines;      8591980;      2537134.0;      1153225.0;   3209.548562286876;      Yes;         ;         ;      Yes;         ;         ;      Yes
+       Lausanne, Grande-Borde;      8592053;      2538097.0;      1153502.0;  3343.5468887383668;         ;         ;         ;         ;         ;         ;         
+             Lausanne, Dranse;      8592032;      2536920.0;      1153535.0;   3586.239416967475;      Yes;      Yes;         ;      Yes;      Yes;         ;      Yes
+       Lausanne, Vieux-Moulin;      8592132;      2537971.0;      1153870.0;  3732.5198955139012;         ;         ;         ;         ;         ;         ;         
+           Lausanne, Béthanie;      8591993;      2536699.0;      1154033.0;   4131.074254326468;      Yes;      Yes;         ;      Yes;      Yes;         ;      Yes
+            Lausanne, Rapille;      8592107;      2536602.0;      1154252.0;   4370.594608367623;      Yes;      Yes;         ;      Yes;      Yes;         ;      Yes
+          Prilly, Mont-Goulin;      8592187;      2536517.0;      1154484.0;   4617.675566759806;      Yes;      Yes;         ;      Yes;      Yes;         ;      Yes
+             Prilly, Coudraie;      8592176;      2536413.0;      1154670.0;   4830.776481821193;      Yes;      Yes;         ;      Yes;      Yes;         ;      Yes

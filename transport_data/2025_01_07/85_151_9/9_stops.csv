@@ -1,0 +1,34 @@
+          STOP_NAME          ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B ; Route_D ; Route_E ; Route_G ; Route_I 
+               Prilly, église;      8592178;      2535587.0;      1154532.0;                 0.0;      Yes;      Yes;         ;         ;      Yes;      Yes
+              Prilly, Perréaz;      8592192;      2535854.0;      1154305.0;   350.4539912741757;      Yes;      Yes;         ;         ;      Yes;      Yes
+               Prilly, centre;      8592173;   2536064.6179;  1154037.43158;     690.97235962108;      Yes;      Yes;         ;         ;      Yes;      Yes
+              Prilly, Huttins;      8592181;      2536308.0;      1153887.0;   977.0921017951503;      Yes;      Yes;         ;         ;      Yes;      Yes
+            Lausanne, Valency;      8592124;  2536528.26003;  1153673.44173;   1283.884565035306;      Yes;      Yes;         ;         ;      Yes;      Yes
+           Lausanne, Montétan;      8592078;  2536743.87961;  1153437.52084;   1603.494435999783;      Yes;      Yes;         ;         ;      Yes;      Yes
+             Lausanne, Prélaz;      8592102;      2536612.0;      1153116.0;  1650.0547027799257;         ;         ;         ;         ;         ;         
+            Lausanne, St-Paul;      8592119;      2537027.0;      1153210.0;  1966.7063409091752;      Yes;      Yes;         ;         ;      Yes;      Yes
+           Lausanne, Recordon;      8592109;      2537035.0;      1153025.0;  2082.7324119353657;         ;         ;         ;         ;         ;         
+             Lausanne, Boston;      8592001;      2537405.0;      1152837.0;   2497.755302870311;      Yes;      Yes;         ;         ;      Yes;      Yes
+          Lausanne, Chauderon;      8592010;      2537555.0;      1152802.0;  2651.7845208778044;      Yes;      Yes;         ;         ;      Yes;      Yes
+            Lausanne, Bel-Air;      8591988;      2537880.0;      1152653.0;  3009.3121421883825;      Yes;      Yes;      Yes;         ;         ;      Yes
+  Lausanne, Riponne-M. Béjart;      8590442;  2538107.47618;   1152738.3363;  3252.2683040061092;         ;         ;         ;         ;         ;         
+        Lausanne, St-François;      8579254;      2538215.0;      1152325.0;   3478.150067275507;      Yes;      Yes;      Yes;      Yes;         ;         
+             Lausanne, Tunnel;      8504176;      2538300.0;      1153000.0;   3577.127216712765;         ;         ;         ;         ;         ;         
+             Lausanne, Mémise;      8592071;      2538205.0;      1153223.0;  3819.5194608131073;         ;         ;         ;         ;         ;         
+          Lausanne, Georgette;      8592051;      2538569.0;      1152150.0;   3873.043723846488;      Yes;      Yes;      Yes;      Yes;         ;         
+       Lausanne, Grande-Borde;      8592053;      2538097.0;      1153502.0;   4118.693323307812;         ;         ;         ;         ;         ;         
+          Lausanne, Eglantine;      8592038;      2538856.0;      1151981.0;   4206.105279718672;      Yes;      Yes;      Yes;      Yes;         ;         
+    Lausanne, avenue du Léman;      8591981;      2539123.0;      1151908.0;   4482.904846192321;      Yes;      Yes;      Yes;      Yes;         ;         
+       Lausanne, Vieux-Moulin;      8592132;      2537971.0;      1153870.0;   4507.666330083346;         ;         ;         ;         ;         ;         
+    Lausanne, Bonne-Espérance;      8591999;   2539510.1314;  1151833.44599;    4877.14972095029;      Yes;      Yes;      Yes;      Yes;         ;         
+          Pully, Perraudettaz;      8592190;      2539805.0;      1151717.0;   5194.178362957786;      Yes;      Yes;      Yes;      Yes;         ;         
+            Pully, Montillier;      8592188;      2540062.0;      1151528.0;   5513.192469228966;      Yes;      Yes;      Yes;      Yes;         ;         
+              Pully, Clergère;      8588446;      2540392.0;      1151396.0;   5868.613346499843;      Yes;      Yes;      Yes;      Yes;         ;         
+             Pully, Reymondin;      8592195;  2540670.16259;  1151175.14903;   6223.788764322328;      Yes;      Yes;      Yes;      Yes;         ;         
+               Pully, Moulins;      8592189;      2541006.0;      1151079.0;   6573.118697087251;      Yes;      Yes;      Yes;      Yes;         ;         
+              Paudex, village;      8592169;      2541227.0;      1150883.0;   6868.511655703397;      Yes;      Yes;      Yes;      Yes;         ;         
+           Paudex, Marronnier;      8592167;      2541418.0;      1150778.0;   7086.470367389808;      Yes;      Yes;      Yes;      Yes;         ;         
+            Lutry, Grand-Pont;      8592150;      2541843.0;      1150593.0;    7549.98951478288;      Yes;      Yes;      Yes;      Yes;         ;         
+             Lutry, Voisinand;      8592164;      2542253.0;      1150541.0;   7963.273920489169;      Yes;      Yes;      Yes;      Yes;         ;         
+                  Lutry, Rive;      8592160;      2542522.0;      1150282.0;   8336.693255821447;         ;      Yes;      Yes;         ;         ;         
+              Lutry, Corniche;      8592155;      2542845.0;      1150204.0;   8668.977772463435;      Yes;      Yes;      Yes;      Yes;         ;         

@@ -1,0 +1,20 @@
+           STOP_NAME            ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;       DISTANCE      ; Route_A ; Route_B ; Route_C 
+          Cossonay-Ville, centre;      8570109;  2528713.11289;  1162746.90564;  -1431.7614466379218;         ;         ;      Yes
+                Penthalaz, poste;      8570130;      2530036.0;      1162464.0;  -463.67445476325315;         ;      Yes;         
+        Cossonay-Penthalaz, gare;      8570129;      2529881.0;      1162027.0;                  0.0;      Yes;      Yes;      Yes
+               Penthalaz, Verney;      8581114;      2530301.0;      1161861.0;    451.6148801800047;      Yes;      Yes;      Yes
+                Penthaz, La Vaux;      8570132;  2530469.00051;  1161616.00115;    748.6815525983025;      Yes;      Yes;      Yes
+                Penthaz, village;      8501299;      2531068.0;      1161308.0;   1422.2282083106868;      Yes;      Yes;      Yes
+  Vufflens-la-Ville,grande salle;      8593779;   2531275.4665;  1159311.65052;    3429.329001723645;      Yes;      Yes;      Yes
+       Vufflens-la-Ville, église;      8593781;  2531065.88983;  1158810.88808;    3972.178338025296;      Yes;      Yes;      Yes
+                 Mex VD, village;      8588853;  2532198.56117;  1158917.43419;    5109.849836312178;      Yes;      Yes;      Yes
+                   Mex VD, Trésy;      8588851;    2532806.001;    1158614.733;    5788.533236358077;      Yes;      Yes;      Yes
+             Mex VD, Les Esserts;      8588850;      2533130.0;      1158729.0;    6132.091527321768;      Yes;      Yes;      Yes
+  Villars-Ste-Croix, Croix Péage;      8588846;      2533051.0;      1157027.0;    7835.923972135518;      Yes;      Yes;      Yes
+               Crissier, Timonet;      8588845;      2533672.0;      1156420.0;    8704.307527944817;      Yes;      Yes;      Yes
+                Crissier, centre;      8588843;      2533922.0;      1156187.0;    9046.051584220855;      Yes;      Yes;      Yes
+                Crissier, Chisaz;      8595148;      2533916.0;      1155821.0;    9412.100761244927;      Yes;      Yes;      Yes
+              Crissier, Marcolet;      8593816;      2533751.0;      1155437.0;    9830.049322673243;      Yes;      Yes;      Yes
+             Crissier, Zinguerie;      8591939;      2533415.0;      1155074.0;    10324.68555264432;      Yes;      Yes;      Yes
+                  Crissier, Jura;      8593815;      2533622.0;      1154891.0;   10600.978875039198;      Yes;      Yes;      Yes
+            Renens VD, gare nord;      8588838;      2534082.0;      1154390.0;    11281.12665309923;      Yes;      Yes;      Yes

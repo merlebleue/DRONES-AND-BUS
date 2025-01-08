@@ -1,0 +1,31 @@
+          STOP_NAME          ; STOP_NUMBER ;   POSITION_X  ;   POSITION_Y  ;      DISTANCE      ; Route_A ; Route_B ; Route_C ; Route_D ; Route_E ; Route_F ; Route_G ; Route_H ; Route_I 
+          Lausanne, Clochatte;      8592019;      2538625.0;      1154924.0;                 0.0;      Yes;      Yes;         ;         ;      Yes;      Yes;      Yes;      Yes;      Yes
+          Lausanne, Piécettes;      8592092;      2538454.0;      1154810.0;   205.5164227014474;      Yes;      Yes;         ;         ;      Yes;      Yes;      Yes;      Yes;      Yes
+           Lausanne, Pavement;      8592089;      2538290.0;      1154743.0;  382.67454416360334;      Yes;      Yes;         ;         ;      Yes;      Yes;      Yes;      Yes;      Yes
+          Lausanne, Bellevaux;      8587357;      2538273.0;      1154496.0;   630.2588732314989;      Yes;      Yes;         ;         ;      Yes;      Yes;      Yes;      Yes;      Yes
+              Lausanne, Forêt;      8592047;      2538223.0;      1154124.0;  1005.6040477042767;      Yes;      Yes;         ;         ;      Yes;      Yes;      Yes;      Yes;      Yes
+              Lausanne, Motte;      8592082;      2538225.0;      1153863.0;  1266.6117104270404;      Yes;      Yes;         ;         ;      Yes;      Yes;      Yes;      Yes;      Yes
+           Lausanne, Rouvraie;      8592111;      2538089.0;      1153799.0;   1399.214767325632;         ;      Yes;         ;         ;         ;      Yes;      Yes;         ;      Yes
+       Lausanne, Vieux-Moulin;      8592132;      2537971.0;      1153870.0;  1520.7081488121544;      Yes;      Yes;         ;      Yes;      Yes;      Yes;         ;      Yes;      Yes
+       Lausanne, Grande-Borde;      8592053;      2538097.0;      1153502.0;  1909.6811555876889;      Yes;      Yes;         ;      Yes;      Yes;      Yes;         ;      Yes;      Yes
+             Lausanne, Mémise;      8592071;      2538205.0;      1153223.0;  2208.8550180823927;      Yes;      Yes;         ;      Yes;      Yes;      Yes;         ;      Yes;      Yes
+             Lausanne, Tunnel;      8504176;      2538300.0;      1153000.0;   2451.247262182735;      Yes;      Yes;         ;      Yes;      Yes;      Yes;         ;      Yes;      Yes
+  Lausanne, Riponne-M. Béjart;      8590442;  2538107.47618;   1152738.3363;  2776.1061748893903;      Yes;      Yes;         ;      Yes;      Yes;      Yes;         ;         ;         
+            Lausanne, Bel-Air;      8591988;      2537880.0;      1152653.0;   3019.062336707117;      Yes;      Yes;         ;      Yes;      Yes;      Yes;         ;         ;         
+          Lausanne, Chauderon;      8592010;      2537555.0;      1152802.0;   3376.589958017695;      Yes;      Yes;         ;      Yes;      Yes;      Yes;         ;         ;         
+             Lausanne, Boston;      8592001;      2537405.0;      1152837.0;  3530.6191760251886;      Yes;      Yes;         ;      Yes;      Yes;      Yes;         ;         ;         
+           Lausanne, Recordon;      8592109;      2537035.0;      1153025.0;  3945.6420669601343;      Yes;      Yes;         ;      Yes;      Yes;      Yes;         ;         ;         
+             Lausanne, Prélaz;      8592102;      2536612.0;      1153116.0;   4378.319776115575;      Yes;      Yes;         ;      Yes;      Yes;      Yes;         ;         ;         
+   Lausanne, Prélaz-les-Roses;      8592103;      2536179.0;      1153200.0;   4819.392332505111;      Yes;      Yes;         ;      Yes;      Yes;      Yes;         ;         ;         
+             Prilly, Galicien;      8592049;      2535968.0;      1153319.0;  5061.6360114732115;      Yes;      Yes;         ;      Yes;      Yes;      Yes;         ;         ;         
+          Renens VD, Perrelet;      8592217;      2535581.0;      1153551.0;   5512.848821575052;      Yes;      Yes;      Yes;      Yes;         ;         ;         ;         ;         
+        Renens VD, Florissant;      8592211;  2535545.62013;  1153832.63271;   5796.695115444055;      Yes;      Yes;      Yes;      Yes;         ;         ;         ;         ;         
+             Renens VD, Broye;      8592207;      2535527.0;      1154137.0;   6101.631430866057;      Yes;      Yes;      Yes;      Yes;         ;         ;         ;         ;         
+      Renens VD, Bourg-Dessus;      8592206;      2535271.0;      1154453.0;   6508.315583495588;      Yes;      Yes;      Yes;      Yes;         ;         ;         ;         ;         
+            Renens VD, Bugnon;      8592208;      2535374.0;      1154630.0;   6713.103278438423;      Yes;      Yes;      Yes;      Yes;         ;         ;         ;         ;         
+      Renens VD, Sur-la-Croix;      8592222;   2535153.1883;  1154807.45208;  6996.3823767728845;      Yes;      Yes;      Yes;      Yes;         ;         ;         ;         ;         
+         Renens VD, Baumettes;      8592203;  2534907.90761;     1155089.87;   7370.444535276058;      Yes;      Yes;      Yes;      Yes;         ;         ;         ;         ;         
+       Renens VD, Bois-Genoud;      8592204;      2534471.0;      1155359.0;   7883.590924307442;      Yes;      Yes;      Yes;      Yes;         ;         ;         ;         ;         
+                Crissier, Bré;      8588842;      2534093.0;      1155828.0;   8485.957092016088;      Yes;      Yes;      Yes;      Yes;         ;         ;         ;         ;         
+             Crissier, centre;      8588843;      2533922.0;      1156187.0;   8883.602662845187;      Yes;      Yes;      Yes;      Yes;         ;         ;         ;         ;         
+            Crissier, Timonet;      8588845;      2533672.0;      1156420.0;   9225.346719121226;      Yes;      Yes;      Yes;      Yes;         ;         ;         ;         ;         

@@ -1,0 +1,21 @@
+         STOP_NAME          ; STOP_NUMBER ; POSITION_X ; POSITION_Y ;      DISTANCE      ; Route_A 
+  Le Mont-sur-L., Grand-Mont;      8504177;     2538190;     1157177;                 0.0;      Yes
+      Le Mont-sur-L., Etavez;      8592141;     2538307;     1157528;  369.98648623970035;      Yes
+    Le Mont-sur-L., Fougères;      8592142;     2538314;     1158063;   905.0322786724603;      Yes
+      Le Mont-sur-L., Budron;      8592139;     2538283;     1158564;   1406.990444259992;      Yes
+          Cugy VD, Cavenette;      8591940;     2538452;     1159076;  1946.1611036990976;      Yes
+              Cugy VD, poste;      8504178;     2538705;     1159474;  2417.7679314698585;      Yes
+            Cugy VD, village;      8573634;     2538831;     1159667;  2648.2565429021806;      Yes
+            Cugy VD, Grillon;      8507540;     2538814;     1159933;  2914.7992224114855;      Yes
+         Morrens VD, village;      8582065;     2537817;     1160152;  3935.5685401321934;      Yes
+       Cheseaux-sur-L., gare;      8570063;     2536115;     1159551;   5740.562999957486;      Yes
+  Cheseaux-sur-L., Martheray;      8577645;     2535497;     1159275;   6417.393850318194;      Yes
+  Cheseaux-sur-L., Châtelard;      8595147;     2535123;     1158887;   6956.300150151477;      Yes
+        Crissier, Montremoën;      8507632;     2533984;     1157108;    9068.68316466376;      Yes
+           Crissier, Timonet;      8588845;     2533672;     1156420;   9824.122109913475;      Yes
+            Crissier, centre;      8588843;     2533922;     1156187;  10165.866166189513;      Yes
+            Crissier, Chisaz;      8595148;     2533916;     1155821;  10531.915343213584;      Yes
+          Crissier, Marcolet;      8593816;     2533751;     1155437;  10949.863904641901;      Yes
+         Crissier, Zinguerie;      8591939;     2533415;     1155074;  11444.500134612977;      Yes
+              Crissier, Jura;      8593815;     2533622;     1154891;  11720.793457007856;      Yes
+        Renens VD, gare nord;      8588838;     2534082;     1154390;  12400.941235067889;      Yes
