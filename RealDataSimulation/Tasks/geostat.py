@@ -52,8 +52,13 @@ class STAT:
             weights = self.default_weights
         return self.generate_n(int(proportion * self.df[weights].sum()), *args, weights=weights)
     
-    def plot(self):
-        
+    def plot(self, ax = None, type = "density"):
+        if ax is None:
+            fig, ax = self.area.plot()
+        if type=="density":
+            ax.scatter(data=self.df, x="POSITION_X", y="POSITION_Y", c=self.default_weights, marker=(4,0,0), s=50, cmap="Blues", alpha=0.5, vmin=-self.df[self.default_weights].quantile(0.5),vmax=self.df[self.default_weights].quantile(0.95), label="Density")
+        elif type == "points":
+            ax.scatter(data=self.df, x="POSITION_X", y="POSITION_Y", c=self.default_weights, marker="*", s=20, cmap="Oranges", alpha=0.5, vmin=-self.df[self.default_weights].quantile(0.5),vmax=self.df[self.default_weights].quantile(0.95), label="Points")
 
 class STATPOP (STAT):
     def __init__(self, area: Area, year = 2023, asset_number = 32686751, **kwargs):
