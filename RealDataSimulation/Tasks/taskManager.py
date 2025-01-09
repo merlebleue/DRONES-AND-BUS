@@ -29,7 +29,9 @@ class TaskManager:
     
     def compute_improvement(self, tasks: pd.DataFrame, lines : LineData | LinesData):
         tasks = tasks.copy(deep=True)
-        if isinstance(lines, LineData):
+        try :
+            len(lines)
+        except TypeError:
             lines = LinesData(lines)
         pickup_stop_x = np.zeros((len(tasks), len(lines)))
         pickup_stop_y = np.zeros((len(tasks), len(lines)))
@@ -115,5 +117,3 @@ class TaskManager:
         ax.plot([self.area.x_min], [self.area.y_max], alpha=0)
         ax.plot([self.area.x_min], [self.area.y_max], alpha=0)
         return ax
-    
-    def 
