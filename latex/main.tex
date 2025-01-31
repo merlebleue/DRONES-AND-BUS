@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage{ars_gibs}
+
+
+\title{Real Data for a Drone-and-Bus Delivery System Scenario}
+\course{Semester project}
+\semesteryear{Master of Civil Engineering, Autumn 2024-2025}
+\author{Julien Ars}
+\shortauthor{J. Ars}
+\figurefolder{../fig}
+\coverimage{l705_clean.png} %% Remplacer <example-image-a> par le chemin vers la photo de couverture
+\coverimagecaption{Bus line 705 (MBC), example result}
+
+\begin{document}
+
+\makecover
+
+\newpage
+
+\input{parts/0introduction}
+
+\newpage
+\begin{titlepage}
+    \tableofcontents
+\end{titlepage}
+
+\input{parts/1methods}
+\input{parts/2examples}
+\input{parts/3results}
+\input{parts/4conclusion}
+
+\newpage
+\bibliography{refs}
+\label{sec:bibliographie}
+\addcontentsline{toc}{section}{\bibname}
+\thispagestyle{empty}
+
+\end{document}

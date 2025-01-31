@@ -48,9 +48,12 @@ class Area:
     def get_lat_lon_box(self):
          return *self.to_lat_lon(self.x_min, self.y_min)[::-1], *self.to_lat_lon(self.x_max, self.y_max)[::-1]
     
-    def plot(self, *elements, background = "cartodb", figsize=(8,8), dpi=200, margin=0, layout="tight", plot_axes = True):
+    def plot(self, *elements, background = "cartodb", figwidth=8, dpi=200, margin=0, layout="tight", plot_axes = True):
+        size_x, size_y = self.x_max - self.x_min, self.y_max - self.y_min
+
+        figheight = figwidth * size_y / size_x
         # Create figure
-        fig = plt.figure(figsize=figsize, dpi=dpi, layout = layout)
+        fig = plt.figure(figsize=(figwidth, figheight), dpi=dpi, layout = layout)
         ax = fig.subplots()
 
         # Add the background (using smopy library)
@@ -70,7 +73,6 @@ class Area:
             map.show_mpl(ax=ax, extent=[x_min, x_max, y_min, y_max], zorder= -100)
 
         # If margin > 0, plot a rectangle with the area in the simulation
-        size_x, size_y = self.x_max - self.x_min, self.y_max - self.y_min
         if margin > 0 and plot_axes:
             ax.add_patch(patches.Rectangle((self.x_min, self.y_min), size_x, size_y, linewidth=1, edgecolor='navy', facecolor='none'))
 

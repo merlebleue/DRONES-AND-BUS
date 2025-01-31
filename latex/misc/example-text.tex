@@ -1,0 +1,40 @@
+Ce template centre les caption, place les \emph{figures} et les \emph{tables} là où elles se trouvent dans le code, propose une police et un style de \lstinline[language=Python]{code Python}. La largeur des images est de \lstinline{0.8\linewidth} par défaut. Des packages pratiques comme \emph{enumitem} et \emph{tabularray} sont aussi chargés. La police utilisée est \textbf{Linux Libertine O} pour le texte et \textbf{Libertinus} pour le mode math.
+
+Pour donner quelques exemples\footnote{Un exemple}, d'abord quelques opérateurs dans le texte
+$$\times$$
+$\int\int\int\limits_{Q}f(x,y,z) \diff x \diff y \diff z$
+puis
+$\prod_{\gamma\in\Gamma_{\bar{C}}}\partial(\tilde{X}_\gamma)$ puis en mode math :
+\[
+  \int\int\int\int\limits_{Q}f(w,x,y,z) \diff w \diff x \diff y \diff z
+  \leq
+  \oint_{\partial Q} f'\left(\max\left\{
+  \frac{\Vert w\Vert}{\vert w^2+x^2\vert};
+  \frac{\Vert z\Vert}{\vert y^2+z^2\vert};
+  \frac{\Vert w\oplus z\Vert}{\vert x\oplus y\vert}
+  \right\}\right)\,
+\]
+\[
+    \frac{1}{2\pi i} \int\limits_\gamma f\left(x^{\mathbf{N}\in\mathbb{C}^{N\times 10}}\right)
+    = \sum_{k=1}^m n(\gamma;a_k)\mathrm{Res}(f;a_k)\,
+  \]
+  \[
+    \max\{\, |f(z)|:z\in G^- \,\} = \max\{\, |f(z)|:z\in \partial G \,\}\,
+  \]
+
+
+Reccomandation: \emph{tabularray} est bien pratique pour faire de jolies tables:
+
+\bigskip
+
+\NewColumnType{A}{Q[l, yellow!50]}
+\begin{tblr}{colspec={AQ[r,red!50]r}, hlines={2pt, gray}, vlines={2pt, gray}}
+    \SetCell[c=3]{c, green, fg=red, font=\LARGE} StackExchange Sites && \\
+    \SetRow{blue!50} Site & questions & answers \\
+    Stack Overflow & 22m & 33m \\
+    Mathematics & 1.5m & \SetCell{magenta} 2m \\
+    Super User &  472k & 684k \\
+    \SetRow{orange!50} TeX - LaTeX & 228k & 293k \\
+\end{tblr}
+
+\lstinputlisting[language=Python]{misc/somecode.py}
