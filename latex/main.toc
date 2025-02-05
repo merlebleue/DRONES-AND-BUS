@@ -5,7 +5,10 @@
 \contentsline {subsection}{\numberline {1.3}Task generation}{1}{subsection.1.3}%
 \contentsline {subsection}{\numberline {1.4}Bus data processing}{2}{subsection.1.4}%
 \contentsline {subsection}{\numberline {1.5}Evaluation}{3}{subsection.1.5}%
-\contentsline {section}{\numberline {2}Examples}{3}{section.2}%
-\contentsline {section}{\numberline {3}Données de base}{4}{section.3}%
-\contentsline {section}{\numberline {4}Conclusion}{4}{section.4}%
-\contentsline {section}{Bibliography}{5}{section*.5}%
+\contentsline {section}{\numberline {2}Application}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Baseline case : synthetic bus lines and tasks}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Suburban case : Bus line 705}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}City case : Lausanne agglomeration}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Results}{7}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Conclusion}{9}{section.3}%
+\contentsline {section}{Bibliography}{10}{section*.10}%

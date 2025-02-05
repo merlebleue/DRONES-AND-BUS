@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.10)  31 JAN 2025 20:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.10)  5 FEB 2025 16:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -774,7 +774,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 \c@lstlisting=\count379
-<misc/logoepfl.png, id=44, 2040.62375pt x 594.22pt>
+<misc/logoepfl.png, id=56, 2040.62375pt x 594.22pt>
 File: misc/logoepfl.png Graphic file (type png)
 <use misc/logoepfl.png>
 Package pdftex.def Info: misc/logoepfl.png  used on input line 17.
@@ -787,7 +787,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
  (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<../fig/l705_clean.png, id=45, 578.16pt x 374.71996pt>
+<../fig/l705_clean.png, id=57, 578.16pt x 374.71996pt>
 File: ../fig/l705_clean.png Graphic file (type png)
 <use ../fig/l705_clean.png>
 Package pdftex.def Info: ../fig/l705_clean.png  used on input line 17.
@@ -795,11 +795,11 @@ Package pdftex.def Info: ../fig/l705_clean.png  used on input line 17.
  [1
 
 {c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./misc/logoepfl.png> <../fig/l705_clean.png>] (./parts/0introduction.tex
-<../fig/synthetic_tasks.png, id=58, 462.528pt x 346.896pt>
+<../fig/synthetic_tasks.png, id=70, 505.89pt x 505.89pt>
 File: ../fig/synthetic_tasks.png Graphic file (type png)
 <use ../fig/synthetic_tasks.png>
-Package pdftex.def Info: ../fig/synthetic_tasks.png  used on input line 6.
-(pdftex.def)             Requested size: 290.22107pt x 217.67754pt.
+Package pdftex.def Info: ../fig/synthetic_tasks.png  used on input line 8.
+(pdftex.def)             Requested size: 241.84843pt x 241.8518pt.
 )
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
@@ -819,7 +819,67 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 <to be read again> 
                    \relax 
 l.20 F
-      or customers, we used the STATPOP data that provides, in particular, t... [1] [2]) (./parts/2examples.tex) (./parts/3results.tex [3]) (./parts/4conclusion.tex) [4] (./main.bbl (./main.brf)
+      or deliveries destinations (customers), we used the STATPOP data that ... [1] [2]) (./parts/2examples.tex [3]
+File: ../fig/synthetic_tasks.png Graphic file (type png)
+<use ../fig/synthetic_tasks.png>
+Package pdftex.def Info: ../fig/synthetic_tasks.png  used on input line 10.
+(pdftex.def)             Requested size: 386.95897pt x 386.96597pt.
+<../fig/l705_area.png, id=118, 578.16pt x 374.71996pt>
+File: ../fig/l705_area.png Graphic file (type png)
+<use ../fig/l705_area.png>
+Package pdftex.def Info: ../fig/l705_area.png  used on input line 20.
+(pdftex.def)             Requested size: 386.95897pt x 250.79803pt.
+<../fig/l705_densities.png, id=119, 578.16pt x 374.71996pt>
+File: ../fig/l705_densities.png Graphic file (type png)
+<use ../fig/l705_densities.png>
+Package pdftex.def Info: ../fig/l705_densities.png  used on input line 24.
+(pdftex.def)             Requested size: 386.95897pt x 250.79803pt.
+ [4] [5 <../fig/l705_area.png> <../fig/l705_densities.png>]
+<../fig/laus_bus.png, id=136, 578.16pt x 350.14815pt>
+File: ../fig/laus_bus.png Graphic file (type png)
+<use ../fig/laus_bus.png>
+Package pdftex.def Info: ../fig/laus_bus.png  used on input line 41.
+(pdftex.def)             Requested size: 237.01411pt x 143.54028pt.
+<../fig/laus_density.png, id=137, 578.16pt x 350.14815pt>
+File: ../fig/laus_density.png Graphic file (type png)
+<use ../fig/laus_density.png>
+Package pdftex.def Info: ../fig/laus_density.png  used on input line 46.
+(pdftex.def)             Requested size: 237.01411pt x 143.54028pt.
+<../fig/laus_tasks1000.png, id=138, 578.16pt x 350.14815pt>
+File: ../fig/laus_tasks1000.png Graphic file (type png)
+<use ../fig/laus_tasks1000.png>
+Package pdftex.def Info: ../fig/laus_tasks1000.png  used on input line 54.
+(pdftex.def)             Requested size: 386.95897pt x 234.35226pt.
+ [6 <../fig/laus_bus.png> <../fig/laus_density.png>]
+File: ../fig/synthetic_tasks.png Graphic file (type png)
+<use ../fig/synthetic_tasks.png>
+Package pdftex.def Info: ../fig/synthetic_tasks.png  used on input line 64.
+(pdftex.def)             Requested size: 237.01411pt x 237.01956pt.
+<../fig/synthetic_tasks_bus.png, id=148, 505.89pt x 505.89pt>
+File: ../fig/synthetic_tasks_bus.png Graphic file (type png)
+<use ../fig/synthetic_tasks_bus.png>
+Package pdftex.def Info: ../fig/synthetic_tasks_bus.png  used on input line 65.
+(pdftex.def)             Requested size: 237.01411pt x 237.01956pt.
+<../fig/l705_tasks.png, id=149, 578.16pt x 374.71996pt>
+File: ../fig/l705_tasks.png Graphic file (type png)
+<use ../fig/l705_tasks.png>
+Package pdftex.def Info: ../fig/l705_tasks.png  used on input line 69.
+(pdftex.def)             Requested size: 237.01411pt x 153.6133pt.
+<../fig/l705_tasks_bus.png, id=150, 578.16pt x 374.71996pt>
+File: ../fig/l705_tasks_bus.png Graphic file (type png)
+<use ../fig/l705_tasks_bus.png>
+Package pdftex.def Info: ../fig/l705_tasks_bus.png  used on input line 70.
+(pdftex.def)             Requested size: 237.01411pt x 153.6133pt.
+File: ../fig/laus_tasks1000.png Graphic file (type png)
+<use ../fig/laus_tasks1000.png>
+Package pdftex.def Info: ../fig/laus_tasks1000.png  used on input line 74.
+(pdftex.def)             Requested size: 237.01411pt x 143.54028pt.
+<../fig/laus_tasks1000_bus.png, id=151, 578.16pt x 350.14815pt>
+File: ../fig/laus_tasks1000_bus.png Graphic file (type png)
+<use ../fig/laus_tasks1000_bus.png>
+Package pdftex.def Info: ../fig/laus_tasks1000_bus.png  used on input line 75.
+(pdftex.def)             Requested size: 237.01411pt x 143.54028pt.
+ [7 <../fig/laus_tasks1000.png>]) (./parts/4conclusion.tex) [8 <../fig/synthetic_tasks_bus.png> <../fig/l705_tasks.png> <../fig/l705_tasks_bus.png> <../fig/laus_tasks1000_bus.png>] [9] (./main.bbl (./main.brf)
 \tf@brf=\write5
 \openout5 = `main.brf'.
 
@@ -827,29 +887,29 @@ l.20 F
 
 Package natbib Warning: Empty `thebibliography' environment on input line 3.
 
-) [5] (./main.aux)
+) [10] (./main.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-12-08>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C2A7B8687A51C834777C6CD319593CBA;1133.
+(rerunfilecheck)             Checksum: 8193E4F964707C0D7E1887CDE6CB1833;1871.
 Package rerunfilecheck Info: File `main.brf' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 23067 strings out of 474171
- 445467 string characters out of 5749596
- 1935473 words of memory out of 5000000
- 45048 multiletter control sequences out of 15000+600000
- 567300 words of font info for 69 fonts, out of 8000000 for 9000
+ 23162 strings out of 474171
+ 447982 string characters out of 5749596
+ 1936473 words of memory out of 5000000
+ 45133 multiletter control sequences out of 15000+600000
+ 567600 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 105i,12n,107p,1105b,992s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (8 pages, 1061021 bytes).
+ 105i,12n,107p,1235b,992s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (13 pages, 8825527 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 110 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 216 PDF objects out of 1000 (max. 8388607)
+ 163 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 165 words of extra memory for PDF output out of 10000 (max. 10000000)
 
