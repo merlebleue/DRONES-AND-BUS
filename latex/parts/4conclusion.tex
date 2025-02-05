@@ -1,2 +1,14 @@
 \section{Conclusion}
 \label{sec:conclusion}
+
+In this study, we have implemented multiple python tools to import, process and use general data about bus systems and socio-economical geographical variables into processed data for use in a drone-and-bus delivery simulation scenario, allowing to place these simulations in a more realistic setting. In addition, we have demonstrated that in realistic scenarios, key metrics like the possible improvement in total drone distance, are likely to improve compared to a synthetic scenario.
+
+The work done here could be completed by adding other methods of tasks pairing, for example with a minimal and maximum distance or by pairing to the nearest shop. Including time data both in bus data and in tasks - adding time constraints to the deliveries - could also bring more realistic results. For tasks, new data sources would help anchor those time constraints to the reality, for example home utilities usage to generate times for the delivery, and shops opening hours for the pickup. For bus data, we already process the time data and output a timetable. This could allow a simulation to run more realistically, for example determining bus frequencies and mean travel times from these outputs, or even by including the variability in travel times and frequencies (for example, at rush hour) and monitoring their impact on the simulation. The data also includes scheduled and real departure and arrival times, which could allow for a simulation that includes the unpredictability of the bus real arrival time.
+
+The processing of bus data could be made more robust to work also on other public transport in Switzerland. The outputs could also be used for other researchs purposes than a drone-and-bus delivery system, given their general aspect.
+
+\vspace{7cm}
+
+\paragraph{Code} The code is availlable on github : \url{https://github.com/merlebleue/DRONES-AND-BUS}
+
+\paragraph{Acknowledgements} Many thanks to Minru Wang for her precious help and comments during the semester. The code uses the \href{https://github.com/rossant/smopy}{smopy} package for mapping, with backgrounds from \href{https://carto.com/}{CARTO} in the visualisation.

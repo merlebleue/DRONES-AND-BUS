@@ -23,7 +23,7 @@ class LineData:
             self.routes = routes
             self.journeys = journeys
         else:
-            self.timetable, self.stops, self.journeys = self.get_data()
+            self.timetable, self.stops, self.journeys = self.load_data()
 
     def path_join (self, *args):
         return os.path.join(self.path, *args)
@@ -189,6 +189,8 @@ Registered keys to access lines : {', '.join(map("'{}'".format, self.key_to_id))
             fig, ax = self.get_area().plot()
         label = kwargs.pop("label", "Transport lines" if same_color else "")
         for line_id, line in self.items():
+            if not same_color:
+                label = line.line_name
             line.plot(ax=ax, label=label, **kwargs)
             if same_color:
                 kwargs["c"] = ax.get_lines()[-1].get_c()

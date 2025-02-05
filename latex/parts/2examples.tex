@@ -33,7 +33,7 @@ Looking at the population and shops (Figure \ref{fig:suburban_densities}), we ca
 
 \subsection{City case : Lausanne agglomeration}
 
-For the third case, we wanted to explore a more complete environment, at a larger scale. We choose for that the Lausanne agglomeration, as depicted in Figure \ref{fig:agglo_case}, as it involves the whole city of Lausanne and surroundings municipalities. In particular, as we can see in the population densities, this area includes the dense city centre, the greater agglomeration with Renens as a second pole, and then outspots, such as the Romanel, Crissier, St Sulpice municipalities. Following population, transport lines radiate from the city and desserve most of the population, altough we could identify a significant zone not well desserved (around coordinates $(2,536,000\text{ , }1,157,000)$), which could be explained that it is desserved by the LEB train and therefore ignored by the bus network. This is an interesting case of some places where the drones would not much benefit from the bus network but the customers could still expect to be served by the delivery system as they are a part of the agglomeration. To account for the greater population, 1000 tasks will be generated.
+For the third case, we wanted to explore a more complete environment, at a larger scale. We choose for that the Lausanne agglomeration, as depicted in Figure \ref{fig:agglo_case}, as it involves the whole city of Lausanne and surroundings municipalities. In particular, as we can see in the population densities, this area includes the dense city centre, the greater agglomeration with Renens as a second pole, and then outspots, such as the Romanel, Crissier, St Sulpice municipalities. Following population, transport lines radiate from the city and desserve most of the population, altough we could identify a significant zone not well desserved (around coordinates $(2,536,000\text{ , }1,157,000)$), which could be explained in that it is desserved by the LEB train and therefore ignored by the bus network. This is an interesting case of some places where the drones would not much benefit from the bus network but the customers could still expect to be served by the delivery system as they are a part of the agglomeration. To account for the greater population, 1000 tasks will be generated.
 
 \begin{figure}
     \centering
@@ -55,7 +55,25 @@ For the third case, we wanted to explore a more complete environment, at a large
 
 \subsection{Results}
 
-The drone trajectories with and without using the bus lines are depicted for each case in Figure \ref{fig:results}. For visualisation purposes, we represented on the maps the packages for which the improvement would be negative as not using the bus network and instead going directly to the delivery point, with a black arrow.
+The drone trajectories with and without using the bus lines are depicted for each case in Figure \ref{fig:results}. For visualisation purposes, we represented on the maps the packages for which the improvement would be negative as not using the bus network and instead going directly to the delivery point, with a black arrow. Quantitatively, we will use two metrics : the percentage of packages for which using the bus lines reduces the distance drones have to travel, and the distribution of the relative improvement in distance. They are visualised in Figure \ref{fig:results2} :
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[t]{0.49\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{"../fig/analysis_proportion.pdf"}
+        \caption{Proportion of tasks using bus lines}        
+    \end{subfigure}
+    \begin{subfigure}[t]{0.49\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{"../fig/analysis_boxplot.pdf"}
+        \caption{Improvement (normalised to the direct distance)}        
+    \end{subfigure}
+    \caption{Results}
+    \label{fig:results2}
+\end{figure}
+
+We can see that the proportion of tasks using bus lines increase slightly between the synthetic case and the suburban case, and increase much more using the agglomeration case. In the relative improvement, we can see that when the suburban case does not serve well the packages, the negative improvement can be very big, however, in such a case, the drone would go directly to the delivery point, without using the bus line.
 
 \begin{figure}
     \centering
@@ -77,6 +95,41 @@ The drone trajectories with and without using the bus lines are depicted for eac
     \end{subfigure}
     \caption{Comparison of drone trajectories without using the bus lines (left) and with using the bus lines (right)}
     \label{fig:results}
+\end{figure}
+
+\subsection{Extra analysis : number of bus lines necessary}
+
+The very good results of the agglomeration case can be explained easily by the dense network of public transport lines availlable. Interesting related questions what is the impact of the number of bus lines, and what is the minimum of bus lines that should be included in the scheme to get an already good result. In order to do so, we will order the bus line by their effectiveness and then, while adding them progressively to our scenario, measure the evolution of both the improvement in total drone travel distance and the number of packages using the bus line.
+
+In order to order them by their effectiveness, we used two rankings : the number of packages using the line, and the total reduction in drone travel distance they are responsible for. The results can be visualised in Figure \ref{fig:lines_absolute} :
+\begin{figure}
+    \centering
+    \begin{subfigure}[t]{0.49\linewidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{"../fig/buslines_number_crop.pdf"}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.49\linewidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{"../fig/buslines_improvement_crop.pdf"}
+    \end{subfigure}
+    \caption{Influence of the number of bus lines availlable}
+    \label{fig:lines_absolute}
+\end{figure}
+
+To answer the question of how many lines are necessary for good enough result, we normalise both metrics by their maximum value (Figure \ref{fig:lines_relative}). We notice that ranking the bus lines by the number of package bring good results faster ($80 \%$ reached in 4-5 bus lines, compared to 5-6), and that only 10 bus lines are necessary to get $90 \%$ of the result.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[t]{0.49\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{"../fig/buslines_number_norm.pdf"}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.49\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{"../fig/buslines_improvement_norm.pdf"}
+    \end{subfigure}
+    \caption{Influence of the number of bus lines availlable (normalised)}
+    \label{fig:lines_relative}
 \end{figure}
 
 %The findings indicate that real data significantly enhances the probability that bus-based deliveries reduce drone travel distances. Moreover, task distributions generated using real data more accurately reflect real-world delivery demands, demonstrating the advantages of this approach over synthetic modeling.

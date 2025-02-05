@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.10)  5 FEB 2025 16:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.10)  5 FEB 2025 21:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -851,65 +851,86 @@ File: ../fig/laus_tasks1000.png Graphic file (type png)
 Package pdftex.def Info: ../fig/laus_tasks1000.png  used on input line 54.
 (pdftex.def)             Requested size: 386.95897pt x 234.35226pt.
  [6 <../fig/laus_bus.png> <../fig/laus_density.png>]
+<../fig/analysis_proportion.pdf, id=149, 438.72519pt x 169.29059pt>
+File: ../fig/analysis_proportion.pdf Graphic file (type pdf)
+<use ../fig/analysis_proportion.pdf>
+Package pdftex.def Info: ../fig/analysis_proportion.pdf  used on input line 64.
+(pdftex.def)             Requested size: 237.01411pt x 91.45688pt.
+<../fig/analysis_boxplot.pdf, id=150, 445.46895pt x 169.29059pt>
+File: ../fig/analysis_boxplot.pdf Graphic file (type pdf)
+<use ../fig/analysis_boxplot.pdf>
+Package pdftex.def Info: ../fig/analysis_boxplot.pdf  used on input line 69.
+(pdftex.def)             Requested size: 237.01411pt x 90.07487pt.
 File: ../fig/synthetic_tasks.png Graphic file (type png)
 <use ../fig/synthetic_tasks.png>
-Package pdftex.def Info: ../fig/synthetic_tasks.png  used on input line 64.
+Package pdftex.def Info: ../fig/synthetic_tasks.png  used on input line 82.
 (pdftex.def)             Requested size: 237.01411pt x 237.01956pt.
-<../fig/synthetic_tasks_bus.png, id=148, 505.89pt x 505.89pt>
+<../fig/synthetic_tasks_bus.png, id=151, 505.89pt x 505.89pt>
 File: ../fig/synthetic_tasks_bus.png Graphic file (type png)
 <use ../fig/synthetic_tasks_bus.png>
-Package pdftex.def Info: ../fig/synthetic_tasks_bus.png  used on input line 65.
+Package pdftex.def Info: ../fig/synthetic_tasks_bus.png  used on input line 83.
 (pdftex.def)             Requested size: 237.01411pt x 237.01956pt.
-<../fig/l705_tasks.png, id=149, 578.16pt x 374.71996pt>
+<../fig/l705_tasks.png, id=152, 578.16pt x 374.71996pt>
 File: ../fig/l705_tasks.png Graphic file (type png)
 <use ../fig/l705_tasks.png>
-Package pdftex.def Info: ../fig/l705_tasks.png  used on input line 69.
+Package pdftex.def Info: ../fig/l705_tasks.png  used on input line 87.
 (pdftex.def)             Requested size: 237.01411pt x 153.6133pt.
-<../fig/l705_tasks_bus.png, id=150, 578.16pt x 374.71996pt>
+<../fig/l705_tasks_bus.png, id=153, 578.16pt x 374.71996pt>
 File: ../fig/l705_tasks_bus.png Graphic file (type png)
 <use ../fig/l705_tasks_bus.png>
-Package pdftex.def Info: ../fig/l705_tasks_bus.png  used on input line 70.
+Package pdftex.def Info: ../fig/l705_tasks_bus.png  used on input line 88.
 (pdftex.def)             Requested size: 237.01411pt x 153.6133pt.
 File: ../fig/laus_tasks1000.png Graphic file (type png)
 <use ../fig/laus_tasks1000.png>
-Package pdftex.def Info: ../fig/laus_tasks1000.png  used on input line 74.
+Package pdftex.def Info: ../fig/laus_tasks1000.png  used on input line 92.
 (pdftex.def)             Requested size: 237.01411pt x 143.54028pt.
-<../fig/laus_tasks1000_bus.png, id=151, 578.16pt x 350.14815pt>
+<../fig/laus_tasks1000_bus.png, id=154, 578.16pt x 350.14815pt>
 File: ../fig/laus_tasks1000_bus.png Graphic file (type png)
 <use ../fig/laus_tasks1000_bus.png>
-Package pdftex.def Info: ../fig/laus_tasks1000_bus.png  used on input line 75.
+Package pdftex.def Info: ../fig/laus_tasks1000_bus.png  used on input line 93.
 (pdftex.def)             Requested size: 237.01411pt x 143.54028pt.
- [7 <../fig/laus_tasks1000.png>]) (./parts/4conclusion.tex) [8 <../fig/synthetic_tasks_bus.png> <../fig/l705_tasks.png> <../fig/l705_tasks_bus.png> <../fig/laus_tasks1000_bus.png>] [9] (./main.bbl (./main.brf)
-\tf@brf=\write5
-\openout5 = `main.brf'.
-
-
-
-Package natbib Warning: Empty `thebibliography' environment on input line 3.
-
-) [10] (./main.aux)
+ [7 <../fig/laus_tasks1000.png> <../fig/analysis_proportion.pdf> <../fig/analysis_boxplot.pdf>] [8 <../fig/synthetic_tasks_bus.png> <../fig/l705_tasks.png> <../fig/l705_tasks_bus.png> <../fig/laus_tasks1000_bus.png>]
+<../fig/buslines_number_crop.pdf, id=250, 408.52625pt x 310.15875pt>
+File: ../fig/buslines_number_crop.pdf Graphic file (type pdf)
+<use ../fig/buslines_number_crop.pdf>
+Package pdftex.def Info: ../fig/buslines_number_crop.pdf  used on input line 109.
+(pdftex.def)             Requested size: 213.31125pt x 161.95078pt.
+<../fig/buslines_improvement_crop.pdf, id=251, 415.5525pt x 310.15875pt>
+File: ../fig/buslines_improvement_crop.pdf Graphic file (type pdf)
+<use ../fig/buslines_improvement_crop.pdf>
+Package pdftex.def Info: ../fig/buslines_improvement_crop.pdf  used on input line 113.
+(pdftex.def)             Requested size: 213.31125pt x 159.21057pt.
+<../fig/buslines_number_norm.pdf, id=253, 462.52798pt x 346.89601pt>
+File: ../fig/buslines_number_norm.pdf Graphic file (type pdf)
+<use ../fig/buslines_number_norm.pdf>
+Package pdftex.def Info: ../fig/buslines_number_norm.pdf  used on input line 125.
+(pdftex.def)             Requested size: 237.01411pt x 177.76154pt.
+<../fig/buslines_improvement_norm.pdf, id=254, 462.52798pt x 346.89601pt>
+File: ../fig/buslines_improvement_norm.pdf Graphic file (type pdf)
+<use ../fig/buslines_improvement_norm.pdf>
+Package pdftex.def Info: ../fig/buslines_improvement_norm.pdf  used on input line 129.
+(pdftex.def)             Requested size: 237.01411pt x 177.76154pt.
+) (./parts/4conclusion.tex [9 <../fig/buslines_number_crop.pdf> <../fig/buslines_improvement_crop.pdf> <../fig/buslines_number_norm.pdf> <../fig/buslines_improvement_norm.pdf>]) [10] (./main.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-12-08>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8193E4F964707C0D7E1887CDE6CB1833;1871.
-Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: E5C5DF34997B50160F927E4FA7CAE801;2074.
  ) 
 Here is how much of TeX's memory you used:
- 23162 strings out of 474171
- 447982 string characters out of 5749596
+ 23204 strings out of 474171
+ 449937 string characters out of 5749596
  1936473 words of memory out of 5000000
- 45133 multiletter control sequences out of 15000+600000
- 567600 words of font info for 70 fonts, out of 8000000 for 9000
+ 45175 multiletter control sequences out of 15000+600000
+ 567769 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 105i,12n,107p,1235b,992s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (13 pages, 8825527 bytes).
+ 105i,12n,107p,1238b,992s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on main.pdf (13 pages, 9226584 bytes).
 PDF statistics:
- 216 PDF objects out of 1000 (max. 8388607)
- 163 compressed objects within 2 object streams
- 37 named destinations out of 1000 (max. 500000)
- 165 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 500 PDF objects out of 1000 (max. 8388607)
+ 209 compressed objects within 3 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 195 words of extra memory for PDF output out of 10000 (max. 10000000)
 

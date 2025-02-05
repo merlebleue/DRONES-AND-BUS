@@ -10,5 +10,7 @@
 \contentsline {subsection}{\numberline {2.2}Suburban case : Bus line 705}{4}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}City case : Lausanne agglomeration}{6}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Results}{7}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Conclusion}{9}{section.3}%
-\contentsline {section}{Bibliography}{10}{section*.10}%
+\contentsline {subsection}{\numberline {2.5}Extra analysis : number of bus lines necessary}{9}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Conclusion}{10}{section.3}%
+\contentsline {paragraph}{Code}{10}{section*.13}%
+\contentsline {paragraph}{Acknowledgements}{10}{section*.14}%
