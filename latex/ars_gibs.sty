@@ -144,22 +144,22 @@
 \usepackage{setspace}
 \renewcommand{\baselinestretch}{1.15}
 %% Bibliography
-\usepackage{natbib}
-\bibliographystyle{authordate1}
-\setcitestyle{authoryear,authorsep={\&},open={(}, close={)}}
+%   \usepackage{natbib}
+%   \bibliographystyle{authordate1}
+%   \setcitestyle{authoryear,authorsep={\&},open={(}, close={)}}
 %% Backref style
-\renewcommand*{\backreflastsep}{, }
-\renewcommand*{\backreftwosep}{, }
-\renewcommand*{\backref}[1]{}
-\renewcommand*{\backrefalt}[4]{%
-  \ifcase #1 %
-    No citations.% use \relax if you do not want the "No citations" message
-  \or
-(page #4).%
-  \else
-(pages #4).%
-  \fi%
-}
+%   \renewcommand*{\backreflastsep}{, }
+%   \renewcommand*{\backreftwosep}{, }
+%   \renewcommand*{\backref}[1]{}
+%   \renewcommand*{\backrefalt}[4]{%
+%     \ifcase #1 %
+%       No citations.% use \relax if you do not want the "No citations" message
+%     \or
+%   (page #4).%
+%     \else
+%   (pages #4).%
+%     \fi%
+%   }
 %% Writing in multiple columns
 \if@twocolumn\else
     \usepackage{multicol}

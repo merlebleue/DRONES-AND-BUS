@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.10)  5 FEB 2025 21:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.10)  5 FEB 2025 22:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -589,28 +589,22 @@ Package: listings 2023/02/27 1.9 (Carsten Heinz)
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 ) (c:/texlive/2023/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-) (c:/texlive/2023/texmf-dist/tex/latex/natbib/natbib.sty
-Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip72
-\bibsep=\skip73
-LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count361
 ) (c:/texlive/2023/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
-\c@tracingmulticols=\count362
+\c@tracingmulticols=\count361
 \mult@box=\box95
 \multicol@leftmargin=\dimen300
-\c@unbalance=\count363
-\c@collectmore=\count364
-\doublecol@number=\count365
-\multicoltolerance=\count366
-\multicolpretolerance=\count367
+\c@unbalance=\count362
+\c@collectmore=\count363
+\doublecol@number=\count364
+\multicoltolerance=\count365
+\multicolpretolerance=\count366
 \full@width=\dimen301
 \page@free=\dimen302
 \premulticols=\dimen303
 \postmulticols=\dimen304
-\multicolsep=\skip74
-\multicolbaselineskip=\skip75
+\multicolsep=\skip72
+\multicolbaselineskip=\skip73
 \partial@page=\box96
 \last@line=\box97
 \mc@boxedresult=\box98
@@ -655,19 +649,19 @@ Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 \@tempa=\box136
 \@tempa=\box137
 \@tempa=\box138
-\c@minrows=\count368
-\c@columnbadness=\count369
-\c@finalcolumnbadness=\count370
+\c@minrows=\count367
+\c@columnbadness=\count368
+\c@finalcolumnbadness=\count369
 \last@try=\dimen306
 \multicolovershoot=\dimen307
 \multicolundershoot=\dimen308
 \mult@nat@firstbox=\box139
 \colbreak@box=\box140
-\mc@col@check@num=\count371
+\mc@col@check@num=\count370
 )) (c:/texlive/2023/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen309
 \WF@size=\dimen310
-\c@WF@wrappedlines=\count372
+\c@WF@wrappedlines=\count371
 \WF@box=\box141
 \WF@everypar=\toks34
 Package: wrapfig 2003/01/31  v 3.6
@@ -729,16 +723,16 @@ LaTeX Font Info:    ... okay on input line 15.
 
 (c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count373
+\scratchcounter=\count372
 \scratchdimen=\dimen311
 \scratchbox=\box142
-\nofMPsegments=\count374
-\nofMParguments=\count375
+\nofMPsegments=\count373
+\nofMParguments=\count374
 \everyMPshowfont=\toks35
-\MPscratchCnt=\count376
+\MPscratchCnt=\count375
 \MPscratchDim=\dimen312
-\MPnumerator=\count377
-\makeMPintoPDFobject=\count378
+\MPnumerator=\count376
+\makeMPintoPDFobject=\count377
 \everyMPtoPDFconversion=\toks36
 ) (c:/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -746,7 +740,6 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (c:/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package backref Info: ** backref set up for natbib ** on input line 15.
 Package hyperref Info: Link coloring ON on input line 15.
  (./main.out) (./main.out)
 \@outlinefile=\write3
@@ -773,7 +766,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-\c@lstlisting=\count379
+\c@lstlisting=\count378
 <misc/logoepfl.png, id=56, 2040.62375pt x 594.22pt>
 File: misc/logoepfl.png Graphic file (type png)
 <use misc/logoepfl.png>
@@ -919,15 +912,15 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: E5C5DF34997B50160F927E4FA7CAE801;2074.
  ) 
 Here is how much of TeX's memory you used:
- 23204 strings out of 474171
- 449937 string characters out of 5749596
+ 22876 strings out of 474171
+ 445880 string characters out of 5749596
  1936473 words of memory out of 5000000
- 45175 multiletter control sequences out of 15000+600000
+ 44851 multiletter control sequences out of 15000+600000
  567769 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  105i,12n,107p,1238b,992s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (13 pages, 9226584 bytes).
+Output written on main.pdf (13 pages, 9226560 bytes).
 PDF statistics:
  500 PDF objects out of 1000 (max. 8388607)
  209 compressed objects within 3 object streams

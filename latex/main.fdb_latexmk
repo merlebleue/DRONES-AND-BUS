@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1738788959 "c:/Users/arsju/OneDrive/Documents/1 Etudes/EPFL MA3 2024-2025/PROJETS/DRONES/latex/main.tex" "main.pdf" "main" 1738788972 0
+["pdflatex"] 1738791377 "c:/Users/arsju/OneDrive/Documents/1 Etudes/EPFL MA3 2024-2025/PROJETS/DRONES/latex/main.tex" "main.pdf" "main" 1738791384 0
   "../fig/analysis_boxplot.pdf" 1738786815 15549 dceb6d0f8a7a2a8a07b826181af99916 ""
   "../fig/analysis_proportion.pdf" 1738786669 13921 9003fee32510c45036e5e4b1e2fa5448 ""
   "../fig/buslines_improvement_crop.pdf" 1738788310 18448 b769a4db0a8ad81970735f7e9945600d ""
@@ -17,7 +17,7 @@
   "../fig/laus_tasks1000_bus.png" 1738770069 1347457 cb536f349327393b0e4ea7c4810c5a50 ""
   "../fig/synthetic_tasks.png" 1738770089 96802 1be61fba76a58b0411d0fb38e60c0732 ""
   "../fig/synthetic_tasks_bus.png" 1738770090 75355 912691e692d9adcffc06573fb62db2f5 ""
-  "ars_gibs.sty" 1738419048 4671 59d9b1bd46658643e20ccf6fd480641a ""
+  "ars_gibs.sty" 1738791353 4677 a26cb010486a10526ab52f3a2a35a334 ""
   "c:/Users/arsju/OneDrive/Documents/1 Etudes/EPFL MA3 2024-2025/PROJETS/DRONES/latex/main.tex" 1738772113 698 adf52251fb6133953b63e5bdaac02356 ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1702150248 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1702148777 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -133,7 +133,6 @@
   "c:/texlive/2023/texmf-dist/tex/latex/listings/listings.sty" 1702151059 80947 75a96bb4c9f40ae31d54a01d924df2ff ""
   "c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty" 1702151059 205154 31132370016e8c97e49bc3862419679b ""
   "c:/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty" 1702151059 77021 d05e9115c67855816136d82929db8892 ""
-  "c:/texlive/2023/texmf-dist/tex/latex/natbib/natbib.sty" 1702151472 45456 1c8843383c0bd05870c45fa0ebea6cc2 ""
   "c:/texlive/2023/texmf-dist/tex/latex/ninecolors/ninecolors.sty" 1702151521 24994 276ffd1a92e69ec7402483b3bf3318d2 ""
   "c:/texlive/2023/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty" 1702151704 6572 ea530fbbe537629fd97736d33babc07d ""
   "c:/texlive/2023/texmf-dist/tex/latex/pdflscape/pdflscape.sty" 1702151704 2224 1230ab76aa62221ccbd90bca8c8c015e ""
@@ -157,15 +156,15 @@
   "c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1702216739 4754915 f164c5801f6387d9d51285b36c40995c ""
   "c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1702215295 8218298 32ab44677f6c961b1cd621367366c3e5 ""
   "c:/texlive/2023/texmf.cnf" 1702214981 713 e69b156964470283e0530f5060668171 ""
-  "main.aux" 1738788972 5583 dd0e5c3a7faefdd5a8600e72bbb2a6e6 "pdflatex"
-  "main.out" 1738788972 2074 e5c5df34997b50160f927e4fa7cae801 "pdflatex"
+  "main.aux" 1738791383 5560 e14b7023a4fc9de46426ddc6ced93216 "pdflatex"
+  "main.out" 1738791383 2074 e5c5df34997b50160f927e4fa7cae801 "pdflatex"
   "main.tex" 1738772113 698 adf52251fb6133953b63e5bdaac02356 ""
-  "main.toc" 1738788972 1229 d46bffab80d7c43ccad1b1567dd3f18a "pdflatex"
+  "main.toc" 1738791383 1229 d46bffab80d7c43ccad1b1567dd3f18a "pdflatex"
   "misc/logoepfl.png" 1738333780 11272 d42ab12864e439fa06e830bbc44ba1f9 ""
   "parts/0introduction.tex" 1738765900 2120 f9320f9de9b726099477a37992ca6433 ""
   "parts/1methods.tex" 1738768891 10087 1b99a1ed12563f96a578573b3df0678b ""
   "parts/2examples.tex" 1738788757 9518 95b776f392c229cfa7c2f246a5b1614c ""
-  "parts/4conclusion.tex" 1738788958 2179 d0e732cd31a470ebfe3217cc71bb5b09 ""
+  "parts/4conclusion.tex" 1738791295 2172 db30fc80af291cfe31d76efa8185907a ""
   (generated)
   "main.aux"
   "main.log"
